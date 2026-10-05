@@ -1,0 +1,3048 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delk Advertising | ديلك للدعاية والإعلان</title>
+
+<meta name="description"
+content="Delk Advertising - ديلك للدعاية والإعلان والحملات التسويقية والتصميم وصناعة المحتوى.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#050711;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle at 10% 10%,
+        rgba(108,76,255,.18),
+        transparent 28%),
+
+    radial-gradient(circle at 90% 20%,
+        rgba(255,72,160,.10),
+        transparent 25%),
+
+    radial-gradient(circle at 50% 90%,
+        rgba(50,120,255,.10),
+        transparent 30%);
+}
+
+.grid-bg{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+    opacity:.08;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    padding:14px 0;
+}
+
+.navbar{
+    width:min(1200px,94%);
+    height:72px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:7px 10px 7px 18px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:23px;
+
+    background:rgba(5,7,18,.82);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.05);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8d5cff,
+            #ff4fa3
+        );
+
+    box-shadow:
+        0 10px 30px rgba(108,76,255,.25);
+
+    font-size:20px;
+    font-weight:900;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.25;
+}
+
+.brand-text strong{
+    font-size:15px;
+    font-weight:900;
+}
+
+.brand-text span{
+    color:#747d94;
+    font-size:8px;
+    letter-spacing:1.2px;
+    direction:ltr;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:3px;
+}
+
+.nav-links a{
+    color:#aeb5c8;
+    font-size:12px;
+    font-weight:700;
+    padding:10px 13px;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.06);
+}
+
+.nav-links .active{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(108,76,255,.25);
+}
+
+.menu{
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+
+    color:#fff;
+    background:rgba(255,255,255,.05);
+
+    font-size:21px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        145px
+        0
+        85px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    border-radius:50%;
+
+    background:#6c4cff;
+
+    filter:blur(180px);
+
+    opacity:.13;
+
+    top:-270px;
+    right:-200px;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:#ff4fa3;
+
+    filter:blur(170px);
+
+    opacity:.08;
+
+    bottom:-250px;
+    left:-170px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    gap:55px;
+
+    align-items:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 15px;
+
+    color:#c8bcff;
+
+    background:rgba(108,76,255,.08);
+
+    border:1px solid rgba(108,76,255,.25);
+
+    border-radius:100px;
+
+    font-size:11px;
+    font-weight:800;
+
+    margin-bottom:21px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    box-shadow:
+        0 0 18px #8b5cf6;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,70px);
+
+    line-height:1.12;
+
+    letter-spacing:-2px;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #7c5cff,
+            #ff5ca8
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-description{
+    max-width:660px;
+
+    color:#929bae;
+
+    font-size:14px;
+
+    line-height:2.1;
+
+    margin-bottom:28px;
+}
+
+.hero-description strong{
+    color:#ddd5ff;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+}
+
+.btn{
+    min-width:165px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:14px 21px;
+
+    border-radius:15px;
+
+    font-size:12px;
+    font-weight:900;
+
+    transition:.3s;
+
+    border:0;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn-primary{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    box-shadow:
+        0 15px 40px
+        rgba(108,76,255,.25);
+}
+
+.btn-secondary{
+    color:#dce1ed;
+
+    background:rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+.hero-stats{
+    display:flex;
+
+    gap:32px;
+
+    margin-top:36px;
+}
+
+.stat strong{
+    display:block;
+
+    font-size:22px;
+
+    font-weight:900;
+}
+
+.stat span{
+    color:#70798e;
+
+    font-size:10px;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual{
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.ad-orbit{
+    width:420px;
+    height:420px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(108,76,255,.17),
+            rgba(255,255,255,.015) 55%,
+            transparent 70%
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 100px
+        rgba(108,76,255,.12);
+}
+
+.ad-orbit::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-30px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(139,92,246,.20);
+
+    animation:
+        spin 20s linear infinite;
+}
+
+.ad-orbit::after{
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    box-shadow:
+        0 0 30px #8b5cf6;
+
+    top:5px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.ad-icon{
+    width:240px;
+    height:240px;
+
+    border-radius:60px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(108,76,255,.20),
+            rgba(255,79,163,.12)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 35px 80px
+        rgba(0,0,0,.35);
+
+    animation:
+        floatIcon 5s ease-in-out infinite;
+}
+
+.ad-icon::before{
+    content:"";
+
+    position:absolute;
+
+    inset:15px;
+
+    border-radius:48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.megaphone{
+    font-size:105px;
+
+    filter:
+        drop-shadow(
+            0 15px 30px
+            rgba(108,76,255,.30)
+        );
+}
+
+.float-card{
+    position:absolute;
+
+    padding:11px 15px;
+
+    color:#c7cedf;
+
+    background:
+        rgba(8,11,27,.80);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius:14px;
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.25);
+
+    font-size:10px;
+    font-weight:800;
+
+    z-index:5;
+}
+
+.float-one{
+    top:65px;
+    right:0;
+}
+
+.float-two{
+    bottom:75px;
+    left:0;
+}
+
+.float-three{
+    bottom:20px;
+    right:65px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:100px 0;
+}
+
+.section-head{
+    max-width:700px;
+
+    margin:
+        0 auto
+        48px;
+
+    text-align:center;
+}
+
+.section-label{
+    color:#9276ff;
+
+    font-size:11px;
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+.section-head h2{
+    font-size:
+        clamp(30px,5vw,44px);
+
+    line-height:1.3;
+
+    font-weight:900;
+
+    margin-bottom:9px;
+}
+
+.section-head p{
+    color:#818a9f;
+
+    font-size:12px;
+
+    line-height:2;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.35fr
+        .65fr;
+
+    gap:18px;
+}
+
+.glass{
+    padding:32px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.3s;
+}
+
+.glass:hover{
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(108,76,255,.30);
+}
+
+.about-main h3{
+    font-size:25px;
+
+    margin-bottom:13px;
+}
+
+.about-main p{
+    color:#8e97ab;
+
+    font-size:13px;
+
+    line-height:2.1;
+}
+
+.owner-card{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(108,76,255,.16),
+            transparent 60%
+        );
+}
+
+.owner-card-icon{
+    width:90px;
+    height:90px;
+
+    border-radius:28px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:40px;
+
+    margin-bottom:17px;
+
+    background:
+        rgba(108,76,255,.10);
+
+    border:
+        1px solid
+        rgba(108,76,255,.22);
+}
+
+.owner-card h3{
+    font-size:18px;
+
+    margin-bottom:3px;
+}
+
+.owner-card p{
+    color:#a78bfa;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+}
+
+.service-card{
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:220px;
+
+    padding:27px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(108,76,255,.35);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.22);
+}
+
+.service-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    background:#6c4cff;
+
+    filter:blur(80px);
+
+    opacity:.08;
+
+    top:-70px;
+    left:-70px;
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(108,76,255,.10);
+
+    border:
+        1px solid
+        rgba(108,76,255,.20);
+
+    font-size:25px;
+
+    margin-bottom:17px;
+}
+
+.service-card h3{
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.service-card p{
+    color:#7f889d;
+
+    font-size:11px;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.package{
+    position:relative;
+
+    padding:30px 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:.3s;
+}
+
+.package:hover{
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(108,76,255,.35);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.25);
+}
+
+.package.featured{
+    border-color:
+        rgba(108,76,255,.40);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(108,76,255,.12),
+            rgba(255,255,255,.02)
+        );
+
+    box-shadow:
+        0 25px 80px
+        rgba(108,76,255,.10);
+}
+
+.package-badge{
+    display:inline-block;
+
+    padding:5px 10px;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    font-size:9px;
+
+    font-weight:900;
+
+    margin-bottom:15px;
+}
+
+.package h3{
+    font-size:20px;
+
+    margin-bottom:5px;
+}
+
+.package-subtitle{
+    color:#747d91;
+
+    font-size:10px;
+
+    margin-bottom:14px;
+}
+
+.price{
+    margin:12px 0 18px;
+}
+
+.price strong{
+    font-size:32px;
+    font-weight:900;
+}
+
+.price span{
+    color:#747d91;
+    font-size:10px;
+}
+
+.package ul{
+    list-style:none;
+}
+
+.package li{
+    color:#9ba3b6;
+
+    font-size:11px;
+
+    padding:9px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.05);
+}
+
+.package li:last-child{
+    border-bottom:0;
+}
+
+.package li::before{
+    content:"✓";
+
+    color:#8b6cff;
+
+    font-weight:900;
+
+    margin-left:8px;
+}
+
+.package .btn{
+    width:100%;
+
+    margin-top:20px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+.process{
+    text-align:center;
+
+    padding:27px 15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius:21px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.process-number{
+    width:48px;
+    height:48px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin:
+        0 auto
+        13px;
+
+    border-radius:15px;
+
+    background:
+        rgba(108,76,255,.10);
+
+    border:
+        1px solid
+        rgba(108,76,255,.18);
+
+    color:#a78bfa;
+
+    font-size:14px;
+
+    font-weight:900;
+}
+
+.process h3{
+    font-size:13px;
+
+    margin-bottom:5px;
+}
+
+.process p{
+    color:#778095;
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:70px 25px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(108,76,255,.25);
+
+    border-radius:32px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(108,76,255,.20),
+            transparent 60%
+        ),
+        rgba(255,255,255,.025);
+}
+
+.cta h2{
+    font-size:
+        clamp(30px,5vw,45px);
+
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.cta p{
+    max-width:620px;
+
+    margin:
+        0 auto
+        25px;
+
+    color:#8d96aa;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:20px;
+}
+
+.contact-info{
+    padding:32px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(108,76,255,.09),
+            rgba(255,255,255,.02)
+        );
+}
+
+.contact-info h3{
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.contact-info > p{
+    color:#828b9f;
+
+    font-size:12px;
+
+    line-height:2;
+}
+
+.contact-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin-top:20px;
+}
+
+.contact-item-icon{
+    width:45px;
+    height:45px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+        rgba(108,76,255,.10);
+
+    border:
+        1px solid
+        rgba(108,76,255,.18);
+}
+
+.contact-item strong{
+    display:block;
+
+    font-size:11px;
+}
+
+.contact-item span{
+    display:block;
+
+    color:#737d91;
+
+    font-size:10px;
+
+    margin-top:2px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:70px 0 25px;
+
+    background:#02040a;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap:35px;
+
+    margin-bottom:45px;
+}
+
+.footer-description{
+    color:#70798e;
+
+    font-size:11px;
+
+    line-height:2;
+
+    max-width:400px;
+
+    margin-top:14px;
+}
+
+.footer-title{
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:14px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:7px 0;
+}
+
+.footer-links a{
+    color:#70798e;
+
+    font-size:11px;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.copyright{
+    padding-top:22px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+    text-align:center;
+
+    color:#596276;
+
+    font-size:9px;
+
+    line-height:2;
+}
+
+.copyright strong{
+    color:#9276ff;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floatIcon{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:82px;
+
+        right:3%;
+        left:3%;
+
+        padding:10px;
+
+        flex-direction:column;
+
+        background:
+            rgba(5,7,18,.96);
+
+        border:
+            1px solid
+            rgba(255,255,255,.08);
+
+        border-radius:20px;
+
+        backdrop-filter:blur(20px);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        width:100%;
+        text-align:center;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-stats{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        min-height:430px;
+    }
+
+    .ad-orbit{
+        width:340px;
+        height:340px;
+    }
+
+    .ad-icon{
+        width:190px;
+        height:190px;
+    }
+
+    .megaphone{
+        font-size:80px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .packages{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:64px;
+    }
+
+    .brand-text strong{
+        font-size:13px;
+    }
+
+    .logo{
+        width:44px;
+        height:44px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .hero-stats{
+        gap:20px;
+    }
+
+    .stat strong{
+        font-size:18px;
+    }
+
+    .hero-visual{
+        min-height:350px;
+    }
+
+    .ad-orbit{
+        width:280px;
+        height:280px;
+    }
+
+    .ad-icon{
+        width:160px;
+        height:160px;
+        border-radius:40px;
+    }
+
+    .megaphone{
+        font-size:65px;
+    }
+
+    .float-one{
+        top:25px;
+        right:-5px;
+    }
+
+    .float-two{
+        bottom:35px;
+        left:-5px;
+    }
+
+    .float-three{
+        bottom:0;
+        right:35px;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .packages{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .footer-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons .btn{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="#" class="brand">
+
+        <div class="logo">
+            DS
+        </div>
+
+        <div class="brand-text">
+
+            <strong>Delk Advertising</strong>
+
+            <span>DELK ADVERTISING</span>
+
+        </div>
+
+    </a>
+
+
+    <div class="nav-links" id="navLinks">
+
+        <a href="#home" class="active">
+            الرئيسية
+        </a>
+
+        <a href="#about">
+            من نحن
+        </a>
+
+        <a href="#services">
+            خدماتنا
+        </a>
+
+        <a href="#packages">
+            الباقات
+        </a>
+
+        <a href="#process">
+            طريقة العمل
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
+    </div>
+
+
+    <button class="menu" onclick="toggleMenu()">
+        ☰
+    </button>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+
+<div class="hero-content">
+
+<div class="badge">
+
+<span class="badge-dot"></span>
+
+Delk Advertising
+
+</div>
+
+
+<h1>
+
+نحوّل فكرتك إلى
+
+<span class="gradient">
+حضور قوي
+</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+في <strong>Delk Advertising</strong>
+نساعد الشركات والمشروعات وأصحاب الأعمال
+على بناء حضور احترافي من خلال
+الإعلانات والتصميم والحملات التسويقية
+وصناعة المحتوى والحلول البصرية.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#packages"
+class="btn btn-primary">
+
+شاهد الباقات
+
+</a>
+
+
+<a href="#contact"
+class="btn btn-secondary">
+
+ابدأ مشروعك
+
+</a>
+
+</div>
+
+
+<div class="hero-stats">
+
+<div class="stat">
+
+<strong>4</strong>
+
+<span>
+باقات تسويقية
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>100%</strong>
+
+<span>
+اهتمام بالتفاصيل
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>24/7</strong>
+
+<span>
+تواصل واستقبال الطلبات
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="hero-visual">
+
+<div class="ad-orbit">
+
+<div class="ad-icon">
+
+<div class="megaphone">
+📣
+</div>
+
+</div>
+
+<div class="float-card float-one">
+🎯 استهداف أفضل
+</div>
+
+<div class="float-card float-two">
+🚀 نمو أقوى
+</div>
+
+<div class="float-card float-three">
+✨ تصميم احترافي
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+من نحن
+</div>
+
+<h2>
+دعاية وإعلان بطريقة مختلفة
+</h2>
+
+<p>
+نركز على تقديم حلول تسويقية عصرية تساعد مشروعك
+على الظهور بصورة احترافية والوصول إلى الجمهور المناسب.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="glass about-main">
+
+<h3>
+لماذا Delk Advertising؟
+</h3>
+
+<p>
+
+لأن الإعلان الناجح ليس مجرد صورة أو منشور،
+بل هو فكرة وهوية ورسالة وطريقة مناسبة للوصول
+إلى الجمهور.
+
+نعمل على تقديم خدمات تسويقية وتصميمية
+بشكل منظم يناسب الشركات والمشروعات
+والأعمال الناشئة وأصحاب الخدمات.
+
+</p>
+
+</div>
+
+
+<div class="glass owner-card">
+
+<div class="owner-card-icon">
+DS
+</div>
+
+<h3>
+Delk Advertising
+</h3>
+
+<p>
+إحدى خدمات منظومة Delk Star
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+خدماتنا
+</div>
+
+<h2>
+كل ما تحتاجه لحضور أقوى
+</h2>
+
+<p>
+حلول إعلانية وتسويقية تساعدك على تقديم مشروعك
+بشكل أفضل والوصول إلى عملائك.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎨
+</div>
+
+<h3>
+تصميم الإعلانات
+</h3>
+
+<p>
+تصميمات إعلانية احترافية للسوشيال ميديا
+والعروض والخدمات والمنتجات.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+إدارة المحتوى
+</h3>
+
+<p>
+تجهيز محتوى منظم يساعد صفحتك على الظهور
+بصورة أكثر احترافية.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🚀
+</div>
+
+<h3>
+الحملات التسويقية
+</h3>
+
+<p>
+تجهيز حملات تسويقية مناسبة لهدف مشروعك
+والجمهور الذي تريد الوصول إليه.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎯
+</div>
+
+<h3>
+استهداف الجمهور
+</h3>
+
+<p>
+تحديد الجمهور المناسب للخدمة أو المنتج
+لزيادة فرص الوصول للعملاء المحتملين.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎬
+</div>
+
+<h3>
+المحتوى المرئي
+</h3>
+
+<p>
+تصميم وتجهيز محتوى بصري مناسب للإعلانات
+والمنصات الاجتماعية.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+📈
+</div>
+
+<h3>
+تطوير الحضور الرقمي
+</h3>
+
+<p>
+مساعدة مشروعك على بناء صورة رقمية أكثر
+احترافية وتنظيمًا.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section id="packages">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+الباقات
+</div>
+
+<h2>
+اختر الباقة المناسبة لمشروعك
+</h2>
+
+<p>
+باقات مختلفة لتناسب احتياجات المشروعات
+وتبدأ من 200 جنيه.
+</p>
+
+</div>
+
+
+<div class="packages">
+
+
+<!-- BASIC -->
+
+<div class="package">
+
+<div class="package-badge">
+البداية
+</div>
+
+<h3>
+متوسط
+</h3>
+
+<div class="package-subtitle">
+للمشروعات التي تبدأ حضورها الإعلاني
+</div>
+
+<div class="price">
+
+<strong>
+200
+</strong>
+
+<span>
+جنيه
+</span>
+
+</div>
+
+<ul>
+
+<li>
+تصميم إعلاني
+</li>
+
+<li>
+كتابة محتوى
+</li>
+
+<li>
+تجهيز منشورات
+</li>
+
+<li>
+تنسيق الحملة
+</li>
+
+</ul>
+
+<button
+class="btn btn-secondary"
+onclick="orderPackage('الباقة المتوسطة','200 جنيه')">
+
+اطلب الباقة
+
+</button>
+
+</div>
+
+
+
+<!-- PRO -->
+
+<div class="package featured">
+
+<div class="package-badge">
+الأكثر طلبًا
+</div>
+
+<h3>
+احترافي
+</h3>
+
+<div class="package-subtitle">
+لحضور أكثر احترافية
+</div>
+
+<div class="price">
+
+<strong>
+500
+</strong>
+
+<span>
+جنيه
+</span>
+
+</div>
+
+<ul>
+
+<li>
+تصميمات إعلانية
+</li>
+
+<li>
+كتابة محتوى احترافي
+</li>
+
+<li>
+خطة محتوى
+</li>
+
+<li>
+تجهيز حملة تسويقية
+</li>
+
+<li>
+متابعة وتنظيم
+</li>
+
+</ul>
+
+<button
+class="btn btn-primary"
+onclick="orderPackage('الباقة الاحترافية','500 جنيه')">
+
+اطلب الباقة
+
+</button>
+
+</div>
+
+
+
+<!-- LEGEND -->
+
+<div class="package">
+
+<div class="package-badge">
+مستوى أعلى
+</div>
+
+<h3>
+أسطوري
+</h3>
+
+<div class="package-subtitle">
+للمشروعات التي تريد توسعًا أكبر
+</div>
+
+<div class="price">
+
+<strong>
+800
+</strong>
+
+<span>
+جنيه
+</span>
+
+</div>
+
+<ul>
+
+<li>
+تصميمات متعددة
+</li>
+
+<li>
+محتوى تسويقي
+</li>
+
+<li>
+خطة إعلانية
+</li>
+
+<li>
+استهداف الجمهور
+</li>
+
+<li>
+تطوير الحملة
+</li>
+
+</ul>
+
+<button
+class="btn btn-secondary"
+onclick="orderPackage('الباقة الأسطورية','800 جنيه')">
+
+اطلب الباقة
+
+</button>
+
+</div>
+
+
+
+<!-- PREMIUM -->
+
+<div class="package">
+
+<div class="package-badge">
+Premium
+</div>
+
+<h3>
+متميز جدًا
+</h3>
+
+<div class="package-subtitle">
+حل متكامل للحضور التسويقي
+</div>
+
+<div class="price">
+
+<strong>
+1200
+</strong>
+
+<span>
+جنيه
+</span>
+
+</div>
+
+<ul>
+
+<li>
+خطة تسويقية متكاملة
+</li>
+
+<li>
+تصميمات احترافية
+</li>
+
+<li>
+محتوى تسويقي
+</li>
+
+<li>
+حملة إعلانية
+</li>
+
+<li>
+استهداف وتحسين
+</li>
+
+<li>
+متابعة الحملة
+</li>
+
+</ul>
+
+<button
+class="btn btn-primary"
+onclick="orderPackage('باقة متميز جدًا','1200 جنيه')">
+
+اطلب الباقة
+
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+طريقة العمل
+</div>
+
+<h2>
+من الفكرة إلى الحملة
+</h2>
+
+<p>
+خطوات بسيطة ومنظمة لبدء العمل على مشروعك.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process">
+
+<div class="process-number">
+01
+</div>
+
+<h3>
+تواصل معنا
+</h3>
+
+<p>
+أرسل لنا بيانات مشروعك
+والخدمة التي تحتاج إليها.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+02
+</div>
+
+<h3>
+نفهم احتياجك
+</h3>
+
+<p>
+نحدد الهدف والجمهور
+والفكرة المناسبة.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+03
+</div>
+
+<h3>
+نبدأ التنفيذ
+</h3>
+
+<p>
+نجهز التصميم والمحتوى
+والحملة التسويقية.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+04
+</div>
+
+<h3>
+الإطلاق والمتابعة
+</h3>
+
+<p>
+يتم تجهيز الحملة ومتابعة
+تنفيذها بالشكل المتفق عليه.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+جاهز تبدأ حملتك؟
+</h2>
+
+<p>
+اختار الباقة المناسبة أو تواصل معنا
+وسنساعدك في تحديد الحل المناسب لمشروعك.
+</p>
+
+<div class="buttons">
+
+<a
+href="https://wa.me/201064665780"
+class="btn btn-primary"
+target="_blank">
+
+تواصل عبر واتساب
+
+</a>
+
+<a
+href="#packages"
+class="btn btn-secondary">
+
+مشاهدة الباقات
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+تواصل معنا
+</div>
+
+<h2>
+ابدأ مشروعك الآن
+</h2>
+
+<p>
+أرسل بياناتك وسنتواصل معك عبر واتساب.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+
+<div class="contact-info">
+
+<h3>
+Delk Advertising
+</h3>
+
+<p>
+للطلب والاستفسار عن الحملات الإعلانية
+والتصميم والتسويق، تواصل معنا مباشرة.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-item-icon">
+📱
+</div>
+
+<div>
+
+<strong>
+واتساب
+</strong>
+
+<span>
+01064665780
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-item-icon">
+🚀
+</div>
+
+<div>
+
+<strong>
+الخدمات
+</strong>
+
+<span>
+إعلانات وتصميم وتسويق
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-item-icon">
+💎
+</div>
+
+<div>
+
+<strong>
+الباقات
+</strong>
+
+<span>
+من 200 إلى 1200 جنيه
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="glass">
+
+<form id="contactForm">
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+الاسم
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="اكتب اسمك"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="رقم الهاتف"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>
+نوع الخدمة
+</label>
+
+<select id="service">
+
+<option>
+حملة إعلانية
+</option>
+
+<option>
+تصميم إعلانات
+</option>
+
+<option>
+إدارة محتوى
+</option>
+
+<option>
+تسويق
+</option>
+
+<option>
+خدمة أخرى
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>
+الباقة
+</label>
+
+<select id="package">
+
+<option>
+الباقة المتوسطة - 200 جنيه
+</option>
+
+<option>
+الباقة الاحترافية - 500 جنيه
+</option>
+
+<option>
+الباقة الأسطورية - 800 جنيه
+</option>
+
+<option>
+باقة متميز جدًا - 1200 جنيه
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+تفاصيل المشروع
+</label>
+
+<textarea
+id="details"
+placeholder="اكتب تفاصيل مشروعك أو الحملة التي تريدها..."
+required></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="btn btn-primary form-submit">
+
+إرسال الطلب عبر واتساب
+
+</button>
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="brand">
+
+<div class="logo">
+DS
+</div>
+
+<div class="brand-text">
+
+<strong>
+Delk Advertising
+</strong>
+
+<span>
+DELK ADVERTISING
+</span>
+
+</div>
+
+</div>
+
+
+<p class="footer-description">
+
+ديلك للدعاية والإعلان —
+حلول إعلانية وتسويقية تساعد
+مشروعك على بناء حضور رقمي
+أكثر احترافية.
+
+</p>
+
+</div>
+
+
+
+<div>
+
+<div class="footer-title">
+روابط سريعة
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a href="#home">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="#services">
+خدماتنا
+</a>
+</li>
+
+<li>
+<a href="#packages">
+الباقات
+</a>
+</li>
+
+<li>
+<a href="#contact">
+تواصل معنا
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div>
+
+<div class="footer-title">
+تواصل معنا
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a
+href="https://wa.me/201064665780"
+target="_blank">
+
+واتساب
+
+</a>
+</li>
+
+<li>
+01064665780
+</li>
+
+<li>
+Delk Star
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026
+<strong>
+Delk Advertising
+</strong>
+
+جميع الحقوق محفوظة.
+
+<br>
+
+إحدى خدمات منظومة
+<strong>
+Delk Star
+</strong>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("show");
+
+}
+
+
+/* إغلاق القائمة بعد الضغط */
+
+document.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("show");
+
+    });
+
+});
+
+
+/* =========================
+   PACKAGE ORDER
+========================= */
+
+function orderPackage(packageName, price){
+
+    const message =
+`مرحبًا Delk Advertising 👋
+
+أريد طلب باقة:
+${packageName}
+
+السعر:
+${price}
+
+الاسم:
+[اكتب اسمك هنا]
+
+رقم الهاتف:
+[اكتب رقمك هنا]
+
+تفاصيل المشروع:
+[اكتب تفاصيل مشروعك هنا]
+
+أرغب في معرفة تفاصيل البدء والتنفيذ.`;
+
+    const url =
+        "https://wa.me/201064665780?text="
+        + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+document
+.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const service =
+        document.getElementById("service").value;
+
+    const packageName =
+        document.getElementById("package").value;
+
+    const details =
+        document.getElementById("details").value.trim();
+
+
+    const message =
+`مرحبًا Delk Advertising 👋
+
+لدي طلب جديد:
+
+الاسم:
+${name}
+
+رقم الهاتف:
+${phone}
+
+الخدمة المطلوبة:
+${service}
+
+الباقة:
+${packageName}
+
+تفاصيل المشروع:
+${details}
+
+أرغب في معرفة الخطوات التالية للبدء.`;
+
+    const url =
+        "https://wa.me/201064665780?text="
+        + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+});
+
+
+/* =========================
+   ACTIVE NAV
+========================= */
+
+const sections =
+document.querySelectorAll("section[id]");
+
+const navItems =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(
+            link.getAttribute("href")
+            === "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

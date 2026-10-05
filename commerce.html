@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delk Commerce | ديلك للتجارة والخدمات</title>
+
+<meta name="description" content="Delk Commerce - ديلك للتجارة والخدمات، حلول رقمية وتجارية متكاملة للأفراد والشركات.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#050711;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    top:-250px;
+    right:-200px;
+    background:radial-gradient(circle,rgba(0,210,255,.18),transparent 65%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    bottom:-300px;
+    left:-200px;
+    background:radial-gradient(circle,rgba(120,70,255,.16),transparent 65%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:16px 5%;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    min-height:70px;
+    padding:12px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    background:rgba(8,10,24,.72);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:22px;
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#fff;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+    font-weight:900;
+
+    background:linear-gradient(135deg,#00d9ff,#6969ff,#9c4dff);
+    box-shadow:0 0 30px rgba(0,210,255,.25);
+}
+
+.logo-text{
+    line-height:1.1;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:17px;
+}
+
+.logo-text span{
+    color:#9ba3c7;
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.nav-links a{
+    color:#b8bed7;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    padding:10px 13px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(255,255,255,.07);
+}
+
+.nav-btn{
+    text-decoration:none;
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+
+    padding:11px 18px;
+    border-radius:13px;
+
+    background:linear-gradient(135deg,#00cfff,#686cff,#9a4dff);
+
+    box-shadow:0 8px 25px rgba(80,100,255,.22);
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:170px 6% 100px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:70px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 15px;
+    margin-bottom:22px;
+
+    border-radius:50px;
+
+    background:rgba(0,210,255,.07);
+    border:1px solid rgba(0,210,255,.18);
+
+    color:#8deaff;
+    font-size:13px;
+    font-weight:700;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#00dcff;
+    box-shadow:0 0 12px #00dcff;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,76px);
+    line-height:1.12;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#00dcff,#6874ff,#b34dff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#aeb5d0;
+    font-size:17px;
+    line-height:2;
+    max-width:650px;
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:none;
+    text-decoration:none;
+    cursor:pointer;
+
+    padding:14px 24px;
+    border-radius:15px;
+
+    font-family:inherit;
+    font-size:14px;
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.primary-btn{
+    color:#fff;
+    background:linear-gradient(135deg,#00cfff,#686cff,#9a4dff);
+    box-shadow:0 15px 35px rgba(74,92,255,.25);
+}
+
+.secondary-btn{
+    color:#fff;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO CARD */
+
+.hero-card{
+    position:relative;
+}
+
+.dashboard-card{
+    position:relative;
+    min-height:470px;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(145deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.025));
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 30px 90px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+    overflow:hidden;
+}
+
+.dashboard-card::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    top:-130px;
+    right:-100px;
+
+    background:radial-gradient(circle,
+    rgba(0,217,255,.25),
+    transparent 70%);
+}
+
+.dashboard-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding-bottom:22px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.dashboard-title{
+    font-weight:800;
+}
+
+.dashboard-title span{
+    display:block;
+    color:#858da9;
+    font-size:11px;
+    margin-top:3px;
+}
+
+.status{
+    padding:7px 12px;
+    border-radius:50px;
+
+    font-size:11px;
+    color:#6ee7ff;
+
+    background:rgba(0,220,255,.08);
+    border:1px solid rgba(0,220,255,.15);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+    margin-top:20px;
+}
+
+.stat{
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.stat-icon{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(135deg,#00cfff,#765cff);
+
+    margin-bottom:14px;
+}
+
+.stat strong{
+    display:block;
+    font-size:22px;
+}
+
+.stat span{
+    color:#858da9;
+    font-size:11px;
+}
+
+.order-box{
+    margin-top:18px;
+    padding:20px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,208,255,.08),
+        rgba(145,72,255,.08)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.order-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.order-header span{
+    color:#8c94b0;
+    font-size:12px;
+}
+
+.order-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:12px;
+}
+
+.order-circle{
+    width:35px;
+    height:35px;
+
+    border-radius:11px;
+
+    background:rgba(255,255,255,.07);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.order-row div:nth-child(2){
+    flex:1;
+}
+
+.order-row strong{
+    font-size:12px;
+}
+
+.order-row small{
+    display:block;
+    color:#777f9b;
+    font-size:10px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:105px 6%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 55px;
+}
+
+.section-head span{
+    color:#62ddff;
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-head h2{
+    font-size:clamp(30px,4vw,48px);
+    margin:10px 0 15px;
+}
+
+.section-head p{
+    color:#8e96b2;
+    line-height:1.9;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.about-card{
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+
+    transition:.35s;
+}
+
+.about-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,210,255,.2);
+}
+
+.about-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#00cfff,#744eff);
+
+    font-size:22px;
+
+    margin-bottom:20px;
+}
+
+.about-card h3{
+    font-size:21px;
+    margin-bottom:12px;
+}
+
+.about-card p{
+    color:#9098b4;
+    line-height:2;
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    padding:28px;
+
+    border-radius:23px;
+
+    background:rgba(255,255,255,.032);
+    border:1px solid rgba(255,255,255,.065);
+
+    transition:.35s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.05);
+    border-color:rgba(0,210,255,.2);
+}
+
+.service-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:linear-gradient(135deg,#00d5ff,#7057ff);
+
+    margin-bottom:20px;
+}
+
+.service h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#8991ad;
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* PRODUCTS */
+
+.products{
+    background:
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(64,80,255,.035),
+        transparent
+    );
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.product{
+    padding:28px;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    position:relative;
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.product:hover{
+    transform:translateY(-6px);
+}
+
+.product-badge{
+    position:absolute;
+    top:18px;
+    left:18px;
+
+    font-size:10px;
+
+    padding:6px 10px;
+    border-radius:50px;
+
+    background:rgba(0,220,255,.1);
+    color:#68ddff;
+}
+
+.product-logo{
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#00d9ff,#7255ff,#a44dff);
+
+    font-size:22px;
+    font-weight:900;
+
+    margin-bottom:22px;
+}
+
+.product h3{
+    font-size:19px;
+    margin-bottom:9px;
+}
+
+.product p{
+    color:#858da8;
+    font-size:13px;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.product a{
+    display:inline-block;
+
+    color:#fff;
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:800;
+
+    padding:10px 15px;
+    border-radius:11px;
+
+    background:rgba(255,255,255,.06);
+
+    transition:.3s;
+}
+
+.product a:hover{
+    background:rgba(0,210,255,.12);
+}
+
+/* PACKAGES */
+
+.packages-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.package{
+    padding:32px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+
+    position:relative;
+    transition:.35s;
+}
+
+.package:hover{
+    transform:translateY(-7px);
+}
+
+.package.featured{
+    border-color:rgba(0,210,255,.4);
+    box-shadow:0 20px 70px rgba(0,190,255,.08);
+}
+
+.package-label{
+    display:inline-block;
+
+    padding:6px 11px;
+
+    border-radius:50px;
+
+    background:rgba(0,210,255,.09);
+    color:#67dcff;
+
+    font-size:10px;
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.package h3{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.package-description{
+    color:#858da8;
+    font-size:12px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.package ul{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.package li{
+    color:#b0b6ca;
+    font-size:12px;
+    margin:11px 0;
+}
+
+.package li::before{
+    content:"✓";
+    color:#4edbff;
+    margin-left:8px;
+    font-weight:900;
+}
+
+.package-btn{
+    width:100%;
+
+    display:block;
+    text-align:center;
+
+    color:#fff;
+    text-decoration:none;
+
+    padding:12px;
+
+    border-radius:13px;
+
+    background:linear-gradient(135deg,#00cfff,#7654ff);
+
+    font-size:12px;
+    font-weight:800;
+}
+
+/* PROCESS */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.process{
+    text-align:center;
+    padding:25px 15px;
+}
+
+.process-number{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 18px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#00cfff,#7553ff);
+
+    font-size:19px;
+    font-weight:900;
+
+    box-shadow:0 10px 30px rgba(79,91,255,.2);
+}
+
+.process h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.process p{
+    color:#8088a3;
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* CTA */
+
+.cta{
+    max-width:1100px;
+    margin:40px auto 0;
+
+    padding:65px 35px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+    radial-gradient(circle at 20% 30%,rgba(0,215,255,.14),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(153,65,255,.15),transparent 35%),
+    rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.09);
+}
+
+.cta h2{
+    font-size:clamp(30px,5vw,48px);
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#8d95b0;
+    max-width:650px;
+    margin:0 auto 25px;
+    line-height:1.9;
+}
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:25px;
+}
+
+.contact-info,
+.contact-form{
+    padding:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.contact-info h3{
+    font-size:23px;
+    margin-bottom:13px;
+}
+
+.contact-info>p{
+    color:#858da8;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:rgba(0,210,255,.08);
+
+    color:#64ddff;
+}
+
+.contact-item strong{
+    display:block;
+    font-size:12px;
+}
+
+.contact-item span{
+    color:#7e87a3;
+    font-size:11px;
+}
+
+form{
+    display:grid;
+    gap:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border-radius:14px;
+
+    padding:14px 15px;
+
+    font-family:inherit;
+    font-size:12px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:rgba(0,210,255,.4);
+    box-shadow:0 0 0 3px rgba(0,210,255,.05);
+}
+
+select option{
+    background:#101322;
+    color:#fff;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.submit-btn{
+    border:0;
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-family:inherit;
+    font-weight:800;
+
+    background:linear-gradient(135deg,#00cfff,#7654ff);
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 6% 30px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:22px;
+    font-weight:900;
+
+    background:linear-gradient(90deg,#00d9ff,#9a55ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#69718c;
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+
+    margin:17px 0;
+}
+
+.footer-links a{
+    color:#8189a4;
+    text-decoration:none;
+    font-size:11px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* ANIMATION */
+
+.reveal{
+    animation:fadeUp .8s ease both;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .hero{
+        padding-top:145px;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .services-grid,
+    .products-grid,
+    .packages-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:10px 3%;
+    }
+
+    .navbar{
+        min-height:62px;
+        border-radius:17px;
+    }
+
+    .logo-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .logo-text strong{
+        font-size:14px;
+    }
+
+    .nav-btn{
+        padding:9px 12px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding:125px 5% 70px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .dashboard-card{
+        min-height:auto;
+    }
+
+    .services-grid,
+    .products-grid,
+    .packages-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-card,
+    .contact-info,
+    .contact-form{
+        padding:23px;
+    }
+
+    .cta{
+        padding:45px 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+DC
+</div>
+
+<div class="logo-text">
+<strong>Delk Commerce</strong>
+<span>ديلك للتجارة والخدمات</span>
+</div>
+
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">الرئيسية</a>
+<a href="#about">من نحن</a>
+<a href="#services">خدماتنا</a>
+<a href="#products">حلولنا</a>
+<a href="#packages">الباقات</a>
+<a href="#contact">تواصل معنا</a>
+
+</div>
+
+<a class="nav-btn" href="#contact">
+اطلب خدمتك
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-container">
+
+<div class="hero-content reveal">
+
+<div class="badge">
+<span class="badge-dot"></span>
+Delk Commerce
+</div>
+
+<h1>
+نحوّل فكرتك إلى
+<span class="gradient-text">مشروع تجاري</span>
+قابل للنمو
+</h1>
+
+<p>
+في Delk Commerce نقدم حلولًا تجارية ورقمية تساعد الأفراد
+وأصحاب المشاريع والشركات على بناء حضور قوي، عرض خدماتهم،
+وتطوير أعمالهم بطريقة احترافية.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#contact" class="primary-btn">
+ابدأ مشروعك الآن
+</a>
+
+<a href="#services" class="secondary-btn">
+اكتشف خدماتنا
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card reveal">
+
+<div class="dashboard-card">
+
+<div class="dashboard-top">
+
+<div class="dashboard-title">
+Delk Commerce
+<span>منصة حلول تجارية رقمية</span>
+</div>
+
+<div class="status">
+● متاح
+</div>
+
+</div>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-icon">
+🛒
+</div>
+
+<strong>+50</strong>
+<span>حل تجاري</span>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-icon">
+📈
+</div>
+
+<strong>24/7</strong>
+<span>دعم و متابعة</span>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-icon">
+💻
+</div>
+
+<strong>Digital</strong>
+<span>حلول رقمية</span>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-icon">
+⚡
+</div>
+
+<strong>Fast</strong>
+<span>تنفيذ سريع</span>
+
+</div>
+
+</div>
+
+
+<div class="order-box">
+
+<div class="order-header">
+<strong>طلبات الخدمات</strong>
+<span>Delk Commerce</span>
+</div>
+
+<div class="order-row">
+
+<div class="order-circle">🛍️</div>
+
+<div>
+<strong>متجر إلكتروني</strong>
+<small>قيد التنفيذ</small>
+</div>
+
+</div>
+
+<div class="order-row">
+
+<div class="order-circle">📢</div>
+
+<div>
+<strong>حملة تجارية</strong>
+<small>جاهزة للبدء</small>
+</div>
+
+</div>
+
+<div class="order-row">
+
+<div class="order-circle">🌐</div>
+
+<div>
+<strong>حل رقمي</strong>
+<small>تم الطلب</small>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-head">
+
+<span>ABOUT DELK COMMERCE</span>
+
+<h2>
+حلول تجارية مبنية على التقنية
+</h2>
+
+<p>
+نساعدك في تحويل النشاط التجاري التقليدي إلى تجربة رقمية
+أكثر تنظيمًا واحترافية، مع حلول تناسب طبيعة مشروعك واحتياجاتك.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-card">
+
+<div class="about-icon">
+🚀
+</div>
+
+<h3>
+نركز على نمو مشروعك
+</h3>
+
+<p>
+لا نقدم مجرد خدمة منفصلة، بل نحاول فهم نشاطك وأهدافك
+ثم اختيار الحل المناسب الذي يساعدك على تقديم مشروعك بصورة أفضل.
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<div class="about-icon">
+💎
+</div>
+
+<h3>
+جودة واحترافية
+</h3>
+
+<p>
+نهتم بالتفاصيل في التصميم والتنفيذ وطريقة تقديم الخدمة،
+حتى تحصل على تجربة احترافية تليق بعلامتك التجارية.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<span>OUR SERVICES</span>
+
+<h2>
+خدمات Delk Commerce
+</h2>
+
+<p>
+مجموعة من الحلول التي تساعد أصحاب المشاريع والشركات
+على تطوير الجانب التجاري والرقمي.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+
+<div class="service-icon">
+🛒
+</div>
+
+<h3>
+المتاجر الإلكترونية
+</h3>
+
+<p>
+تصميم وتطوير متاجر إلكترونية احترافية لعرض المنتجات
+وتسهيل تجربة العملاء.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>
+المواقع التجارية
+</h3>
+
+<p>
+مواقع تعريفية وتجارية تساعد نشاطك على الظهور بصورة
+احترافية أمام العملاء.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📦
+</div>
+
+<h3>
+حلول المنتجات والخدمات
+</h3>
+
+<p>
+تنظيم وعرض المنتجات والخدمات بطريقة واضحة وسهلة
+للعميل.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📣
+</div>
+
+<h3>
+الحملات التجارية
+</h3>
+
+<p>
+حلول تسويقية رقمية تساعد على الوصول إلى العملاء
+المناسبين لمشروعك.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+💳
+</div>
+
+<h3>
+الخدمات الرقمية
+</h3>
+
+<p>
+حلول رقمية متنوعة للأفراد وأصحاب الأعمال والشركات.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🤝
+</div>
+
+<h3>
+حلول للشركات
+</h3>
+
+<p>
+نساعد الشركات على تطوير حضورها التجاري والاستفادة من
+الحلول الرقمية الحديثة.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<div class="container">
+
+<div class="section-head">
+
+<span>OUR SOLUTIONS</span>
+
+<h2>
+حلولنا ومشاريعنا
+</h2>
+
+<p>
+نماذج من الحلول الرقمية والمشاريع التي يمكن تقديمها
+ضمن منظومة Delk.
+</p>
+
+</div>
+
+
+<div class="products-grid">
+
+
+<div class="product">
+
+<div class="product-badge">
+DIGITAL
+</div>
+
+<div class="product-logo">
+WEB
+</div>
+
+<h3>
+مواقع الأعمال
+</h3>
+
+<p>
+موقع احترافي لنشاطك التجاري مع تصميم متجاوب
+وواجهة مناسبة للعملاء.
+</p>
+
+<a href="#contact">
+اطلب الآن
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-badge">
+STORE
+</div>
+
+<div class="product-logo">
+SHOP
+</div>
+
+<h3>
+المتاجر الإلكترونية
+</h3>
+
+<p>
+حلول لعرض منتجاتك وتنظيم متجرك وتقديم تجربة
+شراء أكثر احترافية.
+</p>
+
+<a href="#contact">
+ابدأ متجرك
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-badge">
+BUSINESS
+</div>
+
+<div class="product-logo">
+BIZ
+</div>
+
+<h3>
+حلول الشركات
+</h3>
+
+<p>
+حلول رقمية وتجارية مصممة حسب احتياجات الشركات
+والمشاريع المختلفة.
+</p>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section id="packages">
+
+<div class="container">
+
+<div class="section-head">
+
+<span>OUR PACKAGES</span>
+
+<h2>
+باقات تناسب مشروعك
+</h2>
+
+<p>
+اختر نقطة البداية المناسبة، ويمكننا أيضًا تصميم حل خاص
+بمشروعك حسب احتياجاتك.
+</p>
+
+</div>
+
+
+<div class="packages-grid">
+
+
+<div class="package">
+
+<div class="package-label">
+START
+</div>
+
+<h3>
+الباقة الأساسية
+</h3>
+
+<p class="package-description">
+مناسبة للأفراد والمشاريع الصغيرة التي تريد بداية رقمية.
+</p>
+
+<ul>
+
+<li>صفحة تجارية احترافية</li>
+<li>عرض الخدمات أو المنتجات</li>
+<li>زر تواصل مباشر</li>
+<li>تصميم متجاوب للموبايل</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+اطلب الباقة
+</a>
+
+</div>
+
+
+<div class="package featured">
+
+<div class="package-label">
+POPULAR
+</div>
+
+<h3>
+الباقة الاحترافية
+</h3>
+
+<p class="package-description">
+حل متكامل للمشاريع التي تريد حضورًا رقميًا أقوى.
+</p>
+
+<ul>
+
+<li>موقع تجاري متكامل</li>
+<li>صفحات متعددة</li>
+<li>عرض المنتجات والخدمات</li>
+<li>ربط واتساب</li>
+<li>تصميم احترافي متجاوب</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+ابدأ الآن
+</a>
+
+</div>
+
+
+<div class="package">
+
+<div class="package-label">
+CUSTOM
+</div>
+
+<h3>
+حل مخصص
+</h3>
+
+<p class="package-description">
+للمشاريع والشركات التي تحتاج إلى نظام خاص.
+</p>
+
+<ul>
+
+<li>تحليل احتياجات المشروع</li>
+<li>تصميم مخصص</li>
+<li>حلول تجارية رقمية</li>
+<li>خصائص حسب الطلب</li>
+<li>دعم وتطوير</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+اطلب عرضًا
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<span>HOW WE WORK</span>
+
+<h2>
+كيف نعمل؟
+</h2>
+
+<p>
+عملية بسيطة ومنظمة من أول تواصل حتى تسليم الخدمة.
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process">
+
+<div class="process-number">
+01
+</div>
+
+<h3>
+التواصل
+</h3>
+
+<p>
+تخبرنا عن مشروعك والخدمة التي تحتاجها.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+02
+</div>
+
+<h3>
+فهم الاحتياج
+</h3>
+
+<p>
+نحدد المطلوب ونختار الحل الأنسب.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+03
+</div>
+
+<h3>
+التنفيذ
+</h3>
+
+<p>
+نبدأ في تنفيذ المشروع بطريقة منظمة.
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+04
+</div>
+
+<h3>
+التسليم
+</h3>
+
+<p>
+نراجع العمل ثم يتم تسليمه للعميل.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+<div class="cta">
+
+<h2>
+لديك مشروع؟ لنبدأ.
+</h2>
+
+<p>
+سواء كنت تبدأ مشروعًا جديدًا أو تريد تطوير نشاط قائم،
+Delk Commerce يمكن أن يساعدك في بناء الحل المناسب.
+</p>
+
+<a href="#contact" class="primary-btn">
+تحدث معنا الآن
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-head">
+
+<span>CONTACT US</span>
+
+<h2>
+اطلب خدمتك الآن
+</h2>
+
+<p>
+املأ البيانات التالية وسنقوم بتجهيز رسالة تحتوي على
+تفاصيل طلبك لإرسالها عبر واتساب.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+<h3>
+Delk Commerce
+</h3>
+
+<p>
+ديلك للتجارة والخدمات — حلول رقمية وتجارية للأفراد
+وأصحاب المشاريع والشركات.
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+📱
+</div>
+
+<div>
+<strong>واتساب</strong>
+<span>01064665780</span>
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+💼
+</div>
+
+<div>
+<strong>الخدمة</strong>
+<span>تجارة وخدمات رقمية</span>
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+⚡
+</div>
+
+<div>
+<strong>الاستجابة</strong>
+<span>نتواصل معك بعد إرسال الطلب</span>
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="contact-form">
+
+<form id="commerceForm">
+
+<input
+type="text"
+id="name"
+placeholder="الاسم"
+required
+>
+
+<input
+type="tel"
+id="phone"
+placeholder="رقم الهاتف"
+required
+>
+
+<select id="service" required>
+
+<option value="">
+اختر الخدمة
+</option>
+
+<option>
+متجر إلكتروني
+</option>
+
+<option>
+موقع تجاري
+</option>
+
+<option>
+حل تجاري
+</option>
+
+<option>
+حملة تجارية
+</option>
+
+<option>
+خدمات رقمية
+</option>
+
+<option>
+حل مخصص
+</option>
+
+</select>
+
+
+<textarea
+id="details"
+placeholder="اكتب تفاصيل مشروعك أو طلبك..."
+required
+></textarea>
+
+
+<button
+type="submit"
+class="submit-btn"
+>
+إرسال الطلب عبر واتساب
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+Delk Commerce
+</div>
+
+<p>
+جزء من منظومة Delk Star للحلول الرقمية والتقنية.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">
+الرئيسية
+</a>
+
+<a href="#about">
+من نحن
+</a>
+
+<a href="#services">
+خدماتنا
+</a>
+
+<a href="#products">
+حلولنا
+</a>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</div>
+
+<p>
+© 2026 Delk Commerce — جميع الحقوق محفوظة.
+</p>
+
+</footer>
+
+
+<script>
+
+document.getElementById("commerceForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name =
+document.getElementById("name").value.trim();
+
+const phone =
+document.getElementById("phone").value.trim();
+
+const service =
+document.getElementById("service").value;
+
+const details =
+document.getElementById("details").value.trim();
+
+
+const message =
+`مرحبًا Delk Commerce 👋
+
+أرغب في طلب خدمة من ديلك للتجارة والخدمات.
+
+👤 الاسم: ${name}
+
+📱 رقم الهاتف: ${phone}
+
+🛍️ الخدمة المطلوبة: ${service}
+
+📝 تفاصيل الطلب:
+${details}
+
+أرغب في معرفة التفاصيل والخطوات التالية.`;
+
+const whatsappURL =
+"https://wa.me/201064665780?text="
++encodeURIComponent(message);
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>

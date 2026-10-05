@@ -1,0 +1,3233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delk Education | ديلك للتعليم</title>
+
+<meta name="description" content="Delk Education - ديلك للتعليم، حلول ومنصات رقمية للتعليم والكتب والدورات والمحتوى التعليمي.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#050711;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:650px;
+    height:650px;
+    top:-280px;
+    right:-220px;
+
+    background:radial-gradient(
+        circle,
+        rgba(0,210,255,.18),
+        transparent 68%
+    );
+
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:650px;
+    height:650px;
+    bottom:-300px;
+    left:-230px;
+
+    background:radial-gradient(
+        circle,
+        rgba(123,72,255,.18),
+        transparent 68%
+    );
+
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:16px 5%;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+
+    min-height:70px;
+    padding:12px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    background:rgba(8,10,24,.75);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.28);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#fff;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #686cff,
+            #a04cff
+        );
+
+    font-size:17px;
+    font-weight:900;
+
+    box-shadow:
+        0 0 30px rgba(0,210,255,.25);
+}
+
+.logo-text{
+    line-height:1.1;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:17px;
+}
+
+.logo-text span{
+    color:#9ba3c7;
+    font-size:11px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.nav-links a{
+    color:#b8bed7;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    padding:10px 13px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(255,255,255,.07);
+}
+
+.nav-btn{
+    color:#fff;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:800;
+
+    padding:11px 18px;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #686cff,
+            #9a4dff
+        );
+
+    box-shadow:
+        0 8px 25px rgba(80,100,255,.22);
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:
+        170px
+        6%
+        100px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    align-items:center;
+
+    gap:70px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 15px;
+
+    margin-bottom:22px;
+
+    border-radius:50px;
+
+    background:
+        rgba(0,210,255,.07);
+
+    border:
+        1px solid
+        rgba(0,210,255,.18);
+
+    color:#8deaff;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#00dcff;
+
+    box-shadow:
+        0 0 12px #00dcff;
+}
+
+.hero h1{
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            76px
+        );
+
+    line-height:1.12;
+
+    font-weight:900;
+
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:
+        linear-gradient(
+            90deg,
+            #00dcff,
+            #6874ff,
+            #b34dff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#aeb5d0;
+
+    font-size:17px;
+
+    line-height:2;
+
+    max-width:650px;
+
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:none;
+    text-decoration:none;
+    cursor:pointer;
+
+    padding:14px 24px;
+
+    border-radius:15px;
+
+    font-family:inherit;
+
+    font-size:14px;
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.primary-btn{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #686cff,
+            #9a4dff
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(74,92,255,.25);
+}
+
+.secondary-btn{
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   EDUCATION DASHBOARD
+========================= */
+
+.education-card{
+    position:relative;
+}
+
+.dashboard-card{
+    position:relative;
+
+    min-height:470px;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,.4),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+
+    overflow:hidden;
+}
+
+.dashboard-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    top:-140px;
+    right:-110px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,.25),
+            transparent 70%
+        );
+}
+
+.dashboard-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding-bottom:22px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.dashboard-title{
+    font-weight:800;
+}
+
+.dashboard-title span{
+    display:block;
+
+    color:#858da9;
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+.status{
+    padding:7px 12px;
+
+    border-radius:50px;
+
+    font-size:11px;
+
+    color:#6ee7ff;
+
+    background:
+        rgba(0,220,255,.08);
+
+    border:
+        1px solid
+        rgba(0,220,255,.15);
+}
+
+.learning-stats{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:13px;
+
+    margin-top:20px;
+}
+
+.learning-stat{
+    padding:20px;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.learning-icon{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #765cff
+        );
+
+    margin-bottom:14px;
+}
+
+.learning-stat strong{
+    display:block;
+    font-size:21px;
+}
+
+.learning-stat span{
+    color:#858da9;
+    font-size:11px;
+}
+
+.course-box{
+    margin-top:18px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,208,255,.08),
+            rgba(145,72,255,.08)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.course-header{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+.course-header strong{
+    font-size:13px;
+}
+
+.course-header span{
+    color:#8c94b0;
+    font-size:11px;
+}
+
+.course{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-top:13px;
+}
+
+.course-icon{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.07);
+}
+
+.course-info{
+    flex:1;
+}
+
+.course-info strong{
+    display:block;
+
+    font-size:12px;
+}
+
+.course-info small{
+    color:#777f9b;
+    font-size:10px;
+}
+
+.progress{
+    width:65px;
+    height:5px;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+.progress span{
+    display:block;
+
+    width:75%;
+    height:100%;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00d9ff,
+            #8155ff
+        );
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:105px 6%;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-head{
+    text-align:center;
+
+    max-width:720px;
+
+    margin:
+        0 auto
+        55px;
+}
+
+.section-head span{
+    color:#62ddff;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.section-head h2{
+    font-size:
+        clamp(
+            30px,
+            4vw,
+            48px
+        );
+
+    margin:
+        10px 0
+        15px;
+}
+
+.section-head p{
+    color:#8e96b2;
+
+    line-height:1.9;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:25px;
+}
+
+.about-card{
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition:.35s;
+}
+
+.about-card:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(0,210,255,.2);
+}
+
+.about-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #744eff
+        );
+
+    font-size:22px;
+
+    margin-bottom:20px;
+}
+
+.about-card h3{
+    font-size:21px;
+
+    margin-bottom:12px;
+}
+
+.about-card p{
+    color:#9098b4;
+
+    line-height:2;
+
+    font-size:14px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.service{
+    padding:28px;
+
+    border-radius:23px;
+
+    background:
+        rgba(255,255,255,.032);
+
+    border:
+        1px solid
+        rgba(255,255,255,.065);
+
+    transition:.35s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-color:
+        rgba(0,210,255,.2);
+}
+
+.service-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d5ff,
+            #7057ff
+        );
+
+    margin-bottom:20px;
+}
+
+.service h3{
+    font-size:17px;
+
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#8991ad;
+
+    font-size:13px;
+
+    line-height:1.9;
+}
+
+/* =========================
+   EDUCATION AREAS
+========================= */
+
+.education-areas{
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(64,80,255,.035),
+            transparent
+        );
+}
+
+.areas-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.area{
+    position:relative;
+
+    padding:30px;
+
+    min-height:220px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.02)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.area::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    left:-80px;
+    bottom:-90px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(119,77,255,.2),
+            transparent 70%
+        );
+}
+
+.area:hover{
+    transform:translateY(-7px);
+}
+
+.area-number{
+    color:#59627f;
+
+    font-size:11px;
+
+    margin-bottom:14px;
+}
+
+.area-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #7654ff
+        );
+
+    font-size:22px;
+
+    margin-bottom:18px;
+}
+
+.area h3{
+    font-size:19px;
+
+    margin-bottom:9px;
+}
+
+.area p{
+    color:#858da8;
+
+    font-size:12px;
+
+    line-height:1.9;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+    padding:28px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    transition:.35s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(115,91,255,.3);
+}
+
+.project-logo{
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #7255ff,
+            #a44dff
+        );
+
+    font-size:22px;
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+.project h3{
+    font-size:19px;
+
+    margin-bottom:9px;
+}
+
+.project p{
+    color:#858da8;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.project-link{
+    display:inline-block;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:800;
+
+    padding:10px 15px;
+
+    border-radius:11px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    transition:.3s;
+}
+
+.project-link:hover{
+    background:
+        rgba(0,210,255,.12);
+}
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.package{
+    padding:32px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    position:relative;
+
+    transition:.35s;
+}
+
+.package:hover{
+    transform:translateY(-7px);
+}
+
+.package.featured{
+    border-color:
+        rgba(0,210,255,.4);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,190,255,.08);
+}
+
+.package-label{
+    display:inline-block;
+
+    padding:6px 11px;
+
+    border-radius:50px;
+
+    background:
+        rgba(0,210,255,.09);
+
+    color:#67dcff;
+
+    font-size:10px;
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.package h3{
+    font-size:21px;
+
+    margin-bottom:8px;
+}
+
+.package-description{
+    color:#858da8;
+
+    font-size:12px;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.package ul{
+    list-style:none;
+
+    margin-bottom:25px;
+}
+
+.package li{
+    color:#b0b6ca;
+
+    font-size:12px;
+
+    margin:11px 0;
+}
+
+.package li::before{
+    content:"✓";
+
+    color:#4edbff;
+
+    margin-left:8px;
+
+    font-weight:900;
+}
+
+.package-btn{
+    width:100%;
+
+    display:block;
+
+    text-align:center;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:12px;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #7654ff
+        );
+
+    font-size:12px;
+
+    font-weight:800;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+}
+
+.process{
+    text-align:center;
+
+    padding:25px 15px;
+}
+
+.process-number{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:
+        0 auto
+        18px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #7553ff
+        );
+
+    font-size:19px;
+    font-weight:900;
+
+    box-shadow:
+        0 10px 30px
+        rgba(79,91,255,.2);
+}
+
+.process h3{
+    font-size:15px;
+
+    margin-bottom:8px;
+}
+
+.process p{
+    color:#8088a3;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    max-width:1100px;
+
+    margin:
+        40px auto
+        0;
+
+    padding:
+        65px
+        35px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(0,215,255,.14),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(153,65,255,.15),
+            transparent 35%
+        ),
+
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+}
+
+.cta h2{
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            48px
+        );
+
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#8d95b0;
+
+    max-width:650px;
+
+    margin:
+        0 auto
+        25px;
+
+    line-height:1.9;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:25px;
+}
+
+.contact-info,
+.contact-form{
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.contact-info h3{
+    font-size:23px;
+
+    margin-bottom:13px;
+}
+
+.contact-info>p{
+    color:#858da8;
+
+    font-size:13px;
+
+    line-height:2;
+
+    margin-bottom:25px;
+}
+
+.contact-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:
+        rgba(0,210,255,.08);
+
+    color:#64ddff;
+}
+
+.contact-item strong{
+    display:block;
+
+    font-size:12px;
+}
+
+.contact-item span{
+    color:#7e87a3;
+
+    font-size:11px;
+}
+
+form{
+    display:grid;
+
+    gap:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border-radius:14px;
+
+    padding:14px 15px;
+
+    font-family:inherit;
+
+    font-size:12px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:
+        rgba(0,210,255,.4);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0,210,255,.05);
+}
+
+select option{
+    background:#101322;
+    color:#fff;
+}
+
+textarea{
+    min-height:140px;
+
+    resize:vertical;
+}
+
+.submit-btn{
+    border:0;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-family:inherit;
+
+    font-weight:800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #7654ff
+        );
+
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:
+        40px
+        6%
+        30px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:22px;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00d9ff,
+            #9a55ff
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#69718c;
+
+    font-size:11px;
+}
+
+.footer-links{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin:17px 0;
+}
+
+.footer-links a{
+    color:#8189a4;
+
+    text-decoration:none;
+
+    font-size:11px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+    animation:
+        fadeUp
+        .8s
+        ease
+        both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-container{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .hero{
+        padding-top:145px;
+    }
+
+    .hero-content{
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .services-grid,
+    .areas-grid,
+    .projects-grid,
+    .packages-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .process-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        padding:
+            10px
+            3%;
+    }
+
+    .navbar{
+        min-height:62px;
+
+        border-radius:17px;
+    }
+
+    .logo-icon{
+        width:40px;
+        height:40px;
+    }
+
+    .logo-text strong{
+        font-size:14px;
+    }
+
+    .nav-btn{
+        padding:
+            9px
+            12px;
+
+        font-size:11px;
+    }
+
+    .hero{
+        padding:
+            125px
+            5%
+            70px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    section{
+        padding:
+            75px
+            5%;
+    }
+
+    .dashboard-card{
+        min-height:auto;
+    }
+
+    .services-grid,
+    .areas-grid,
+    .projects-grid,
+    .packages-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    .about-card,
+    .contact-info,
+    .contact-form{
+        padding:23px;
+    }
+
+    .cta{
+        padding:
+            45px
+            20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">
+DE
+</div>
+
+<div class="logo-text">
+
+<strong>
+Delk Education
+</strong>
+
+<span>
+ديلك للتعليم
+</span>
+
+</div>
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">
+الرئيسية
+</a>
+
+<a href="#about">
+من نحن
+</a>
+
+<a href="#services">
+خدماتنا
+</a>
+
+<a href="#areas">
+مجالاتنا
+</a>
+
+<a href="#packages">
+الباقات
+</a>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</div>
+
+
+<a href="#contact" class="nav-btn">
+ابدأ الآن
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-container">
+
+
+<div class="hero-content reveal">
+
+<div class="badge">
+
+<span class="badge-dot"></span>
+
+Delk Education
+
+</div>
+
+
+<h1>
+
+نبني
+<span class="gradient-text">
+تجارب تعليمية
+</span>
+
+رقمية أفضل
+
+</h1>
+
+
+<p>
+
+في Delk Education نعمل على تقديم حلول رقمية
+للتعليم والكتب والدورات والمحتوى التعليمي،
+ونساعد أصحاب المشاريع التعليمية على الوصول
+إلى الطلاب بطريقة أكثر احترافية.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#contact" class="primary-btn">
+ابدأ مشروعك التعليمي
+</a>
+
+<a href="#services" class="secondary-btn">
+اكتشف خدماتنا
+</a>
+
+</div>
+
+</div>
+
+
+<!-- EDUCATION CARD -->
+
+<div class="education-card reveal">
+
+<div class="dashboard-card">
+
+
+<div class="dashboard-top">
+
+<div class="dashboard-title">
+
+Delk Education
+
+<span>
+منظومة حلول تعليمية رقمية
+</span>
+
+</div>
+
+
+<div class="status">
+● متاح
+</div>
+
+</div>
+
+
+<div class="learning-stats">
+
+
+<div class="learning-stat">
+
+<div class="learning-icon">
+📚
+</div>
+
+<strong>
++100
+</strong>
+
+<span>
+محتوى تعليمي
+</span>
+
+</div>
+
+
+<div class="learning-stat">
+
+<div class="learning-icon">
+🎓
+</div>
+
+<strong>
+Courses
+</strong>
+
+<span>
+دورات تعليمية
+</span>
+
+</div>
+
+
+<div class="learning-stat">
+
+<div class="learning-icon">
+📖
+</div>
+
+<strong>
+Books
+</strong>
+
+<span>
+كتب رقمية
+</span>
+
+</div>
+
+
+<div class="learning-stat">
+
+<div class="learning-icon">
+⚡
+</div>
+
+<strong>
+Digital
+</strong>
+
+<span>
+تعليم رقمي
+</span>
+
+</div>
+
+</div>
+
+
+<div class="course-box">
+
+<div class="course-header">
+
+<strong>
+المحتوى التعليمي
+</strong>
+
+<span>
+Delk Education
+</span>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">
+📘
+</div>
+
+<div class="course-info">
+
+<strong>
+الكتب والمذكرات
+</strong>
+
+<small>
+محتوى تعليمي منظم
+</small>
+
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">
+🎥
+</div>
+
+<div class="course-info">
+
+<strong>
+الدورات التعليمية
+</strong>
+
+<small>
+فيديوهات ودروس
+</small>
+
+</div>
+
+<div class="progress">
+<span style="width:65%"></span>
+</div>
+
+</div>
+
+
+<div class="course">
+
+<div class="course-icon">
+💻
+</div>
+
+<div class="course-info">
+
+<strong>
+المنصات التعليمية
+</strong>
+
+<small>
+حلول رقمية للطلاب
+</small>
+
+</div>
+
+<div class="progress">
+<span style="width:85%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+ABOUT DELK EDUCATION
+</span>
+
+<h2>
+التقنية لخدمة التعليم
+</h2>
+
+<p>
+
+نؤمن أن التكنولوجيا يمكن أن تجعل الوصول
+إلى المعرفة أسهل وأكثر تنظيمًا، لذلك نعمل
+على تقديم حلول رقمية تناسب المجال التعليمي.
+
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-card">
+
+<div class="about-icon">
+🎓
+</div>
+
+<h3>
+نبني حلولًا تعليمية
+</h3>
+
+<p>
+
+نساعد المعلمين وأصحاب المشاريع التعليمية
+على تحويل أفكارهم ومحتواهم إلى تجارب
+رقمية منظمة وسهلة الاستخدام.
+
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<div class="about-icon">
+💡
+</div>
+
+<h3>
+نركز على تجربة الطالب
+</h3>
+
+<p>
+
+نهتم بأن تكون المنصة أو الموقع واضحًا
+وسهل الاستخدام، حتى يستطيع الطالب الوصول
+إلى المحتوى الذي يحتاجه بسهولة.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+OUR SERVICES
+</span>
+
+<h2>
+خدمات Delk Education
+</h2>
+
+<p>
+
+حلول رقمية تساعد المعلمين والمدربين
+والمشاريع التعليمية على تقديم محتواهم
+بصورة احترافية.
+
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+
+<div class="service-icon">
+📚
+</div>
+
+<h3>
+منصات الكتب
+</h3>
+
+<p>
+
+إنشاء منصات ومواقع لعرض الكتب والمذكرات
+والمحتوى التعليمي الرقمي.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎥
+</div>
+
+<h3>
+منصات الدورات
+</h3>
+
+<p>
+
+حلول رقمية لعرض الدورات والمحاضرات
+والدروس التعليمية.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>
+المواقع التعليمية
+</h3>
+
+<p>
+
+تصميم مواقع تعليمية احترافية للمدرسين
+والمراكز والمشاريع التعليمية.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+التطبيقات التعليمية
+</h3>
+
+<p>
+
+تطوير أفكار تطبيقات تساعد الطلاب
+والمعلمين في العملية التعليمية.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📝
+</div>
+
+<h3>
+المحتوى التعليمي
+</h3>
+
+<p>
+
+تنظيم وعرض المحتوى التعليمي بطريقة
+سهلة وواضحة للطلاب.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🚀
+</div>
+
+<h3>
+تطوير المشاريع التعليمية
+</h3>
+
+<p>
+
+نساعد أصحاب الأفكار التعليمية على تحويل
+الفكرة إلى مشروع رقمي قابل للتطوير.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AREAS
+========================= -->
+
+<section class="education-areas" id="areas">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+EDUCATION AREAS
+</span>
+
+<h2>
+مجالات التعليم
+</h2>
+
+<p>
+
+يمكننا بناء حلول لمجالات تعليمية متعددة
+بحسب طبيعة المشروع والجمهور المستهدف.
+
+</p>
+
+</div>
+
+
+<div class="areas-grid">
+
+
+<div class="area">
+
+<div class="area-number">
+01
+</div>
+
+<div class="area-icon">
+🏫
+</div>
+
+<h3>
+المدارس
+</h3>
+
+<p>
+
+حلول ومواقع رقمية تساعد المدارس
+على تقديم خدماتها ومعلوماتها.
+
+</p>
+
+</div>
+
+
+<div class="area">
+
+<div class="area-number">
+02
+</div>
+
+<div class="area-icon">
+👨‍🏫
+</div>
+
+<h3>
+المعلمين
+</h3>
+
+<p>
+
+مواقع ومنصات للمدرسين لعرض الدروس
+والكتب والدورات والمحتوى.
+
+</p>
+
+</div>
+
+
+<div class="area">
+
+<div class="area-number">
+03
+</div>
+
+<div class="area-icon">
+🎓
+</div>
+
+<h3>
+المراكز التعليمية
+</h3>
+
+<p>
+
+حلول رقمية للمراكز التعليمية
+والأكاديميات والدورات.
+
+</p>
+
+</div>
+
+
+<div class="area">
+
+<div class="area-number">
+04
+</div>
+
+<div class="area-icon">
+💻
+</div>
+
+<h3>
+التعليم الإلكتروني
+</h3>
+
+<p>
+
+منصات رقمية تساعد على تقديم المحتوى
+التعليمي عبر الإنترنت.
+
+</p>
+
+</div>
+
+
+<div class="area">
+
+<div class="area-number">
+05
+</div>
+
+<div class="area-icon">
+📖
+</div>
+
+<h3>
+الكتب الرقمية
+</h3>
+
+<p>
+
+حلول لعرض وتنظيم الكتب والمذكرات
+والمراجع التعليمية.
+
+</p>
+
+</div>
+
+
+<div class="area">
+
+<div class="area-number">
+06
+</div>
+
+<div class="area-icon">
+🧠
+</div>
+
+<h3>
+التعلم الذاتي
+</h3>
+
+<p>
+
+منصات تساعد المستخدم على التعلم
+والوصول إلى المحتوى في أي وقت.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+EDUCATIONAL PROJECTS
+</span>
+
+<h2>
+مشاريع يمكننا تنفيذها
+</h2>
+
+<p>
+
+أفكار متعددة يمكن تحويلها إلى منتجات
+ومنصات تعليمية رقمية.
+
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project">
+
+<div class="project-logo">
+BK
+</div>
+
+<h3>
+منصة كتب
+</h3>
+
+<p>
+
+منصة لعرض الكتب والمذكرات والدورات
+التعليمية مع تجربة استخدام منظمة.
+
+</p>
+
+<a href="#contact" class="project-link">
+اطلب مشروعًا مشابهًا
+</a>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-logo">
+ED
+</div>
+
+<h3>
+منصة مدرس
+</h3>
+
+<p>
+
+موقع خاص بالمدرس لعرض الدروس
+والملفات والدورات والمحتوى التعليمي.
+
+</p>
+
+<a href="#contact" class="project-link">
+ابدأ فكرتك
+</a>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-logo">
+EL
+</div>
+
+<h3>
+منصة تعليم إلكتروني
+</h3>
+
+<p>
+
+منصة متكاملة يمكن تطويرها حسب
+طبيعة المشروع والجمهور المستهدف.
+
+</p>
+
+<a href="#contact" class="project-link">
+تواصل معنا
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PACKAGES
+========================= -->
+
+<section id="packages">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+OUR PACKAGES
+</span>
+
+<h2>
+باقات المشاريع التعليمية
+</h2>
+
+<p>
+
+يمكن اختيار الباقة المناسبة أو طلب
+حل مخصص بالكامل حسب فكرة المشروع.
+
+</p>
+
+</div>
+
+
+<div class="packages-grid">
+
+
+<div class="package">
+
+<div class="package-label">
+START
+</div>
+
+<h3>
+البداية
+</h3>
+
+<p class="package-description">
+
+مناسبة للمدرس أو صاحب المحتوى
+الذي يريد بداية رقمية احترافية.
+
+</p>
+
+<ul>
+
+<li>
+صفحة تعليمية احترافية
+</li>
+
+<li>
+عرض الدروس والمحتوى
+</li>
+
+<li>
+بيانات التواصل
+</li>
+
+<li>
+تصميم متجاوب
+</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+ابدأ الآن
+</a>
+
+</div>
+
+
+<div class="package featured">
+
+<div class="package-label">
+POPULAR
+</div>
+
+<h3>
+المشروع الاحترافي
+</h3>
+
+<p class="package-description">
+
+حل متكامل للمشاريع التعليمية
+التي تريد حضورًا رقميًا أقوى.
+
+</p>
+
+<ul>
+
+<li>
+موقع تعليمي متكامل
+</li>
+
+<li>
+صفحات متعددة
+</li>
+
+<li>
+قسم للكتب والدورات
+</li>
+
+<li>
+ربط واتساب
+</li>
+
+<li>
+تصميم احترافي للموبايل
+</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+ابدأ مشروعك
+</a>
+
+</div>
+
+
+<div class="package">
+
+<div class="package-label">
+CUSTOM
+</div>
+
+<h3>
+منصة مخصصة
+</h3>
+
+<p class="package-description">
+
+للمشاريع التي تحتاج إلى منصة
+أو نظام تعليمي خاص.
+
+</p>
+
+<ul>
+
+<li>
+تحليل فكرة المشروع
+</li>
+
+<li>
+تصميم مخصص
+</li>
+
+<li>
+منصة تعليمية
+</li>
+
+<li>
+خصائص حسب الطلب
+</li>
+
+<li>
+تطوير مستقبلي
+</li>
+
+</ul>
+
+<a href="#contact" class="package-btn">
+اطلب عرضًا
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+HOW WE WORK
+</span>
+
+<h2>
+كيف نبني مشروعك؟
+</h2>
+
+<p>
+
+خطوات واضحة من الفكرة حتى إطلاق
+الحل التعليمي.
+
+</p>
+
+</div>
+
+
+<div class="process-grid">
+
+
+<div class="process">
+
+<div class="process-number">
+01
+</div>
+
+<h3>
+الفكرة
+</h3>
+
+<p>
+
+نستمع إلى فكرة المشروع
+والهدف منه.
+
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+02
+</div>
+
+<h3>
+التخطيط
+</h3>
+
+<p>
+
+نحدد الصفحات والخصائص
+وطريقة عرض المحتوى.
+
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+03
+</div>
+
+<h3>
+التنفيذ
+</h3>
+
+<p>
+
+نبدأ في تصميم وتنفيذ
+المشروع التعليمي.
+
+</p>
+
+</div>
+
+
+<div class="process">
+
+<div class="process-number">
+04
+</div>
+
+<h3>
+الإطلاق
+</h3>
+
+<p>
+
+نراجع المشروع ثم يصبح
+جاهزًا للاستخدام.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+<div class="cta">
+
+
+<h2>
+حوّل فكرتك التعليمية إلى واقع
+</h2>
+
+
+<p>
+
+هل لديك فكرة منصة أو موقع أو تطبيق
+تعليمي؟ أخبرنا عنها وسنساعدك في
+تحويلها إلى مشروع رقمي احترافي.
+
+</p>
+
+
+<a href="#contact" class="primary-btn">
+ابدأ مشروعك التعليمي
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<span>
+CONTACT US
+</span>
+
+<h2>
+ابدأ مشروعك التعليمي
+</h2>
+
+<p>
+
+اكتب بياناتك وتفاصيل فكرتك، وسيتم
+تجهيز رسالة لك لإرسالها عبر واتساب.
+
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+
+<h3>
+Delk Education
+</h3>
+
+
+<p>
+
+ديلك للتعليم — حلول رقمية للمحتوى
+والكتب والدورات والمشاريع التعليمية.
+
+</p>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+📱
+</div>
+
+<div>
+
+<strong>
+واتساب
+</strong>
+
+<span>
+01064665780
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+🎓
+</div>
+
+<div>
+
+<strong>
+المجال
+</strong>
+
+<span>
+التعليم والتكنولوجيا
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-icon">
+⚡
+</div>
+
+<div>
+
+<strong>
+ابدأ الآن
+</strong>
+
+<span>
+أرسل تفاصيل فكرتك
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="contact-form">
+
+
+<form id="educationForm">
+
+
+<input
+type="text"
+id="name"
+placeholder="الاسم"
+required
+>
+
+
+<input
+type="tel"
+id="phone"
+placeholder="رقم الهاتف"
+required
+>
+
+
+<select
+id="service"
+required
+>
+
+<option value="">
+اختر نوع المشروع
+</option>
+
+<option>
+موقع تعليمي
+</option>
+
+<option>
+منصة كتب
+</option>
+
+<option>
+منصة دورات
+</option>
+
+<option>
+تطبيق تعليمي
+</option>
+
+<option>
+منصة مدرس
+</option>
+
+<option>
+حل تعليمي مخصص
+</option>
+
+</select>
+
+
+<textarea
+id="details"
+placeholder="اكتب تفاصيل فكرتك التعليمية..."
+required
+></textarea>
+
+
+<button
+type="submit"
+class="submit-btn"
+>
+
+إرسال الطلب عبر واتساب
+
+</button>
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+<div class="footer-logo">
+Delk Education
+</div>
+
+
+<p>
+
+جزء من منظومة Delk Star للحلول
+الرقمية والتقنية.
+
+</p>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+الرئيسية
+</a>
+
+<a href="#about">
+من نحن
+</a>
+
+<a href="#services">
+خدماتنا
+</a>
+
+<a href="#areas">
+مجالاتنا
+</a>
+
+<a href="#projects">
+مشاريعنا
+</a>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</div>
+
+
+<p>
+© 2026 Delk Education — جميع الحقوق محفوظة.
+</p>
+
+
+</footer>
+
+
+<script>
+
+/* =========================
+   WHATSAPP FORM
+========================= */
+
+document
+.getElementById("educationForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+
+const phone =
+document
+.getElementById("phone")
+.value
+.trim();
+
+
+const service =
+document
+.getElementById("service")
+.value;
+
+
+const details =
+document
+.getElementById("details")
+.value
+.trim();
+
+
+const message =
+
+`مرحبًا Delk Education 👋
+
+أرغب في طلب خدمة تعليمية من ديلك للتعليم.
+
+👤 الاسم:
+${name}
+
+📱 رقم الهاتف:
+${phone}
+
+🎓 نوع المشروع:
+${service}
+
+📝 تفاصيل الفكرة:
+${details}
+
+أرغب في معرفة التفاصيل والخطوات التالية.`;
+
+
+const whatsappURL =
+
+"https://wa.me/201064665780?text="
++
+encodeURIComponent(message);
+
+
+window.open(
+    whatsappURL,
+    "_blank"
+);
+
+});
+
+</script>
+
+
+</body>
+</html>

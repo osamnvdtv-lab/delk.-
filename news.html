@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الأخبار | Delk Star - ديلك ستار</title>
+
+<meta name="description" content="آخر أخبار وتحديثات ديلك ستار ومشاريعنا في البرمجة والتكنولوجيا والتعليم والإعلام والتجارة.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#050711;
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    top:-180px;
+    right:-150px;
+    background:radial-gradient(circle,rgba(110,70,255,.22),transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    bottom:-180px;
+    left:-150px;
+    background:radial-gradient(circle,rgba(0,210,255,.16),transparent 70%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(100% - 30px);
+    max-width:1250px;
+    height:72px;
+    background:rgba(10,13,29,.82);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 22px;
+    z-index:1000;
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:900;
+    font-size:20px;
+    white-space:nowrap;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    background:linear-gradient(135deg,#6d45ff,#00d9ff);
+    box-shadow:0 10px 30px rgba(83,83,255,.35);
+}
+
+.logo-text span{
+    color:#8d72ff;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.nav-links a{
+    padding:10px 13px;
+    border-radius:12px;
+    color:#bfc3d8;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(120,90,255,.13);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.nav-btn{
+    border:1px solid rgba(255,255,255,.09);
+    background:rgba(255,255,255,.04);
+    color:#fff;
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    transition:.3s;
+}
+
+.nav-btn:hover{
+    transform:translateY(-2px);
+    border-color:rgba(126,100,255,.5);
+    background:rgba(126,100,255,.12);
+}
+
+.whatsapp-btn{
+    width:auto;
+    padding:0 15px;
+    background:linear-gradient(135deg,#6d45ff,#08bce9);
+    border:none;
+    font-size:13px;
+    font-weight:800;
+}
+
+/* HERO */
+
+.hero{
+    max-width:1250px;
+    margin:0 auto;
+    padding:160px 25px 65px;
+    text-align:center;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 16px;
+    border:1px solid rgba(122,94,255,.25);
+    background:rgba(105,75,255,.08);
+    border-radius:999px;
+    color:#a895ff;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.live-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#00d9ff;
+    box-shadow:0 0 12px #00d9ff;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.05;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#8d6cff,#00d9ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    color:#9da4bd;
+    font-size:17px;
+    line-height:2;
+}
+
+/* SEARCH */
+
+.news-tools{
+    max-width:1250px;
+    margin:0 auto;
+    padding:0 25px 35px;
+}
+
+.search-box{
+    position:relative;
+    max-width:700px;
+    margin:0 auto 25px;
+}
+
+.search-box input{
+    width:100%;
+    height:58px;
+    padding:0 55px 0 20px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:17px;
+    outline:none;
+    color:#fff;
+    font-size:14px;
+    transition:.3s;
+}
+
+.search-box input:focus{
+    border-color:rgba(117,91,255,.6);
+    box-shadow:0 0 30px rgba(98,75,255,.1);
+}
+
+.search-icon{
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#7e87a5;
+    font-size:20px;
+}
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+    color:#aeb4ca;
+    padding:10px 17px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.category-btn:hover,
+.category-btn.active{
+    color:#fff;
+    border-color:rgba(116,91,255,.5);
+    background:linear-gradient(135deg,rgba(109,69,255,.2),rgba(0,217,255,.09));
+}
+
+/* NEWS */
+
+.news-section{
+    max-width:1250px;
+    margin:0 auto;
+    padding:25px 25px 90px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.section-heading h2{
+    font-size:30px;
+    font-weight:900;
+}
+
+.section-heading p{
+    color:#7e879f;
+    font-size:13px;
+    margin-top:5px;
+}
+
+.news-count{
+    color:#858da5;
+    font-size:13px;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.news-card{
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.4s;
+    position:relative;
+}
+
+.news-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(119,91,255,.35);
+    box-shadow:0 25px 70px rgba(0,0,0,.3);
+}
+
+.news-image{
+    height:205px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(0,217,255,.3),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(109,69,255,.4),transparent 35%),
+        linear-gradient(135deg,#111735,#090b18);
+}
+
+.news-image::before{
+    content:"";
+    position:absolute;
+    width:170px;
+    height:170px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:50%;
+    top:20px;
+    right:30px;
+}
+
+.news-image::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+    bottom:-25px;
+    left:30px;
+}
+
+.news-image-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    z-index:2;
+}
+
+.news-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    z-index:3;
+    padding:6px 11px;
+    border-radius:999px;
+    background:rgba(5,7,17,.7);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    color:#d9d6ff;
+    font-size:11px;
+    font-weight:800;
+}
+
+.news-content{
+    padding:21px;
+}
+
+.news-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#737c96;
+    font-size:11px;
+    margin-bottom:12px;
+}
+
+.news-title{
+    font-size:18px;
+    line-height:1.7;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.news-description{
+    color:#9098af;
+    font-size:13px;
+    line-height:1.9;
+    margin-bottom:17px;
+}
+
+.read-more{
+    width:100%;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.035);
+    color:#fff;
+    border-radius:13px;
+    padding:11px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.read-more:hover{
+    background:linear-gradient(135deg,rgba(109,69,255,.2),rgba(0,217,255,.08));
+    border-color:rgba(109,69,255,.4);
+}
+
+/* EMPTY */
+
+.no-results{
+    display:none;
+    text-align:center;
+    padding:60px 20px;
+    color:#7d859d;
+}
+
+.no-results-icon{
+    font-size:50px;
+    margin-bottom:12px;
+}
+
+/* CTA */
+
+.cta{
+    max-width:1200px;
+    margin:0 auto 80px;
+    padding:55px 30px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    background:
+        radial-gradient(circle at 15% 30%,rgba(109,69,255,.2),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(0,217,255,.12),transparent 30%),
+        rgba(255,255,255,.025);
+    text-align:center;
+}
+
+.cta h2{
+    font-size:32px;
+    margin-bottom:12px;
+    font-weight:900;
+}
+
+.cta p{
+    color:#939bb2;
+    line-height:1.9;
+    margin-bottom:25px;
+}
+
+.cta-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 25px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#6d45ff,#00bfe9);
+    font-weight:800;
+    box-shadow:0 15px 40px rgba(83,74,255,.22);
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    background:rgba(0,0,0,.2);
+    padding:35px 25px;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.footer-logo{
+    font-size:18px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#8065ff;
+}
+
+.footer-copy{
+    color:#687188;
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:16px;
+}
+
+.footer-links a{
+    color:#8b93aa;
+    font-size:12px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.72);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:3000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:760px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:#0b0f20;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:27px;
+    box-shadow:0 40px 100px rgba(0,0,0,.6);
+    position:relative;
+    animation:modalIn .3s ease;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.modal-top{
+    height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+    background:
+        radial-gradient(circle at 30% 30%,rgba(0,217,255,.2),transparent 35%),
+        radial-gradient(circle at 70% 70%,rgba(109,69,255,.3),transparent 40%),
+        #11162c;
+    border-radius:27px 27px 0 0;
+}
+
+.modal-close{
+    position:absolute;
+    top:15px;
+    left:15px;
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(0,0,0,.35);
+    color:#fff;
+    font-size:18px;
+    z-index:5;
+}
+
+.modal-body{
+    padding:28px;
+}
+
+.modal-category{
+    color:#8f78ff;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.modal-title{
+    font-size:28px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.modal-date{
+    color:#737d98;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.modal-text{
+    color:#b0b6c9;
+    line-height:2;
+    font-size:14px;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:25px;
+}
+
+.modal-actions button,
+.modal-actions a{
+    flex:1;
+    text-align:center;
+    border-radius:14px;
+    padding:13px;
+    font-size:13px;
+    font-weight:800;
+}
+
+.modal-whatsapp{
+    background:linear-gradient(135deg,#6d45ff,#00c9ed);
+    color:#fff;
+    border:none;
+}
+
+.modal-share{
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    border:1px solid rgba(255,255,255,.09);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+    .news-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+@media(max-width:650px){
+    .navbar{
+        top:8px;
+        width:calc(100% - 16px);
+        height:64px;
+        padding:0 12px;
+        border-radius:18px;
+    }
+
+    .logo{
+        font-size:16px;
+        gap:8px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+        border-radius:11px;
+    }
+
+    .whatsapp-btn{
+        display:none;
+    }
+
+    .hero{
+        padding:130px 18px 50px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .news-tools,
+    .news-section{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:5px;
+    }
+
+    .section-heading h2{
+        font-size:26px;
+    }
+
+    .news-image{
+        height:190px;
+    }
+
+    .cta{
+        margin-left:18px;
+        margin-right:18px;
+        padding:40px 20px;
+    }
+
+    .cta h2{
+        font-size:26px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .modal-body{
+        padding:22px;
+    }
+
+    .modal-title{
+        font-size:23px;
+    }
+
+    .modal-actions{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <div class="logo-icon">DS</div>
+        <div class="logo-text">
+            Delk <span>Star</span>
+        </div>
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="store.html">المتجر</a>
+        <a href="news.html" class="active">الأخبار</a>
+        <a href="delk-advertising.html">الإعلان</a>
+        <a href="delk-media.html">الإعلام</a>
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="nav-btn" onclick="scrollToNews()" title="البحث">
+            🔎
+        </button>
+
+        <a
+            class="nav-btn whatsapp-btn"
+            href="https://wa.me/201064665780"
+            target="_blank"
+        >
+            تواصل معنا
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+        <span class="live-dot"></span>
+        آخر الأخبار والتحديثات
+    </div>
+
+    <h1>
+        أخبار
+        <span class="gradient-text">Delk Star</span>
+    </h1>
+
+    <p>
+        تابع أحدث أخبار ديلك ستار، مشاريعنا الجديدة،
+        تحديثات خدماتنا، وأهم ما يحدث في عالم البرمجة والتكنولوجيا.
+    </p>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="news-tools" id="newsTools">
+
+    <div class="search-box">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="ابحث في الأخبار..."
+            oninput="filterNews()"
+        >
+
+    </div>
+
+    <div class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="setCategory('all',this)"
+        >
+            الكل
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="setCategory('company',this)"
+        >
+            ديلك ستار
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="setCategory('technology',this)"
+        >
+            التكنولوجيا
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="setCategory('projects',this)"
+        >
+            مشاريعنا
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="setCategory('education',this)"
+        >
+            التعليم
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="setCategory('media',this)"
+        >
+            الإعلام
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section class="news-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>آخر الأخبار</h2>
+            <p>أحدث المستجدات من عالم ديلك ستار</p>
+        </div>
+
+        <div class="news-count" id="newsCount">
+            6 أخبار
+        </div>
+
+    </div>
+
+
+    <div class="news-grid" id="newsGrid">
+
+
+        <!-- NEWS 1 -->
+
+        <article
+            class="news-card"
+            data-category="company"
+            data-title="ديلك ستار تطور خدماتها الرقمية"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    ديلك ستار
+                </div>
+
+                <div class="news-image-content">
+                    🚀
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>05 أكتوبر 2026</span>
+                    <span>•</span>
+                    <span>شركة</span>
+                </div>
+
+                <h3 class="news-title">
+                    ديلك ستار تواصل تطوير خدماتها الرقمية
+                </h3>
+
+                <p class="news-description">
+                    نعمل باستمرار على تطوير خدماتنا في البرمجة والتكنولوجيا
+                    وتقديم حلول رقمية أكثر احترافية للعملاء.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'ديلك ستار تواصل تطوير خدماتها الرقمية',
+                        'ديلك ستار',
+                        '05 أكتوبر 2026',
+                        'نواصل في ديلك ستار تطوير خدماتنا الرقمية بشكل مستمر، مع التركيز على تقديم مواقع وتطبيقات وحلول تقنية تساعد أصحاب المشاريع والشركات على بناء حضور رقمي احترافي.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 2 -->
+
+        <article
+            class="news-card"
+            data-category="projects"
+            data-title="تطوير مشاريع رقمية جديدة"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    مشاريعنا
+                </div>
+
+                <div class="news-image-content">
+                    💻
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>04 أكتوبر 2026</span>
+                    <span>•</span>
+                    <span>مشاريع</span>
+                </div>
+
+                <h3 class="news-title">
+                    إطلاق وتطوير مشاريع رقمية جديدة
+                </h3>
+
+                <p class="news-description">
+                    نستمر في العمل على مجموعة من المشاريع الرقمية
+                    المختلفة في التطبيقات والمواقع والمنصات الإلكترونية.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'إطلاق وتطوير مشاريع رقمية جديدة',
+                        'مشاريعنا',
+                        '04 أكتوبر 2026',
+                        'تعمل فرق ديلك ستار على تطوير مجموعة من المشاريع الرقمية المتنوعة، بداية من المواقع الإلكترونية وحتى التطبيقات والمنصات المتخصصة.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 3 -->
+
+        <article
+            class="news-card"
+            data-category="technology"
+            data-title="حلول تقنية للشركات والمشاريع"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    التكنولوجيا
+                </div>
+
+                <div class="news-image-content">
+                    ⚡
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>03 أكتوبر 2026</span>
+                    <span>•</span>
+                    <span>تقنية</span>
+                </div>
+
+                <h3 class="news-title">
+                    حلول تقنية تساعد المشاريع على النمو
+                </h3>
+
+                <p class="news-description">
+                    نقدم حلولًا تقنية مصممة لتناسب احتياجات الشركات
+                    وأصحاب المشاريع والأنشطة التجارية المختلفة.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'حلول تقنية تساعد المشاريع على النمو',
+                        'التكنولوجيا',
+                        '03 أكتوبر 2026',
+                        'تعمل ديلك ستار على توفير حلول تقنية مرنة تناسب احتياجات الشركات وأصحاب المشاريع، مع الاهتمام بالأداء والتصميم وتجربة المستخدم.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 4 -->
+
+        <article
+            class="news-card"
+            data-category="education"
+            data-title="مشاريع ديلك في مجال التعليم"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    التعليم
+                </div>
+
+                <div class="news-image-content">
+                    📚
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>02 أكتوبر 2026</span>
+                    <span>•</span>
+                    <span>تعليم</span>
+                </div>
+
+                <h3 class="news-title">
+                    اهتمام متزايد بالحلول الرقمية التعليمية
+                </h3>
+
+                <p class="news-description">
+                    نعمل على أفكار ومنصات رقمية تهدف إلى تنظيم المحتوى
+                    التعليمي وتسهيل وصول الطلاب والمعلمين إليه.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'اهتمام متزايد بالحلول الرقمية التعليمية',
+                        'التعليم',
+                        '02 أكتوبر 2026',
+                        'يعد قطاع التعليم من المجالات المهمة في مشاريع ديلك ستار، ونسعى إلى تطوير حلول رقمية تساعد على تنظيم الكتب والدورات والمحتوى التعليمي بطريقة حديثة.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 5 -->
+
+        <article
+            class="news-card"
+            data-category="media"
+            data-title="تطوير خدمات ديلك ميديا"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    الإعلام
+                </div>
+
+                <div class="news-image-content">
+                    🎬
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>01 أكتوبر 2026</span>
+                    <span>•</span>
+                    <span>إعلام</span>
+                </div>
+
+                <h3 class="news-title">
+                    تطوير خدمات المحتوى والإعلام الرقمي
+                </h3>
+
+                <p class="news-description">
+                    ديلك ميديا تقدم حلولًا للمونتاج والمحتوى والتصميم
+                    والفيديوهات القصيرة لمساعدة المشاريع على الظهور بشكل أفضل.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'تطوير خدمات المحتوى والإعلام الرقمي',
+                        'الإعلام',
+                        '01 أكتوبر 2026',
+                        'تستمر ديلك ميديا في تطوير خدمات صناعة المحتوى والمونتاج والتصميم والفيديوهات القصيرة لتقديم محتوى مناسب للمنصات الرقمية المختلفة.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 6 -->
+
+        <article
+            class="news-card"
+            data-category="company"
+            data-title="ديلك ستار تجمع خدماتها تحت منظومة واحدة"
+        >
+
+            <div class="news-image">
+
+                <div class="news-badge">
+                    ديلك ستار
+                </div>
+
+                <div class="news-image-content">
+                    🌐
+                </div>
+
+            </div>
+
+            <div class="news-content">
+
+                <div class="news-meta">
+                    <span>30 سبتمبر 2026</span>
+                    <span>•</span>
+                    <span>تحديث</span>
+                </div>
+
+                <h3 class="news-title">
+                    منظومة متكاملة من الخدمات الرقمية
+                </h3>
+
+                <p class="news-description">
+                    ديلك ستار تعمل على تقديم مجموعة متكاملة من الخدمات
+                    التقنية والإعلانية والإعلامية والتعليمية والتجارية.
+                </p>
+
+                <button
+                    class="read-more"
+                    onclick="openNews(
+                        'منظومة متكاملة من الخدمات الرقمية',
+                        'ديلك ستار',
+                        '30 سبتمبر 2026',
+                        'تهدف ديلك ستار إلى بناء منظومة رقمية متكاملة تجمع البرمجة والتسويق والإعلان والإعلام والتجارة والتعليم في تجربة واحدة لخدمة العملاء والمشاريع المختلفة.'
+                    )"
+                >
+                    اقرأ الخبر
+                </button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+
+        <div class="no-results-icon">
+            🔍
+        </div>
+
+        <h3>لم نجد أخبارًا مطابقة</h3>
+
+        <p>
+            جرّب البحث بكلمة أخرى أو اختر تصنيفًا مختلفًا.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <h2>
+        عندك خبر أو مشروع تريد نشره؟
+    </h2>
+
+    <p>
+        تواصل مع فريق ديلك ستار وسنساعدك في معرفة الخدمة المناسبة لمشروعك.
+    </p>
+
+    <a
+        href="https://wa.me/201064665780"
+        target="_blank"
+        class="cta-btn"
+    >
+        💬 تواصل معنا عبر واتساب
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            Delk <span>Star</span>
+        </div>
+
+        <div class="footer-copy">
+            © 2026 Delk Star — جميع الحقوق محفوظة
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="store.html">المتجر</a>
+            <a href="news.html">الأخبار</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- NEWS MODAL -->
+
+<div class="modal" id="newsModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeModal()"
+        >
+            ✕
+        </button>
+
+        <div class="modal-top" id="modalIcon">
+            📰
+        </div>
+
+        <div class="modal-body">
+
+            <div
+                class="modal-category"
+                id="modalCategory"
+            ></div>
+
+            <h2
+                class="modal-title"
+                id="modalTitle"
+            ></h2>
+
+            <div
+                class="modal-date"
+                id="modalDate"
+            ></div>
+
+            <p
+                class="modal-text"
+                id="modalText"
+            ></p>
+
+            <div class="modal-actions">
+
+                <a
+                    class="modal-whatsapp"
+                    href="https://wa.me/201064665780"
+                    target="_blank"
+                >
+                    💬 تواصل معنا
+                </a>
+
+                <button
+                    class="modal-share"
+                    onclick="shareNews()"
+                >
+                    🔗 مشاركة الخبر
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let currentCategory = "all";
+
+const searchInput = document.getElementById("searchInput");
+const newsCards = document.querySelectorAll(".news-card");
+const newsCount = document.getElementById("newsCount");
+const noResults = document.getElementById("noResults");
+
+function filterNews(){
+
+    const search = searchInput.value
+        .trim()
+        .toLowerCase();
+
+    let visible = 0;
+
+    newsCards.forEach(card => {
+
+        const category = card.dataset.category;
+        const title = card.dataset.title.toLowerCase();
+
+        const description =
+            card.querySelector(".news-description")
+            ?.textContent
+            .toLowerCase() || "";
+
+        const matchesCategory =
+            currentCategory === "all" ||
+            category === currentCategory;
+
+        const matchesSearch =
+            title.includes(search) ||
+            description.includes(search);
+
+        if(matchesCategory && matchesSearch){
+
+            card.style.display = "";
+
+            visible++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    newsCount.textContent =
+        visible + (visible === 1 ? " خبر" : " أخبار");
+
+    noResults.style.display =
+        visible === 0 ? "block" : "none";
+}
+
+
+function setCategory(category, button){
+
+    currentCategory = category;
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+    filterNews();
+}
+
+
+function scrollToNews(){
+
+    document
+        .getElementById("newsTools")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    setTimeout(() => {
+        searchInput.focus();
+    },500);
+}
+
+
+function openNews(title, category, date, text){
+
+    document.getElementById("modalTitle").textContent =
+        title;
+
+    document.getElementById("modalCategory").textContent =
+        category;
+
+    document.getElementById("modalDate").textContent =
+        date;
+
+    document.getElementById("modalText").textContent =
+        text;
+
+    document.getElementById("newsModal")
+        .classList.add("show");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeModal(){
+
+    document
+        .getElementById("newsModal")
+        .classList.remove("show");
+
+    document.body.style.overflow = "";
+}
+
+
+document
+    .getElementById("newsModal")
+    .addEventListener("click",function(e){
+
+        if(e.target === this){
+            closeModal();
+        }
+
+    });
+
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+        closeModal();
+    }
+
+});
+
+
+async function shareNews(){
+
+    const title =
+        document.getElementById("modalTitle").textContent;
+
+    const text =
+        "📰 " + title + "\n\nأخبار Delk Star";
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share({
+                title:title,
+                text:text,
+                url:window.location.href
+            });
+
+        }catch(error){}
+
+    }else{
+
+        try{
+
+            await navigator.clipboard.writeText(
+                window.location.href
+            );
+
+            alert("تم نسخ رابط صفحة الأخبار");
+
+        }catch(error){
+
+            alert("يمكنك نسخ رابط الصفحة ومشاركته.");
+
+        }
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

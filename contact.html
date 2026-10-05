@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تواصل معنا | Delk Star</title>
+
+<meta name="description" content="تواصل مع Delk Star للحصول على خدمات البرمجة والتطبيقات والمواقع والتسويق والإعلام والتعليم والتجارة الرقمية.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(109,40,217,.18),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(6,182,212,.12),transparent 30%),
+        linear-gradient(135deg,#050816,#080b19 45%,#050711);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:15px;
+    left:20px;
+    right:20px;
+    height:72px;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:22px;
+    background:rgba(8,11,28,.78);
+    backdrop-filter:blur(18px);
+    box-shadow:0 15px 50px rgba(0,0,0,.35);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-weight:900;
+    font-size:20px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:18px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb,#06b6d4);
+    box-shadow:0 0 25px rgba(124,58,237,.4);
+}
+
+.logo-text span{
+    background:linear-gradient(90deg,#a78bfa,#38bdf8);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.nav-links a{
+    padding:10px 14px;
+    border-radius:12px;
+    color:#b9c0d4;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(124,58,237,.16);
+}
+
+.nav-contact{
+    background:linear-gradient(135deg,#7c3aed,#2563eb) !important;
+    color:#fff !important;
+    box-shadow:0 8px 25px rgba(99,102,241,.25);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:rgba(255,255,255,.07);
+    color:#fff;
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:170px 20px 80px;
+    text-align:center;
+    position:relative;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 15px;
+    border:1px solid rgba(139,92,246,.25);
+    background:rgba(124,58,237,.09);
+    color:#c4b5fd;
+    border-radius:999px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero-badge::before{
+    content:"";
+    width:7px;
+    height:7px;
+    background:#22c55e;
+    border-radius:50%;
+    box-shadow:0 0 12px #22c55e;
+}
+
+.hero h1{
+    font-size:clamp(38px,6vw,72px);
+    line-height:1.15;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#a78bfa,#60a5fa,#22d3ee);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:720px;
+    margin:auto;
+    color:#aeb6ca;
+    font-size:17px;
+    line-height:2;
+}
+
+/* ================= MAIN ================= */
+
+.contact-section{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 20px 100px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:25px;
+}
+
+/* ================= INFO ================= */
+
+.info-card,
+.form-card{
+    border:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+    );
+    backdrop-filter:blur(15px);
+    border-radius:28px;
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
+}
+
+.info-card{
+    padding:30px;
+}
+
+.info-card h2{
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.info-card > p{
+    color:#9fa8bd;
+    line-height:1.9;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.info-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:16px;
+    margin-bottom:13px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.info-item:hover{
+    transform:translateY(-3px);
+    border-color:rgba(124,58,237,.3);
+    background:rgba(124,58,237,.07);
+}
+
+.info-icon{
+    width:48px;
+    height:48px;
+    flex-shrink:0;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    background:linear-gradient(
+        135deg,
+        rgba(124,58,237,.25),
+        rgba(37,99,235,.18)
+    );
+}
+
+.info-item h3{
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.info-item p{
+    color:#aab2c5;
+    font-size:13px;
+}
+
+.whatsapp-box{
+    margin-top:20px;
+    padding:18px;
+    border-radius:20px;
+    background:linear-gradient(
+        135deg,
+        rgba(34,197,94,.10),
+        rgba(16,185,129,.04)
+    );
+    border:1px solid rgba(34,197,94,.16);
+}
+
+.whatsapp-box h3{
+    font-size:15px;
+    margin-bottom:6px;
+}
+
+.whatsapp-box p{
+    color:#9fa8bd;
+    font-size:13px;
+    line-height:1.8;
+    margin-bottom:13px;
+}
+
+.whatsapp-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    width:100%;
+    padding:12px;
+    border-radius:13px;
+    background:#16a34a;
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+    background:#15803d;
+    transform:translateY(-2px);
+}
+
+/* ================= FORM ================= */
+
+.form-card{
+    padding:35px;
+}
+
+.form-title{
+    margin-bottom:25px;
+}
+
+.form-title h2{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.form-title p{
+    color:#9fa8bd;
+    font-size:14px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    color:#d7dced;
+    font-size:13px;
+    font-weight:700;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid rgba(255,255,255,.09);
+    outline:none;
+    border-radius:15px;
+    padding:14px 15px;
+    background:rgba(3,7,18,.55);
+    color:#fff;
+    transition:.3s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#697287;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:#7c3aed;
+    box-shadow:0 0 0 3px rgba(124,58,237,.09);
+}
+
+.field select option{
+    background:#090d1d;
+    color:#fff;
+}
+
+.field textarea{
+    min-height:150px;
+    resize:vertical;
+    line-height:1.8;
+}
+
+.submit-btn{
+    width:100%;
+    border:0;
+    padding:15px;
+    border-radius:16px;
+    margin-top:20px;
+    cursor:pointer;
+    color:#fff;
+    font-size:15px;
+    font-weight:900;
+    background:linear-gradient(135deg,#7c3aed,#2563eb,#0891b2);
+    box-shadow:0 15px 35px rgba(79,70,229,.22);
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 45px rgba(79,70,229,.32);
+}
+
+.form-note{
+    text-align:center;
+    color:#737c91;
+    font-size:11px;
+    margin-top:12px;
+}
+
+/* ================= QUICK ================= */
+
+.quick-section{
+    max-width:1200px;
+    margin:0 auto 100px;
+    padding:0 20px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:32px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#929bb0;
+    font-size:14px;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.quick-card{
+    padding:25px 18px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:22px;
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.quick-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(124,58,237,.3);
+    background:rgba(124,58,237,.06);
+}
+
+.quick-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.quick-card h3{
+    font-size:16px;
+    margin-bottom:7px;
+}
+
+.quick-card p{
+    color:#8e97aa;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    max-width:1200px;
+    margin:0 auto 80px;
+    padding:0 20px;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+    padding:55px 30px;
+    text-align:center;
+    border-radius:30px;
+    border:1px solid rgba(124,58,237,.22);
+    background:
+        radial-gradient(circle at 20% 30%,rgba(124,58,237,.18),transparent 35%),
+        radial-gradient(circle at 80% 70%,rgba(6,182,212,.12),transparent 35%),
+        rgba(255,255,255,.025);
+}
+
+.cta-box h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.cta-box p{
+    color:#9fa8bd;
+    max-width:650px;
+    margin:0 auto 25px;
+    line-height:1.9;
+}
+
+.cta-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 25px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    font-weight:800;
+    transition:.3s;
+}
+
+.cta-button:hover{
+    transform:translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+    padding:35px 20px;
+    background:rgba(0,0,0,.15);
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.footer-logo{
+    font-size:19px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#8b5cf6;
+}
+
+.footer-text{
+    color:#697287;
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:15px;
+}
+
+.footer-links a{
+    color:#929bb0;
+    font-size:12px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:82px;
+        left:0;
+        right:0;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:18px;
+        background:rgba(7,10,25,.97);
+        backdrop-filter:blur(18px);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        text-align:center;
+        padding:13px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        left:10px;
+        right:10px;
+        top:10px;
+        height:65px;
+        padding:0 14px;
+        border-radius:18px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+    }
+
+    .hero{
+        padding:135px 18px 60px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .contact-section{
+        padding:10px 12px 70px;
+    }
+
+    .info-card,
+    .form-card{
+        padding:22px 18px;
+        border-radius:22px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .field.full{
+        grid-column:auto;
+    }
+
+    .form-title h2{
+        font-size:23px;
+    }
+
+    .quick-section{
+        padding:0 12px;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:27px;
+    }
+
+    .cta{
+        padding:0 12px;
+    }
+
+    .cta-box{
+        padding:40px 20px;
+        border-radius:24px;
+    }
+
+    .cta-box h2{
+        font-size:25px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <div class="logo-icon">DS</div>
+
+        <div class="logo-text">
+            <span>Delk Star</span>
+        </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">الرئيسية</a>
+
+        <a href="about.html">من نحن</a>
+
+        <a href="services.html">خدماتنا</a>
+
+        <a href="store.html">المتجر</a>
+
+        <a href="news.html">الأخبار</a>
+
+        <a href="contact.html" class="active nav-contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+        نحن هنا لمساعدتك
+    </div>
+
+    <h1>
+        خلينا نبدأ
+        <span class="gradient-text">مشروعك</span>
+        معًا
+    </h1>
+
+    <p>
+        عندك فكرة تطبيق؟ موقع؟ متجر إلكتروني؟
+        أو محتاج تسويق وإعلام وصناعة محتوى؟
+        ابعتلنا تفاصيل مشروعك وسنتواصل معك لمناقشة احتياجاتك.
+    </p>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section">
+
+    <div class="contact-grid">
+
+        <!-- INFO -->
+
+        <div class="info-card">
+
+            <h2>تواصل مع Delk Star</h2>
+
+            <p>
+                اختر الطريقة المناسبة لك أو أرسل تفاصيل مشروعك
+                من النموذج وسنساعدك في تحديد الخطوة المناسبة.
+            </p>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📱
+                </div>
+
+                <div>
+                    <h3>واتساب</h3>
+                    <p>01064665780</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    💻
+                </div>
+
+                <div>
+                    <h3>الخدمات الرقمية</h3>
+                    <p>مواقع وتطبيقات ومنصات رقمية</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    📣
+                </div>
+
+                <div>
+                    <h3>التسويق والإعلان</h3>
+                    <p>حلول تسويقية وإعلانية للمشاريع</p>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    🎬
+                </div>
+
+                <div>
+                    <h3>الإعلام والمحتوى</h3>
+                    <p>مونتاج وتصميم ومحتوى رقمي</p>
+                </div>
+
+            </div>
+
+
+            <div class="whatsapp-box">
+
+                <h3>
+                    تفضل التواصل مباشرة؟
+                </h3>
+
+                <p>
+                    يمكنك فتح محادثة مباشرة على واتساب
+                    والتحدث معنا عن مشروعك.
+                </p>
+
+                <a
+                    href="https://wa.me/201064665780"
+                    target="_blank"
+                    class="whatsapp-btn"
+                >
+                    💬 فتح واتساب
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="form-card">
+
+            <div class="form-title">
+
+                <h2>
+                    أرسل تفاصيل مشروعك
+                </h2>
+
+                <p>
+                    املأ البيانات التالية وسيتم تحويلها إلى واتساب.
+                </p>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+
+                        <label>
+                            الاسم
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="اكتب اسمك"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            رقم الهاتف
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="مثال: 01012345678"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            نوع الخدمة
+                        </label>
+
+                        <select id="service" required>
+
+                            <option value="">
+                                اختر الخدمة
+                            </option>
+
+                            <option value="تطبيق موبايل">
+                                تطبيق موبايل
+                            </option>
+
+                            <option value="موقع إلكتروني">
+                                موقع إلكتروني
+                            </option>
+
+                            <option value="متجر إلكتروني">
+                                متجر إلكتروني
+                            </option>
+
+                            <option value="منصة إلكترونية">
+                                منصة إلكترونية
+                            </option>
+
+                            <option value="تسويق رقمي">
+                                تسويق رقمي
+                            </option>
+
+                            <option value="دعاية وإعلان">
+                                دعاية وإعلان
+                            </option>
+
+                            <option value="إعلام وصناعة محتوى">
+                                إعلام وصناعة محتوى
+                            </option>
+
+                            <option value="حلول تعليمية">
+                                حلول تعليمية
+                            </option>
+
+                            <option value="خدمة أخرى">
+                                خدمة أخرى
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            الميزانية التقريبية
+                        </label>
+
+                        <select id="budget">
+
+                            <option value="">
+                                اختر الميزانية
+                            </option>
+
+                            <option value="لم أحدد الميزانية بعد">
+                                لم أحدد الميزانية بعد
+                            </option>
+
+                            <option value="أقل من 3000 جنيه">
+                                أقل من 3000 جنيه
+                            </option>
+
+                            <option value="3000 - 10000 جنيه">
+                                3000 - 10000 جنيه
+                            </option>
+
+                            <option value="10000 - 25000 جنيه">
+                                10000 - 25000 جنيه
+                            </option>
+
+                            <option value="أكثر من 25000 جنيه">
+                                أكثر من 25000 جنيه
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full">
+
+                        <label>
+                            تفاصيل المشروع
+                        </label>
+
+                        <textarea
+                            id="details"
+                            placeholder="اكتب فكرتك أو تفاصيل المشروع هنا..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    🚀 إرسال تفاصيل المشروع عبر واتساب
+                </button>
+
+                <div class="form-note">
+                    سيتم فتح واتساب برسالة تحتوي على البيانات التي أدخلتها.
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK SERVICES ================= -->
+
+<section class="quick-section">
+
+    <div class="section-title">
+
+        <h2>
+            ماذا يمكننا أن نقدم لك؟
+        </h2>
+
+        <p>
+            حلول رقمية متنوعة تحت مظلة Delk Star
+        </p>
+
+    </div>
+
+
+    <div class="quick-grid">
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                🌐
+            </div>
+
+            <h3>
+                المواقع
+            </h3>
+
+            <p>
+                مواقع تعريفية وتجارية ومنصات إلكترونية.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                📱
+            </div>
+
+            <h3>
+                التطبيقات
+            </h3>
+
+            <p>
+                تطبيقات الهاتف وحلول رقمية مخصصة.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                📈
+            </div>
+
+            <h3>
+                التسويق
+            </h3>
+
+            <p>
+                حلول تسويقية تساعد مشروعك على الوصول لجمهوره.
+            </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+            <div class="quick-icon">
+                🎨
+            </div>
+
+            <h3>
+                المحتوى
+            </h3>
+
+            <p>
+                تصميم ومونتاج وصناعة محتوى رقمي.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <h2>
+            عندك فكرة؟
+            <span class="gradient-text">
+                خلينا نبدأ
+            </span>
+        </h2>
+
+        <p>
+            لا تحتاج أن تكون فكرتك مكتملة.
+            أخبرنا بما تفكر فيه وسنساعدك على تحويلها
+            إلى مشروع رقمي واضح.
+        </p>
+
+        <a
+            href="https://wa.me/201064665780"
+            target="_blank"
+            class="cta-button"
+        >
+            تحدث معنا الآن
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            <span>Delk Star</span>
+            | ديلك ستار
+        </div>
+
+        <div class="footer-text">
+            © 2026 Delk Star — جميع الحقوق محفوظة
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="about.html">
+                من نحن
+            </a>
+
+            <a href="services.html">
+                خدماتنا
+            </a>
+
+            <a href="store.html">
+                المتجر
+            </a>
+
+            <a href="news.html">
+                الأخبار
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function(){
+
+    navLinks.classList.toggle("show");
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        navLinks.classList.remove("show");
+
+    });
+
+});
+
+
+/* ================= CONTACT FORM ================= */
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const service =
+        document.getElementById("service").value;
+
+    const budget =
+        document.getElementById("budget").value || "لم يتم تحديدها";
+
+    const details =
+        document.getElementById("details").value.trim();
+
+
+    const message =
+`🚀 طلب جديد من موقع Delk Star
+
+👤 الاسم:
+${name}
+
+📱 رقم الهاتف:
+${phone}
+
+💼 نوع الخدمة:
+${service}
+
+💰 الميزانية التقريبية:
+${budget}
+
+📝 تفاصيل المشروع:
+${details}
+
+━━━━━━━━━━━━━━
+Delk Star | ديلك ستار`;
+
+
+    const whatsappURL =
+        "https://wa.me/201064665780?text="
+        + encodeURIComponent(message);
+
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>

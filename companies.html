@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>شركاتنا | Delk Star</title>
+
+<meta name="description" content="شركات وأقسام Delk Star المتخصصة في البرمجة والتكنولوجيا والتسويق والإعلان والإعلام والتجارة والتعليم.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(124,58,237,.18),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(6,182,212,.12),transparent 30%),
+        linear-gradient(135deg,#050816,#080b19 45%,#050711);
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:15px;
+    left:20px;
+    right:20px;
+    height:72px;
+    z-index:999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:22px;
+
+    background:rgba(8,11,28,.78);
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 15px 50px rgba(0,0,0,.35);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font-weight:900;
+    font-size:20px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:900;
+    font-size:17px;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb,
+        #06b6d4
+    );
+
+    box-shadow:0 0 25px rgba(124,58,237,.4);
+}
+
+.logo-text span{
+    background:linear-gradient(
+        90deg,
+        #a78bfa,
+        #38bdf8
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.nav-links a{
+    padding:10px 14px;
+    border-radius:12px;
+
+    color:#b9c0d4;
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(124,58,237,.16);
+}
+
+.nav-contact{
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    ) !important;
+
+    color:#fff !important;
+}
+
+.menu-btn{
+    display:none;
+
+    border:0;
+    background:rgba(255,255,255,.07);
+    color:#fff;
+
+    width:43px;
+    height:43px;
+
+    border-radius:12px;
+
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:165px 20px 75px;
+    text-align:center;
+    position:relative;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 16px;
+
+    border:1px solid rgba(139,92,246,.25);
+    background:rgba(124,58,237,.09);
+
+    color:#c4b5fd;
+
+    border-radius:999px;
+
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero-badge::before{
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:0 0 12px #22c55e;
+}
+
+.hero h1{
+    font-size:clamp(40px,6vw,72px);
+    line-height:1.15;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        90deg,
+        #a78bfa,
+        #60a5fa,
+        #22d3ee
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+
+    color:#aeb6ca;
+
+    font-size:17px;
+    line-height:2;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    max-width:1250px;
+    margin:auto;
+    padding:20px 20px 100px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:34px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#8f98ad;
+    font-size:14px;
+}
+
+/* ================= COMPANIES ================= */
+
+.companies-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.company-card{
+    position:relative;
+
+    padding:28px;
+
+    min-height:350px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.22);
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.company-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    top:-90px;
+    left:-90px;
+
+    border-radius:50%;
+
+    background:rgba(124,58,237,.14);
+
+    filter:blur(10px);
+}
+
+.company-card:hover{
+    transform:translateY(-9px);
+
+    border-color:rgba(124,58,237,.35);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 40px rgba(124,58,237,.07);
+}
+
+.company-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.company-logo{
+    width:62px;
+    height:62px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:19px;
+
+    font-size:20px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 10px 30px rgba(79,70,229,.25);
+}
+
+.company-top h3{
+    font-size:20px;
+    margin-bottom:3px;
+}
+
+.company-top span{
+    color:#788297;
+    font-size:12px;
+}
+
+.company-card > p{
+    color:#9ea7bb;
+    line-height:1.9;
+
+    font-size:13px;
+
+    min-height:73px;
+
+    margin-bottom:18px;
+}
+
+.service-list{
+    list-style:none;
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:22px;
+}
+
+.service-list li{
+    padding:7px 10px;
+
+    border-radius:9px;
+
+    background:rgba(124,58,237,.08);
+
+    border:1px solid rgba(124,58,237,.12);
+
+    color:#b8b0d7;
+
+    font-size:11px;
+}
+
+.company-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:13px;
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.company-btn:hover{
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+
+    border-color:transparent;
+
+    transform:translateY(-2px);
+}
+
+/* ================= ABOUT COMPANIES ================= */
+
+.about-companies{
+    margin-top:20px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.about-box{
+    padding:32px;
+
+    border-radius:26px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:rgba(255,255,255,.025);
+
+    backdrop-filter:blur(12px);
+}
+
+.about-box h3{
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.about-box p{
+    color:#9da6ba;
+    font-size:14px;
+    line-height:2;
+}
+
+.about-box strong{
+    color:#c4b5fd;
+}
+
+/* ================= AREAS ================= */
+
+.areas{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.area{
+    padding:23px 17px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:rgba(255,255,255,.025);
+
+    transition:.3s;
+}
+
+.area:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(124,58,237,.28);
+
+    background:rgba(124,58,237,.06);
+}
+
+.area-icon{
+    font-size:29px;
+
+    margin-bottom:10px;
+}
+
+.area h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.area p{
+    color:#7f899d;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+/* ================= PROCESS ================= */
+
+.process{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.step{
+    position:relative;
+
+    text-align:center;
+
+    padding:25px 17px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:rgba(255,255,255,.025);
+}
+
+.step-number{
+    width:45px;
+    height:45px;
+
+    margin:0 auto 13px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:900;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+}
+
+.step h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.step p{
+    color:#858ea2;
+
+    font-size:11px;
+
+    line-height:1.8;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    max-width:1250px;
+
+    margin:0 auto 90px;
+
+    padding:0 20px;
+}
+
+.cta-box{
+    position:relative;
+    overflow:hidden;
+
+    text-align:center;
+
+    padding:60px 25px;
+
+    border-radius:32px;
+
+    border:1px solid rgba(124,58,237,.2);
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(124,58,237,.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(6,182,212,.12),
+            transparent 35%
+        ),
+        rgba(255,255,255,.025);
+}
+
+.cta-box h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.cta-box p{
+    max-width:650px;
+
+    margin:0 auto 25px;
+
+    color:#9fa8bd;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+.cta-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 28px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.cta-button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(79,70,229,.25);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.07);
+
+    padding:35px 20px;
+
+    background:rgba(0,0,0,.15);
+}
+
+.footer-inner{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-logo{
+    font-size:19px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#8b5cf6;
+}
+
+.footer-text{
+    color:#697287;
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:15px;
+}
+
+.footer-links a{
+    color:#929bb0;
+    font-size:12px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    .companies-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .areas{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:82px;
+        left:0;
+        right:0;
+
+        display:none;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:12px;
+
+        border:1px solid rgba(255,255,255,.08);
+
+        border-radius:18px;
+
+        background:rgba(7,10,25,.97);
+
+        backdrop-filter:blur(18px);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        text-align:center;
+        padding:13px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        left:10px;
+        right:10px;
+        top:10px;
+
+        height:65px;
+
+        padding:0 14px;
+
+        border-radius:18px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .logo-icon{
+        width:38px;
+        height:38px;
+    }
+
+    .hero{
+        padding:135px 18px 60px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .section{
+        padding:15px 12px 70px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .companies-grid{
+        grid-template-columns:1fr;
+    }
+
+    .company-card{
+        min-height:auto;
+    }
+
+    .about-companies{
+        grid-template-columns:1fr;
+    }
+
+    .areas{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta{
+        padding:0 12px;
+    }
+
+    .cta-box{
+        padding:45px 20px;
+        border-radius:25px;
+    }
+
+    .cta-box h2{
+        font-size:27px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+@media(max-width:430px){
+
+    .areas,
+    .process{
+        grid-template-columns:1fr;
+    }
+
+    .company-top h3{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            DS
+        </div>
+
+        <div class="logo-text">
+            <span>Delk Star</span>
+        </div>
+
+    </a>
+
+
+    <nav class="nav-links" id="navLinks">
+
+        <a href="index.html">
+            الرئيسية
+        </a>
+
+        <a href="about.html">
+            من نحن
+        </a>
+
+        <a href="services.html">
+            خدماتنا
+        </a>
+
+        <a href="companies.html" class="active">
+            شركاتنا
+        </a>
+
+        <a href="store.html">
+            المتجر
+        </a>
+
+        <a href="news.html">
+            الأخبار
+        </a>
+
+        <a href="contact.html" class="nav-contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+
+    <button class="menu-btn" id="menuBtn">
+        ☰
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+        منظومة Delk Star
+    </div>
+
+
+    <h1>
+
+        شركاتنا
+        <span class="gradient-text">
+            وأقسامنا
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        تحت مظلة Delk Star نعمل على تقديم مجموعة
+        من الخدمات والحلول الرقمية المتخصصة،
+        بداية من البرمجة والتكنولوجيا وحتى التسويق
+        والإعلام والتعليم والتجارة الرقمية.
+
+    </p>
+
+</section>
+
+
+<!-- ================= COMPANIES ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            منظومة شركات Delk Star
+        </h2>
+
+        <p>
+            كل تخصص في مكانه، وكل الخدمات تحت منظومة واحدة
+        </p>
+
+    </div>
+
+
+    <div class="companies-grid">
+
+
+        <!-- SOFTWARE -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DS
+                </div>
+
+                <div>
+
+                    <h3>
+                        DelkSoft
+                    </h3>
+
+                    <span>
+                        ديلك سوفت للبرمجيات والتكنولوجيا
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                قسم البرمجيات والتكنولوجيا المتخصص
+                في بناء المواقع والتطبيقات والمنصات
+                والأنظمة الرقمية.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>مواقع إلكترونية</li>
+                <li>تطبيقات</li>
+                <li>منصات</li>
+                <li>لوحات تحكم</li>
+                <li>أنظمة رقمية</li>
+                <li>UI/UX</li>
+
+            </ul>
+
+
+            <a
+                href="services.html"
+                class="company-btn"
+            >
+                استكشف الخدمات
+            </a>
+
+        </div>
+
+
+        <!-- MARKETING -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DM
+                </div>
+
+                <div>
+
+                    <h3>
+                        Delk Marketing
+                    </h3>
+
+                    <span>
+                        ديلك للتسويق
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                حلول التسويق الرقمي التي تساعد
+                المشاريع والعلامات التجارية على الوصول
+                إلى جمهورها وبناء حضور رقمي أفضل.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>تسويق رقمي</li>
+                <li>إدارة صفحات</li>
+                <li>محتوى</li>
+                <li>خطط تسويقية</li>
+                <li>حملات</li>
+                <li>استراتيجية</li>
+
+            </ul>
+
+
+            <a
+                href="contact.html"
+                class="company-btn"
+            >
+                اطلب الخدمة
+            </a>
+
+        </div>
+
+
+        <!-- ADVERTISING -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DA
+                </div>
+
+                <div>
+
+                    <h3>
+                        Delk Advertising
+                    </h3>
+
+                    <span>
+                        ديلك للدعاية والإعلان
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                قسم الدعاية والإعلان لتصميم الحملات
+                والمواد الإعلانية والحلول البصرية
+                للمشاريع والعلامات التجارية.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>إعلانات</li>
+                <li>تصميمات</li>
+                <li>حملات</li>
+                <li>هوية بصرية</li>
+                <li>سوشيال ميديا</li>
+
+            </ul>
+
+
+            <a
+                href="delk-advertising.html"
+                class="company-btn"
+            >
+                دخول القسم
+            </a>
+
+        </div>
+
+
+        <!-- MEDIA -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DMe
+                </div>
+
+                <div>
+
+                    <h3>
+                        Delk Media
+                    </h3>
+
+                    <span>
+                        ديلك للإعلام وصناعة المحتوى
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                صناعة المحتوى الرقمي والمونتاج
+                والتصميم والفيديوهات القصيرة
+                والحلول الإعلامية.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>مونتاج</li>
+                <li>فيديوهات</li>
+                <li>تصميم</li>
+                <li>محتوى</li>
+                <li>سوشيال</li>
+                <li>إعلام</li>
+
+            </ul>
+
+
+            <a
+                href="delk-media.html"
+                class="company-btn"
+            >
+                دخول القسم
+            </a>
+
+        </div>
+
+
+        <!-- COMMERCE -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DC
+                </div>
+
+                <div>
+
+                    <h3>
+                        Delk Commerce
+                    </h3>
+
+                    <span>
+                        ديلك للتجارة والخدمات
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                حلول التجارة الرقمية والمتاجر
+                الإلكترونية وأنظمة الطلب والخدمات
+                الرقمية المخصصة للمشاريع.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>متاجر إلكترونية</li>
+                <li>متاجر جاهزة</li>
+                <li>منتجات</li>
+                <li>طلبات</li>
+                <li>خدمات رقمية</li>
+
+            </ul>
+
+
+            <a
+                href="delk-commerce.html"
+                class="company-btn"
+            >
+                دخول القسم
+            </a>
+
+        </div>
+
+
+        <!-- EDUCATION -->
+
+        <div class="company-card">
+
+            <div class="company-top">
+
+                <div class="company-logo">
+                    DE
+                </div>
+
+                <div>
+
+                    <h3>
+                        Delk Education
+                    </h3>
+
+                    <span>
+                        ديلك للتعليم
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p>
+
+                حلول التعليم الرقمي والمنصات التعليمية
+                وتنظيم الكتب والدورات وأنظمة الطلاب
+                والمواقع التعليمية.
+
+            </p>
+
+
+            <ul class="service-list">
+
+                <li>منصات تعليمية</li>
+                <li>كتب</li>
+                <li>دورات</li>
+                <li>أنظمة طلاب</li>
+                <li>مواقع مدرسين</li>
+
+            </ul>
+
+
+            <a
+                href="delk-education.html"
+                class="company-btn"
+            >
+                دخول القسم
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            لماذا منظومة شركات؟
+        </h2>
+
+        <p>
+            لأن كل مشروع يحتاج إلى تخصصات مختلفة
+        </p>
+
+    </div>
+
+
+    <div class="about-companies">
+
+        <div class="about-box">
+
+            <h3>
+                منظومة واحدة
+            </h3>
+
+            <p>
+
+                بدلًا من التعامل مع جهات متعددة،
+                تجمع Delk Star مجموعة من المجالات
+                الرقمية تحت منظومة واحدة تساعد
+                على تقديم حلول متكاملة للمشاريع.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <h3>
+                تخصصات متعددة
+            </h3>
+
+            <p>
+
+                من <strong>البرمجة</strong> والتطبيقات
+                إلى <strong>التسويق</strong> والإعلان
+                والإعلام والتعليم والتجارة،
+                لكل مجال خدماته وحلوله الخاصة.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AREAS ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            مجالاتنا
+        </h2>
+
+        <p>
+            مجالات رقمية متنوعة تحت مظلة واحدة
+        </p>
+
+    </div>
+
+
+    <div class="areas">
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                💻
+            </div>
+
+            <h3>
+                البرمجة
+            </h3>
+
+            <p>
+                مواقع وتطبيقات وأنظمة
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                📱
+            </div>
+
+            <h3>
+                التطبيقات
+            </h3>
+
+            <p>
+                حلول موبايل رقمية
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                📈
+            </div>
+
+            <h3>
+                التسويق
+            </h3>
+
+            <p>
+                حلول التسويق الرقمي
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                📣
+            </div>
+
+            <h3>
+                الإعلان
+            </h3>
+
+            <p>
+                دعاية وحملات إعلانية
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                🎬
+            </div>
+
+            <h3>
+                الإعلام
+            </h3>
+
+            <p>
+                محتوى ومونتاج وفيديو
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                🛒
+            </div>
+
+            <h3>
+                التجارة
+            </h3>
+
+            <p>
+                متاجر وخدمات رقمية
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                🎓
+            </div>
+
+            <h3>
+                التعليم
+            </h3>
+
+            <p>
+                منصات وكتب ودورات
+            </p>
+
+        </div>
+
+
+        <div class="area">
+
+            <div class="area-icon">
+                🚀
+            </div>
+
+            <h3>
+                المشاريع الرقمية
+            </h3>
+
+            <p>
+                تحويل الأفكار إلى مشاريع
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            كيف نعمل؟
+        </h2>
+
+        <p>
+            خطوات واضحة من الفكرة حتى التنفيذ
+        </p>
+
+    </div>
+
+
+    <div class="process">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                تواصل معنا
+            </h3>
+
+            <p>
+                أخبرنا عن فكرتك واحتياجات مشروعك.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                فهم المشروع
+            </h3>
+
+            <p>
+                نحدد المطلوب والخدمات المناسبة.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                التنفيذ
+            </h3>
+
+            <p>
+                يبدأ العمل على الحل المطلوب.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <h3>
+                التطوير
+            </h3>
+
+            <p>
+                نعمل على تحسين المشروع وتطويره.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <h2>
+
+            مشروعك يحتاج
+            <span class="gradient-text">
+                منظومة كاملة؟
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            تحدث معنا عن فكرتك، وسنساعدك في تحديد
+            المجال والخدمة المناسبة لتنفيذ مشروعك.
+
+        </p>
+
+
+        <a
+            href="https://wa.me/201064665780"
+            target="_blank"
+            class="cta-button"
+        >
+            💬 تواصل مع Delk Star
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+
+            <span>
+                Delk Star
+            </span>
+
+            | ديلك ستار
+
+        </div>
+
+
+        <div class="footer-text">
+
+            © 2026 Delk Star — جميع الحقوق محفوظة
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                الرئيسية
+            </a>
+
+            <a href="about.html">
+                من نحن
+            </a>
+
+            <a href="services.html">
+                خدماتنا
+            </a>
+
+            <a href="store.html">
+                المتجر
+            </a>
+
+            <a href="news.html">
+                الأخبار
+            </a>
+
+            <a href="contact.html">
+                تواصل معنا
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= MOBILE MENU ================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuBtn.addEventListener("click",function(){
+
+    navLinks.classList.toggle("show");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        navLinks.classList.remove("show");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3690 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>لوحة إدارة Delk Star</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:
+        radial-gradient(circle at top right,#24104a 0%,transparent 35%),
+        radial-gradient(circle at bottom left,#061c3c 0%,transparent 35%),
+        #050711;
+    color:#fff;
+    min-height:100vh;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* LOGIN */
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.login-box{
+    width:100%;
+    max-width:450px;
+    background:rgba(15,18,35,.88);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 25px 80px rgba(0,0,0,.45);
+    backdrop-filter:blur(20px);
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:900;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    box-shadow:0 15px 40px rgba(124,58,237,.3);
+}
+
+.login-box h1{
+    text-align:center;
+    margin-top:20px;
+    font-size:28px;
+}
+
+.login-box p{
+    text-align:center;
+    color:#9ca3af;
+    margin:8px 0 25px;
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.form-control{
+    width:100%;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid #252b40;
+    outline:none;
+    background:#0b0f1d;
+    color:#fff;
+}
+
+.form-control:focus{
+    border-color:#7c3aed;
+    box-shadow:0 0 0 3px rgba(124,58,237,.12);
+}
+
+.btn{
+    border:none;
+    border-radius:14px;
+    padding:13px 18px;
+    color:#fff;
+    font-weight:700;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+}
+
+.btn-primary{
+    width:100%;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+}
+
+.btn-success{
+    background:#059669;
+}
+
+.btn-danger{
+    background:#dc2626;
+}
+
+.btn-secondary{
+    background:#1f2937;
+}
+
+.error{
+    color:#f87171;
+    background:rgba(239,68,68,.1);
+    border:1px solid rgba(239,68,68,.2);
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:15px;
+    display:none;
+}
+
+/* APP */
+
+.app{
+    min-height:100vh;
+    display:flex;
+}
+
+.sidebar{
+    width:270px;
+    position:fixed;
+    right:0;
+    top:0;
+    bottom:0;
+    background:rgba(7,10,22,.96);
+    border-left:1px solid rgba(255,255,255,.08);
+    padding:20px;
+    overflow-y:auto;
+    z-index:20;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 5px 25px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+    margin-bottom:20px;
+}
+
+.brand-logo{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+}
+
+.brand strong{
+    display:block;
+}
+
+.brand small{
+    color:#8b93a7;
+}
+
+.nav-btn{
+    width:100%;
+    border:none;
+    background:transparent;
+    color:#aeb6c8;
+    text-align:right;
+    padding:13px 14px;
+    border-radius:13px;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+    color:#fff;
+    background:linear-gradient(
+        90deg,
+        rgba(124,58,237,.25),
+        rgba(37,99,235,.12)
+    );
+}
+
+.main{
+    margin-right:270px;
+    width:calc(100% - 270px);
+    padding:25px;
+}
+
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.topbar h2{
+    font-size:25px;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#9ca3af;
+    font-size:13px;
+}
+
+.logout{
+    border:none;
+    background:#1f2937;
+    color:#fff;
+    border-radius:12px;
+    padding:10px 14px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    padding:20px;
+    border-radius:20px;
+    background:rgba(15,18,35,.8);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.stat-icon{
+    font-size:25px;
+}
+
+.stat-value{
+    font-size:27px;
+    font-weight:900;
+    margin-top:8px;
+}
+
+.stat-title{
+    color:#8992a6;
+    font-size:13px;
+}
+
+/* CONTENT */
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.section-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.section-head h3{
+    font-size:22px;
+}
+
+.add-btn{
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    border:none;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:13px;
+    font-weight:700;
+}
+
+.table-wrap{
+    background:rgba(12,16,30,.82);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:850px;
+}
+
+th,
+td{
+    padding:14px;
+    text-align:right;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+th{
+    color:#9ca3af;
+    font-size:13px;
+    background:rgba(255,255,255,.02);
+}
+
+td{
+    font-size:14px;
+}
+
+.badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.badge-on{
+    background:rgba(16,185,129,.13);
+    color:#34d399;
+}
+
+.badge-off{
+    background:rgba(239,68,68,.13);
+    color:#f87171;
+}
+
+.actions{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+.action{
+    border:none;
+    border-radius:9px;
+    padding:7px 10px;
+    color:#fff;
+    font-size:12px;
+}
+
+.edit{
+    background:#2563eb;
+}
+
+.delete{
+    background:#dc2626;
+}
+
+.toggle{
+    background:#7c3aed;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:100;
+    backdrop-filter:blur(5px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:650px;
+    max-height:90vh;
+    overflow:auto;
+    background:#0c1020;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:24px;
+    padding:25px;
+}
+
+.modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.close{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:12px;
+    background:#1f2937;
+    color:#fff;
+    font-size:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.modal-actions button{
+    flex:1;
+}
+
+/* VISITS */
+
+.visit-card{
+    background:rgba(12,16,30,.82);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
+    padding:20px;
+}
+
+.visit-number{
+    font-size:42px;
+    font-weight:900;
+}
+
+/* MOBILE */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .sidebar{
+        transform:translateX(100%);
+        transition:.25s;
+        width:280px;
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-right:0;
+        width:100%;
+        padding:15px;
+    }
+
+    .mobile-menu{
+        display:block;
+        border:none;
+        background:#1f2937;
+        color:#fff;
+        border-radius:12px;
+        padding:10px 13px;
+        font-size:20px;
+    }
+
+    .topbar{
+        align-items:flex-start;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat{
+        padding:14px;
+    }
+
+    .stat-value{
+        font-size:22px;
+    }
+
+    .topbar h2{
+        font-size:19px;
+    }
+
+    .user-box{
+        display:none;
+    }
+
+    .login-box{
+        padding:25px 18px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="login-page">
+
+    <div class="login-box">
+
+        <div class="logo">DS</div>
+
+        <h1>لوحة إدارة Delk Star</h1>
+
+        <p>الدخول إلى لوحة الإدارة الرئيسية</p>
+
+        <div id="loginError" class="error"></div>
+
+        <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input
+                id="loginEmail"
+                class="form-control"
+                type="email"
+                value="delk.admin@gmail.com"
+                autocomplete="email"
+            >
+        </div>
+
+        <div class="form-group">
+            <label>كلمة المرور</label>
+            <input
+                id="loginPassword"
+                class="form-control"
+                type="password"
+                placeholder="أدخل كلمة المرور"
+                autocomplete="current-password"
+            >
+        </div>
+
+        <button id="loginBtn" class="btn btn-primary">
+            دخول لوحة الإدارة
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- APP -->
+
+<div id="app" class="app hidden">
+
+    <aside id="sidebar" class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">DS</div>
+
+            <div>
+                <strong>Delk Star</strong>
+                <small>Admin Panel</small>
+            </div>
+
+        </div>
+
+        <button class="nav-btn active" data-section="dashboard">
+            📊 لوحة التحكم
+        </button>
+
+        <button class="nav-btn" data-section="companies">
+            🏢 الشركات
+        </button>
+
+        <button class="nav-btn" data-section="products">
+            📦 المنتجات
+        </button>
+
+        <button class="nav-btn" data-section="services">
+            🛍️ الخدمات
+        </button>
+
+        <button class="nav-btn" data-section="campaigns">
+            📈 الحملات
+        </button>
+
+        <button class="nav-btn" data-section="advertisements">
+            📣 الإعلانات
+        </button>
+
+        <button class="nav-btn" data-section="statistics">
+            👁️ الإحصائيات
+        </button>
+
+    </aside>
+
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <div style="display:flex;align-items:center;gap:10px">
+
+                <button id="mobileMenu" class="mobile-menu">
+                    ☰
+                </button>
+
+                <div>
+                    <h2 id="pageTitle">لوحة التحكم</h2>
+                </div>
+
+            </div>
+
+            <div class="user-box">
+
+                <span id="adminEmail"></span>
+
+                <button id="logoutBtn" class="logout">
+                    تسجيل الخروج
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="section active">
+
+            <div class="stats">
+
+                <div class="stat">
+                    <div class="stat-icon">🏢</div>
+                    <div id="companiesCount" class="stat-value">0</div>
+                    <div class="stat-title">الشركات</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">📦</div>
+                    <div id="productsCount" class="stat-value">0</div>
+                    <div class="stat-title">المنتجات</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">🛍️</div>
+                    <div id="servicesCount" class="stat-value">0</div>
+                    <div class="stat-title">الخدمات</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon">👁️</div>
+                    <div id="visitsCount" class="stat-value">0</div>
+                    <div class="stat-title">زيارات المتجر</div>
+                </div>
+
+            </div>
+
+
+            <div class="visit-card">
+
+                <h3>🚀 موسوعة Delk Star</h3>
+
+                <p style="color:#9ca3af;margin-top:10px;line-height:2">
+                    من هنا يمكنك إدارة الشركات والمنتجات والخدمات والحملات
+                    والإعلانات وكل المحتوى الظاهر في متجر Delk Star.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPANIES -->
+
+        <section id="companies" class="section">
+
+            <div class="section-head">
+
+                <h3>🏢 الشركات</h3>
+
+                <button class="add-btn" onclick="openCompanyModal()">
+                    + إضافة شركة
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>الشركة</th>
+                            <th>الاسم الإنجليزي</th>
+                            <th>التصنيف</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="companiesTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+
+        <section id="products" class="section">
+
+            <div class="section-head">
+
+                <h3>📦 المنتجات</h3>
+
+                <button class="add-btn" onclick="openProductModal()">
+                    + إضافة منتج
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>المنتج</th>
+                            <th>الشركة</th>
+                            <th>التصنيف</th>
+                            <th>السعر</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="productsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <section id="services" class="section">
+
+            <div class="section-head">
+
+                <h3>🛍️ الخدمات</h3>
+
+                <button class="add-btn" onclick="openServiceModal()">
+                    + إضافة خدمة
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>الخدمة</th>
+                            <th>الشركة</th>
+                            <th>السعر</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="servicesTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAMPAIGNS -->
+
+        <section id="campaigns" class="section">
+
+            <div class="section-head">
+
+                <h3>📈 الحملات التسويقية</h3>
+
+                <button class="add-btn" onclick="openCampaignModal()">
+                    + إضافة حملة
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>الحملة</th>
+                            <th>الشركة</th>
+                            <th>السعر</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="campaignsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADS -->
+
+        <section id="advertisements" class="section">
+
+            <div class="section-head">
+
+                <h3>📣 الإعلانات</h3>
+
+                <button class="add-btn" onclick="openAdModal()">
+                    + إضافة إعلان
+                </button>
+
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>الإعلان</th>
+                            <th>الشركة</th>
+                            <th>السعر</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="adsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+
+        <section id="statistics" class="section">
+
+            <div class="section-head">
+
+                <h3>👁️ إحصائيات الزيارات</h3>
+
+            </div>
+
+            <div class="visit-card">
+
+                <div class="stat-title">
+                    إجمالي زيارات المتجر
+                </div>
+
+                <div id="totalVisits" class="visit-number">
+                    0
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>الصفحة</th>
+                            <th>معرف الزائر</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="visitsTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- COMPANY MODAL -->
+
+<div id="companyModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3 id="companyModalTitle">
+                إضافة شركة
+            </h3>
+
+            <button class="close" onclick="closeModal('companyModal')">
+                ×
+            </button>
+
+        </div>
+
+        <input id="companyId" type="hidden">
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>اسم الشركة</label>
+                <input id="companyName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الاسم الإنجليزي</label>
+                <input id="companyEnglish" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الأيقونة</label>
+                <input id="companyIcon" class="form-control" value="🏢">
+            </div>
+
+            <div class="form-group">
+                <label>التصنيف</label>
+                <input id="companyCategory" class="form-control" value="company">
+            </div>
+
+            <div class="form-group full">
+                <label>الوصف</label>
+                <textarea id="companyDescription" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>رابط الموقع</label>
+                <input id="companyWebsite" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>واتساب</label>
+                <input id="companyWhatsapp" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>البريد</label>
+                <input id="companyEmail" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>ترتيب الظهور</label>
+                <input id="companySort" class="form-control" type="number" value="0">
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-primary" onclick="saveCompany()">
+                حفظ
+            </button>
+
+            <button class="btn btn-secondary" onclick="closeModal('companyModal')">
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>إضافة / تعديل منتج</h3>
+
+            <button class="close" onclick="closeModal('productModal')">
+                ×
+            </button>
+
+        </div>
+
+        <input id="productId" type="hidden">
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>اسم المنتج</label>
+                <input id="productTitle" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>العنوان الفرعي</label>
+                <input id="productSubtitle" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الشركة</label>
+                <select id="productCompany" class="form-control">
+                    <option value="">اختر الشركة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>التصنيف</label>
+                <select id="productCategory" class="form-control">
+                    <option value="website">موقع</option>
+                    <option value="app">تطبيق</option>
+                    <option value="game">لعبة</option>
+                    <option value="software">برنامج</option>
+                    <option value="other">أخرى</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>السعر</label>
+                <input id="productPrice" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>وصف السعر</label>
+                <input id="productPriceLabel" class="form-control" placeholder="مثال: يبدأ من 1500 جنيه">
+            </div>
+
+            <div class="form-group full">
+                <label>الوصف</label>
+                <textarea id="productDescription" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>الأيقونة</label>
+                <input id="productIcon" class="form-control" value="📦">
+            </div>
+
+            <div class="form-group">
+                <label>رابط الصورة</label>
+                <input id="productImage" class="form-control">
+            </div>
+
+            <div class="form-group full">
+                <label>رابط المنتج</label>
+                <input id="productLink" class="form-control">
+            </div>
+
+            <div class="form-group full">
+                <label>المميزات — كل ميزة في سطر</label>
+                <textarea id="productFeatures" class="form-control" rows="5"></textarea>
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-primary" onclick="saveProduct()">
+                حفظ المنتج
+            </button>
+
+            <button class="btn btn-secondary" onclick="closeModal('productModal')">
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SERVICE MODAL -->
+
+<div id="serviceModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>إضافة / تعديل خدمة</h3>
+
+            <button class="close" onclick="closeModal('serviceModal')">
+                ×
+            </button>
+
+        </div>
+
+        <input id="serviceId" type="hidden">
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>اسم الخدمة</label>
+                <input id="serviceName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الشركة</label>
+                <select id="serviceCompany" class="form-control">
+                    <option value="">اختر الشركة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>الأيقونة</label>
+                <input id="serviceIcon" class="form-control" value="⚙️">
+            </div>
+
+            <div class="form-group">
+                <label>السعر</label>
+                <input id="servicePrice" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>وصف السعر</label>
+                <input id="servicePriceLabel" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>ترتيب الظهور</label>
+                <input id="serviceSort" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group full">
+                <label>الوصف</label>
+                <textarea id="serviceDescription" class="form-control" rows="5"></textarea>
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-primary" onclick="saveService()">
+                حفظ الخدمة
+            </button>
+
+            <button class="btn btn-secondary" onclick="closeModal('serviceModal')">
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CAMPAIGN MODAL -->
+
+<div id="campaignModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>إضافة / تعديل حملة</h3>
+
+            <button class="close" onclick="closeModal('campaignModal')">
+                ×
+            </button>
+
+        </div>
+
+        <input id="campaignId" type="hidden">
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>اسم الحملة</label>
+                <input id="campaignName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الشركة</label>
+                <input id="campaignCompany" class="form-control" value="Delk Marketing">
+            </div>
+
+            <div class="form-group">
+                <label>السعر</label>
+                <input id="campaignPrice" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>ترتيب الظهور</label>
+                <input id="campaignSort" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group full">
+                <label>الوصف</label>
+                <textarea id="campaignDescription" class="form-control" rows="5"></textarea>
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-primary" onclick="saveCampaign()">
+                حفظ الحملة
+            </button>
+
+            <button class="btn btn-secondary" onclick="closeModal('campaignModal')">
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- AD MODAL -->
+
+<div id="adModal" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h3>إضافة / تعديل إعلان</h3>
+
+            <button class="close" onclick="closeModal('adModal')">
+                ×
+            </button>
+
+        </div>
+
+        <input id="adId" type="hidden">
+
+        <div class="grid">
+
+            <div class="form-group">
+                <label>عنوان الإعلان</label>
+                <input id="adTitle" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>الشركة</label>
+                <input id="adCompany" class="form-control" value="Delk Advertising">
+            </div>
+
+            <div class="form-group">
+                <label>السعر</label>
+                <input id="adPrice" class="form-control" type="number" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>وصف السعر</label>
+                <input id="adPriceLabel" class="form-control">
+            </div>
+
+            <div class="form-group full">
+                <label>الوصف</label>
+                <textarea id="adDescription" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>رابط الصورة</label>
+                <input id="adImage" class="form-control">
+            </div>
+
+            <div class="form-group full">
+                <label>رابط الإعلان</label>
+                <input id="adLink" class="form-control">
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button class="btn btn-primary" onclick="saveAd()">
+                حفظ الإعلان
+            </button>
+
+            <button class="btn btn-secondary" onclick="closeModal('adModal')">
+                إلغاء
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SUPABASE
+========================= */
+
+const SUPABASE_URL =
+"https://rqgffpzjonyjliffhsgm.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_Rl4LcU-2cEqjrzVURDkdQg_kcs-HQ5z";
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* =========================
+   DATA
+========================= */
+
+let companies = [];
+let products = [];
+let services = [];
+let campaigns = [];
+let advertisements = [];
+let visits = [];
+
+
+/* =========================
+   HELPERS
+========================= */
+
+function esc(value){
+
+    if(value === null || value === undefined)
+        return "";
+
+    return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+}
+
+
+function showError(message){
+
+    const box =
+        document.getElementById("loginError");
+
+    box.textContent = message;
+    box.style.display = "block";
+}
+
+
+function hideError(){
+
+    const box =
+        document.getElementById("loginError");
+
+    box.style.display = "none";
+}
+
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+}
+
+
+document.querySelectorAll(".modal").forEach(modal=>{
+
+    modal.addEventListener("click",e=>{
+
+        if(e.target === modal){
+            modal.classList.remove("show");
+        }
+
+    });
+
+});
+
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key === "Escape"){
+
+        document
+            .querySelectorAll(".modal.show")
+            .forEach(modal=>{
+                modal.classList.remove("show");
+            });
+
+    }
+
+});
+
+
+/* =========================
+   AUTH
+========================= */
+
+async function checkSession(){
+
+    try{
+
+        const {
+            data:{
+                session
+            }
+        } = await supabaseClient
+            .auth
+            .getSession();
+
+        if(!session){
+
+            showLogin();
+            return;
+
+        }
+
+        await verifyAdmin(session.user);
+
+    }catch(error){
+
+        console.error(error);
+
+        showLogin();
+
+    }
+
+}
+
+
+async function verifyAdmin(user){
+
+    try{
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("admin_users")
+            .select("user_id,full_name,is_active")
+            .eq("user_id",user.id)
+            .eq("is_active",true)
+            .maybeSingle();
+
+        if(error){
+
+            throw error;
+
+        }
+
+        if(!data){
+
+            await supabaseClient.auth.signOut();
+
+            showError(
+                "هذا الحساب ليس لديه صلاحية دخول لوحة الإدارة."
+            );
+
+            showLogin();
+
+            return;
+
+        }
+
+        document
+            .getElementById("loginPage")
+            .classList.add("hidden");
+
+        document
+            .getElementById("app")
+            .classList.remove("hidden");
+
+        document
+            .getElementById("adminEmail")
+            .textContent =
+            user.email || "";
+
+        await loadAll();
+
+    }catch(error){
+
+        console.error(error);
+
+        showError(
+            "حدث خطأ أثناء التحقق من صلاحيات الأدمن: " +
+            error.message
+        );
+
+        showLogin();
+
+    }
+
+}
+
+
+function showLogin(){
+
+    document
+        .getElementById("loginPage")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("app")
+        .classList.add("hidden");
+
+}
+
+
+document
+    .getElementById("loginBtn")
+    .addEventListener("click",login);
+
+
+document
+    .getElementById("loginPassword")
+    .addEventListener("keydown",e=>{
+
+        if(e.key === "Enter"){
+            login();
+        }
+
+    });
+
+
+async function login(){
+
+    hideError();
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById("loginPassword")
+        .value;
+
+    if(!email || !password){
+
+        showError(
+            "اكتب البريد الإلكتروني وكلمة المرور."
+        );
+
+        return;
+
+    }
+
+    const button =
+        document.getElementById("loginBtn");
+
+    button.disabled = true;
+    button.textContent = "جاري تسجيل الدخول...";
+
+    try{
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .auth
+            .signInWithPassword({
+                email,
+                password
+            });
+
+        if(error){
+
+            throw error;
+
+        }
+
+        if(!data.user){
+
+            throw new Error(
+                "لم يتم العثور على المستخدم."
+            );
+
+        }
+
+        await verifyAdmin(data.user);
+
+    }catch(error){
+
+        console.error(error);
+
+        showError(
+            "فشل تسجيل الدخول: " +
+            error.message
+        );
+
+    }finally{
+
+        button.disabled = false;
+        button.textContent = "دخول لوحة الإدارة";
+
+    }
+
+}
+
+
+document
+    .getElementById("logoutBtn")
+    .addEventListener("click",async()=>{
+
+        await supabaseClient.auth.signOut();
+
+        showLogin();
+
+    });
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+const titles = {
+
+    dashboard:"لوحة التحكم",
+    companies:"الشركات",
+    products:"المنتجات",
+    services:"الخدمات",
+    campaigns:"الحملات التسويقية",
+    advertisements:"الإعلانات",
+    statistics:"الإحصائيات"
+
+};
+
+
+document
+.querySelectorAll(".nav-btn")
+.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const section =
+            button.dataset.section;
+
+        document
+            .querySelectorAll(".nav-btn")
+            .forEach(btn=>{
+                btn.classList.remove("active");
+            });
+
+        button.classList.add("active");
+
+        document
+            .querySelectorAll(".section")
+            .forEach(sec=>{
+                sec.classList.remove("active");
+            });
+
+        document
+            .getElementById(section)
+            .classList.add("active");
+
+        document
+            .getElementById("pageTitle")
+            .textContent =
+            titles[section] || "";
+
+        document
+            .getElementById("sidebar")
+            .classList.remove("open");
+
+    });
+
+});
+
+
+document
+    .getElementById("mobileMenu")
+    .addEventListener("click",()=>{
+
+        document
+            .getElementById("sidebar")
+            .classList.toggle("open");
+
+    });
+
+
+/* =========================
+   LOAD ALL
+========================= */
+
+async function loadAll(){
+
+    await loadCompanies();
+
+    await Promise.all([
+
+        loadServices(),
+        loadProducts(),
+        loadCampaigns(),
+        loadAds(),
+        loadVisits()
+
+    ]);
+
+    updateStats();
+
+}
+
+
+/* =========================
+   COMPANIES
+========================= */
+
+async function loadCompanies(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("companies")
+        .select("*")
+        .order("sort_order",{ascending:true})
+        .order("created_at",{ascending:false});
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "خطأ في تحميل الشركات:\n" +
+            error.message
+        );
+
+        return;
+
+    }
+
+    companies = data || [];
+
+    renderCompanies();
+
+    refreshCompanySelects();
+
+}
+
+
+function renderCompanies(){
+
+    const tbody =
+        document.getElementById("companiesTable");
+
+    if(!companies.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد شركات حتى الآن
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        companies.map(company=>`
+
+            <tr>
+
+                <td>
+                    ${esc(company.icon || "🏢")}
+                    ${esc(company.name)}
+                </td>
+
+                <td>
+                    ${esc(company.english_name)}
+                </td>
+
+                <td>
+                    ${esc(company.category)}
+                </td>
+
+                <td>
+                    ${
+                        company.is_active
+                        ?
+                        `<span class="badge badge-on">نشطة</span>`
+                        :
+                        `<span class="badge badge-off">متوقفة</span>`
+                    }
+                </td>
+
+                <td>
+
+                    <div class="actions">
+
+                        <button
+                            class="action edit"
+                            onclick="editCompany('${company.id}')">
+                            تعديل
+                        </button>
+
+                        <button
+                            class="action toggle"
+                            onclick="toggleCompany('${company.id}',${company.is_active})">
+                            ${company.is_active ? "إيقاف" : "تفعيل"}
+                        </button>
+
+                        <button
+                            class="action delete"
+                            onclick="deleteCompany('${company.id}')">
+                            حذف
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+function openCompanyModal(){
+
+    document
+        .getElementById("companyModalTitle")
+        .textContent = "إضافة شركة";
+
+    document
+        .getElementById("companyId")
+        .value = "";
+
+    document
+        .getElementById("companyName")
+        .value = "";
+
+    document
+        .getElementById("companyEnglish")
+        .value = "";
+
+    document
+        .getElementById("companyIcon")
+        .value = "🏢";
+
+    document
+        .getElementById("companyCategory")
+        .value = "company";
+
+    document
+        .getElementById("companyDescription")
+        .value = "";
+
+    document
+        .getElementById("companyWebsite")
+        .value = "";
+
+    document
+        .getElementById("companyWhatsapp")
+        .value = "";
+
+    document
+        .getElementById("companyEmail")
+        .value = "";
+
+    document
+        .getElementById("companySort")
+        .value = "0";
+
+    document
+        .getElementById("companyModal")
+        .classList.add("show");
+
+}
+
+
+function editCompany(id){
+
+    const company =
+        companies.find(x=>x.id === id);
+
+    if(!company) return;
+
+    openCompanyModal();
+
+    document
+        .getElementById("companyModalTitle")
+        .textContent = "تعديل الشركة";
+
+    document
+        .getElementById("companyId")
+        .value = company.id;
+
+    document
+        .getElementById("companyName")
+        .value = company.name || "";
+
+    document
+        .getElementById("companyEnglish")
+        .value = company.english_name || "";
+
+    document
+        .getElementById("companyIcon")
+        .value = company.icon || "🏢";
+
+    document
+        .getElementById("companyCategory")
+        .value = company.category || "company";
+
+    document
+        .getElementById("companyDescription")
+        .value = company.description || "";
+
+    document
+        .getElementById("companyWebsite")
+        .value = company.website_url || "";
+
+    document
+        .getElementById("companyWhatsapp")
+        .value = company.whatsapp || "";
+
+    document
+        .getElementById("companyEmail")
+        .value = company.email || "";
+
+    document
+        .getElementById("companySort")
+        .value = company.sort_order || 0;
+
+}
+
+
+async function saveCompany(){
+
+    const id =
+        document.getElementById("companyId").value;
+
+    const payload = {
+
+        name:
+            document
+            .getElementById("companyName")
+            .value.trim(),
+
+        english_name:
+            document
+            .getElementById("companyEnglish")
+            .value.trim(),
+
+        description:
+            document
+            .getElementById("companyDescription")
+            .value.trim(),
+
+        icon:
+            document
+            .getElementById("companyIcon")
+            .value.trim() || "🏢",
+
+        website_url:
+            document
+            .getElementById("companyWebsite")
+            .value.trim(),
+
+        whatsapp:
+            document
+            .getElementById("companyWhatsapp")
+            .value.trim(),
+
+        email:
+            document
+            .getElementById("companyEmail")
+            .value.trim(),
+
+        category:
+            document
+            .getElementById("companyCategory")
+            .value.trim() || "company",
+
+        sort_order:
+            Number(
+                document
+                .getElementById("companySort")
+                .value || 0
+            )
+
+    };
+
+    if(!payload.name){
+
+        alert("اكتب اسم الشركة.");
+
+        return;
+
+    }
+
+    try{
+
+        let result;
+
+        if(id){
+
+            result =
+                await supabaseClient
+                .from("companies")
+                .update(payload)
+                .eq("id",id);
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("companies")
+                .insert(payload);
+
+        }
+
+        if(result.error)
+            throw result.error;
+
+        closeModal("companyModal");
+
+        await loadCompanies();
+
+        updateStats();
+
+    }catch(error){
+
+        alert(
+            "حدث خطأ:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+async function toggleCompany(id,current){
+
+    const {error} =
+        await supabaseClient
+        .from("companies")
+        .update({
+            is_active:!current
+        })
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadCompanies();
+
+}
+
+
+async function deleteCompany(id){
+
+    if(!confirm("هل تريد حذف الشركة؟"))
+        return;
+
+    const {error} =
+        await supabaseClient
+        .from("companies")
+        .delete()
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadCompanies();
+
+}
+
+
+/* =========================
+   COMPANY SELECTS
+========================= */
+
+function refreshCompanySelects(){
+
+    const selects = [
+
+        document.getElementById("productCompany"),
+
+        document.getElementById("serviceCompany")
+
+    ];
+
+    selects.forEach(select=>{
+
+        if(!select) return;
+
+        const oldValue =
+            select.value;
+
+        select.innerHTML =
+            `<option value="">اختر الشركة</option>`;
+
+        companies.forEach(company=>{
+
+            const option =
+                document.createElement("option");
+
+            option.value =
+                company.name || "";
+
+            option.textContent =
+                `${company.icon || "🏢"} ${company.name || ""}` +
+                (
+                    company.english_name
+                    ?
+                    ` — ${company.english_name}`
+                    :
+                    ""
+                );
+
+            select.appendChild(option);
+
+        });
+
+        if(oldValue)
+            select.value = oldValue;
+
+    });
+
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+async function loadProducts(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("store_items")
+        .select("*")
+        .order("sort_order",{ascending:true})
+        .order("created_at",{ascending:false});
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "خطأ في تحميل المنتجات:\n" +
+            error.message
+        );
+
+        return;
+
+    }
+
+    products = data || [];
+
+    renderProducts();
+
+}
+
+
+function renderProducts(){
+
+    const tbody =
+        document.getElementById("productsTable");
+
+    if(!products.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="6"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد منتجات
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        products.map(product=>`
+
+            <tr>
+
+                <td>
+                    ${esc(product.icon || "📦")}
+                    ${esc(product.title)}
+                </td>
+
+                <td>
+                    ${esc(product.company)}
+                </td>
+
+                <td>
+                    ${esc(product.category)}
+                </td>
+
+                <td>
+                    ${esc(product.price_label || product.price || 0)}
+                </td>
+
+                <td>
+                    ${
+                        product.is_active
+                        ?
+                        `<span class="badge badge-on">نشط</span>`
+                        :
+                        `<span class="badge badge-off">متوقف</span>`
+                    }
+                </td>
+
+                <td>
+
+                    <div class="actions">
+
+                        <button
+                            class="action edit"
+                            onclick="editProduct('${product.id}')">
+                            تعديل
+                        </button>
+
+                        <button
+                            class="action toggle"
+                            onclick="toggleProduct('${product.id}',${product.is_active})">
+                            ${product.is_active ? "إيقاف" : "تفعيل"}
+                        </button>
+
+                        <button
+                            class="action delete"
+                            onclick="deleteProduct('${product.id}')">
+                            حذف
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+function openProductModal(){
+
+    refreshCompanySelects();
+
+    document
+        .getElementById("productId")
+        .value = "";
+
+    document
+        .getElementById("productTitle")
+        .value = "";
+
+    document
+        .getElementById("productSubtitle")
+        .value = "";
+
+    document
+        .getElementById("productCompany")
+        .value = "";
+
+    document
+        .getElementById("productCategory")
+        .value = "website";
+
+    document
+        .getElementById("productPrice")
+        .value = "0";
+
+    document
+        .getElementById("productPriceLabel")
+        .value = "";
+
+    document
+        .getElementById("productDescription")
+        .value = "";
+
+    document
+        .getElementById("productIcon")
+        .value = "📦";
+
+    document
+        .getElementById("productImage")
+        .value = "";
+
+    document
+        .getElementById("productLink")
+        .value = "";
+
+    document
+        .getElementById("productFeatures")
+        .value = "";
+
+    document
+        .getElementById("productModal")
+        .classList.add("show");
+
+}
+
+
+function editProduct(id){
+
+    const product =
+        products.find(x=>x.id === id);
+
+    if(!product) return;
+
+    refreshCompanySelects();
+
+    document
+        .getElementById("productId")
+        .value = product.id;
+
+    document
+        .getElementById("productTitle")
+        .value = product.title || "";
+
+    document
+        .getElementById("productSubtitle")
+        .value = product.subtitle || "";
+
+    document
+        .getElementById("productCompany")
+        .value = product.company || "";
+
+    document
+        .getElementById("productCategory")
+        .value = product.category || "website";
+
+    document
+        .getElementById("productPrice")
+        .value = product.price || 0;
+
+    document
+        .getElementById("productPriceLabel")
+        .value = product.price_label || "";
+
+    document
+        .getElementById("productDescription")
+        .value = product.description || "";
+
+    document
+        .getElementById("productIcon")
+        .value = product.icon || "📦";
+
+    document
+        .getElementById("productImage")
+        .value = product.image_url || "";
+
+    document
+        .getElementById("productLink")
+        .value = product.link || "";
+
+    document
+        .getElementById("productFeatures")
+        .value =
+        Array.isArray(product.features)
+        ?
+        product.features.join("\n")
+        :
+        "";
+
+    document
+        .getElementById("productModal")
+        .classList.add("show");
+
+}
+
+
+async function saveProduct(){
+
+    const id =
+        document.getElementById("productId").value;
+
+    const features =
+        document
+        .getElementById("productFeatures")
+        .value
+        .split("\n")
+        .map(x=>x.trim())
+        .filter(Boolean);
+
+    const payload = {
+
+        title:
+            document
+            .getElementById("productTitle")
+            .value.trim(),
+
+        subtitle:
+            document
+            .getElementById("productSubtitle")
+            .value.trim(),
+
+        description:
+            document
+            .getElementById("productDescription")
+            .value.trim(),
+
+        category:
+            document
+            .getElementById("productCategory")
+            .value,
+
+        company:
+            document
+            .getElementById("productCompany")
+            .value,
+
+        icon:
+            document
+            .getElementById("productIcon")
+            .value.trim() || "📦",
+
+        price:
+            Number(
+                document
+                .getElementById("productPrice")
+                .value || 0
+            ),
+
+        price_label:
+            document
+            .getElementById("productPriceLabel")
+            .value.trim(),
+
+        link:
+            document
+            .getElementById("productLink")
+            .value.trim(),
+
+        image_url:
+            document
+            .getElementById("productImage")
+            .value.trim(),
+
+        features
+
+    };
+
+    if(!payload.title){
+
+        alert("اكتب اسم المنتج.");
+
+        return;
+
+    }
+
+    try{
+
+        let result;
+
+        if(id){
+
+            result =
+                await supabaseClient
+                .from("store_items")
+                .update(payload)
+                .eq("id",id);
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("store_items")
+                .insert(payload);
+
+        }
+
+        if(result.error)
+            throw result.error;
+
+        closeModal("productModal");
+
+        await loadProducts();
+
+        updateStats();
+
+    }catch(error){
+
+        alert(
+            "حدث خطأ:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+async function toggleProduct(id,current){
+
+    const {error} =
+        await supabaseClient
+        .from("store_items")
+        .update({
+            is_active:!current
+        })
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadProducts();
+
+}
+
+
+async function deleteProduct(id){
+
+    if(!confirm("هل تريد حذف المنتج؟"))
+        return;
+
+    const {error} =
+        await supabaseClient
+        .from("store_items")
+        .delete()
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadProducts();
+
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+async function loadServices(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("services")
+        .select("*")
+        .order("sort_order",{ascending:true})
+        .order("created_at",{ascending:false});
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "خطأ في تحميل الخدمات:\n" +
+            error.message
+        );
+
+        return;
+
+    }
+
+    services = data || [];
+
+    renderServices();
+
+}
+
+
+function renderServices(){
+
+    const tbody =
+        document.getElementById("servicesTable");
+
+    if(!services.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد خدمات
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        services.map(service=>`
+
+            <tr>
+
+                <td>
+                    ${esc(service.icon || "⚙️")}
+                    ${esc(service.name)}
+                </td>
+
+                <td>
+                    ${esc(service.company)}
+                </td>
+
+                <td>
+                    ${esc(service.price_label || service.price || 0)}
+                </td>
+
+                <td>
+                    ${
+                        service.is_active
+                        ?
+                        `<span class="badge badge-on">نشطة</span>`
+                        :
+                        `<span class="badge badge-off">متوقفة</span>`
+                    }
+                </td>
+
+                <td>
+
+                    <div class="actions">
+
+                        <button
+                            class="action edit"
+                            onclick="editService('${service.id}')">
+                            تعديل
+                        </button>
+
+                        <button
+                            class="action toggle"
+                            onclick="toggleService('${service.id}',${service.is_active})">
+                            ${service.is_active ? "إيقاف" : "تفعيل"}
+                        </button>
+
+                        <button
+                            class="action delete"
+                            onclick="deleteService('${service.id}')">
+                            حذف
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+function openServiceModal(){
+
+    refreshCompanySelects();
+
+    document
+        .getElementById("serviceId")
+        .value = "";
+
+    document
+        .getElementById("serviceName")
+        .value = "";
+
+    document
+        .getElementById("serviceCompany")
+        .value = "";
+
+    document
+        .getElementById("serviceIcon")
+        .value = "⚙️";
+
+    document
+        .getElementById("servicePrice")
+        .value = "0";
+
+    document
+        .getElementById("servicePriceLabel")
+        .value = "";
+
+    document
+        .getElementById("serviceDescription")
+        .value = "";
+
+    document
+        .getElementById("serviceSort")
+        .value = "0";
+
+    document
+        .getElementById("serviceModal")
+        .classList.add("show");
+
+}
+
+
+function editService(id){
+
+    const service =
+        services.find(x=>x.id === id);
+
+    if(!service) return;
+
+    refreshCompanySelects();
+
+    document
+        .getElementById("serviceId")
+        .value = service.id;
+
+    document
+        .getElementById("serviceName")
+        .value = service.name || "";
+
+    document
+        .getElementById("serviceCompany")
+        .value = service.company || "";
+
+    document
+        .getElementById("serviceIcon")
+        .value = service.icon || "⚙️";
+
+    document
+        .getElementById("servicePrice")
+        .value = service.price || 0;
+
+    document
+        .getElementById("servicePriceLabel")
+        .value = service.price_label || "";
+
+    document
+        .getElementById("serviceDescription")
+        .value = service.description || "";
+
+    document
+        .getElementById("serviceSort")
+        .value = service.sort_order || 0;
+
+    document
+        .getElementById("serviceModal")
+        .classList.add("show");
+
+}
+
+
+async function saveService(){
+
+    const id =
+        document.getElementById("serviceId").value;
+
+    const payload = {
+
+        company:
+            document
+            .getElementById("serviceCompany")
+            .value,
+
+        name:
+            document
+            .getElementById("serviceName")
+            .value.trim(),
+
+        description:
+            document
+            .getElementById("serviceDescription")
+            .value.trim(),
+
+        icon:
+            document
+            .getElementById("serviceIcon")
+            .value.trim() || "⚙️",
+
+        price:
+            Number(
+                document
+                .getElementById("servicePrice")
+                .value || 0
+            ),
+
+        price_label:
+            document
+            .getElementById("servicePriceLabel")
+            .value.trim(),
+
+        sort_order:
+            Number(
+                document
+                .getElementById("serviceSort")
+                .value || 0
+            )
+
+    };
+
+    if(!payload.name){
+
+        alert("اكتب اسم الخدمة.");
+
+        return;
+
+    }
+
+    if(!payload.company){
+
+        alert("اختر الشركة.");
+
+        return;
+
+    }
+
+    try{
+
+        let result;
+
+        if(id){
+
+            result =
+                await supabaseClient
+                .from("services")
+                .update(payload)
+                .eq("id",id);
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("services")
+                .insert(payload);
+
+        }
+
+        if(result.error)
+            throw result.error;
+
+        closeModal("serviceModal");
+
+        await loadServices();
+
+        updateStats();
+
+    }catch(error){
+
+        alert(
+            "حدث خطأ:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+async function toggleService(id,current){
+
+    const {error} =
+        await supabaseClient
+        .from("services")
+        .update({
+            is_active:!current
+        })
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadServices();
+
+}
+
+
+async function deleteService(id){
+
+    if(!confirm("هل تريد حذف الخدمة؟"))
+        return;
+
+    const {error} =
+        await supabaseClient
+        .from("services")
+        .delete()
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadServices();
+
+}
+
+
+/* =========================
+   CAMPAIGNS
+========================= */
+
+async function loadCampaigns(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("marketing_campaigns")
+        .select("*")
+        .order("sort_order",{ascending:true})
+        .order("created_at",{ascending:false});
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "خطأ في تحميل الحملات:\n" +
+            error.message
+        );
+
+        return;
+
+    }
+
+    campaigns = data || [];
+
+    renderCampaigns();
+
+}
+
+
+function renderCampaigns(){
+
+    const tbody =
+        document.getElementById("campaignsTable");
+
+    if(!campaigns.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد حملات
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        campaigns.map(item=>`
+
+            <tr>
+
+                <td>
+                    ${esc(item.name)}
+                </td>
+
+                <td>
+                    ${esc(item.company)}
+                </td>
+
+                <td>
+                    ${esc(item.price)}
+                </td>
+
+                <td>
+                    ${
+                        item.is_active
+                        ?
+                        `<span class="badge badge-on">نشطة</span>`
+                        :
+                        `<span class="badge badge-off">متوقفة</span>`
+                    }
+                </td>
+
+                <td>
+
+                    <div class="actions">
+
+                        <button
+                            class="action edit"
+                            onclick="editCampaign('${item.id}')">
+                            تعديل
+                        </button>
+
+                        <button
+                            class="action toggle"
+                            onclick="toggleCampaign('${item.id}',${item.is_active})">
+                            ${item.is_active ? "إيقاف" : "تفعيل"}
+                        </button>
+
+                        <button
+                            class="action delete"
+                            onclick="deleteCampaign('${item.id}')">
+                            حذف
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+function openCampaignModal(){
+
+    document.getElementById("campaignId").value = "";
+    document.getElementById("campaignName").value = "";
+    document.getElementById("campaignCompany").value = "Delk Marketing";
+    document.getElementById("campaignPrice").value = "0";
+    document.getElementById("campaignSort").value = "0";
+    document.getElementById("campaignDescription").value = "";
+
+    document
+        .getElementById("campaignModal")
+        .classList.add("show");
+
+}
+
+
+function editCampaign(id){
+
+    const item =
+        campaigns.find(x=>x.id === id);
+
+    if(!item) return;
+
+    document.getElementById("campaignId").value = item.id;
+    document.getElementById("campaignName").value = item.name || "";
+    document.getElementById("campaignCompany").value = item.company || "Delk Marketing";
+    document.getElementById("campaignPrice").value = item.price || 0;
+    document.getElementById("campaignSort").value = item.sort_order || 0;
+    document.getElementById("campaignDescription").value = item.description || "";
+
+    document
+        .getElementById("campaignModal")
+        .classList.add("show");
+
+}
+
+
+async function saveCampaign(){
+
+    const id =
+        document.getElementById("campaignId").value;
+
+    const payload = {
+
+        name:
+            document
+            .getElementById("campaignName")
+            .value.trim(),
+
+        description:
+            document
+            .getElementById("campaignDescription")
+            .value.trim(),
+
+        price:
+            Number(
+                document
+                .getElementById("campaignPrice")
+                .value || 0
+            ),
+
+        company:
+            document
+            .getElementById("campaignCompany")
+            .value.trim() || "Delk Marketing",
+
+        sort_order:
+            Number(
+                document
+                .getElementById("campaignSort")
+                .value || 0
+            )
+
+    };
+
+    if(!payload.name){
+
+        alert("اكتب اسم الحملة.");
+
+        return;
+
+    }
+
+    try{
+
+        let result;
+
+        if(id){
+
+            result =
+                await supabaseClient
+                .from("marketing_campaigns")
+                .update(payload)
+                .eq("id",id);
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("marketing_campaigns")
+                .insert(payload);
+
+        }
+
+        if(result.error)
+            throw result.error;
+
+        closeModal("campaignModal");
+
+        await loadCampaigns();
+
+    }catch(error){
+
+        alert(
+            "حدث خطأ:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+async function toggleCampaign(id,current){
+
+    const {error} =
+        await supabaseClient
+        .from("marketing_campaigns")
+        .update({
+            is_active:!current
+        })
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadCampaigns();
+
+}
+
+
+async function deleteCampaign(id){
+
+    if(!confirm("هل تريد حذف الحملة؟"))
+        return;
+
+    const {error} =
+        await supabaseClient
+        .from("marketing_campaigns")
+        .delete()
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadCampaigns();
+
+}
+
+
+/* =========================
+   ADS
+========================= */
+
+async function loadAds(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("advertisements")
+        .select("*")
+        .order("sort_order",{ascending:true})
+        .order("created_at",{ascending:false});
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "خطأ في تحميل الإعلانات:\n" +
+            error.message
+        );
+
+        return;
+
+    }
+
+    advertisements = data || [];
+
+    renderAds();
+
+}
+
+
+function renderAds(){
+
+    const tbody =
+        document.getElementById("adsTable");
+
+    if(!advertisements.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد إعلانات
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        advertisements.map(item=>`
+
+            <tr>
+
+                <td>
+                    ${esc(item.title)}
+                </td>
+
+                <td>
+                    ${esc(item.company)}
+                </td>
+
+                <td>
+                    ${esc(item.price_label || item.price || 0)}
+                </td>
+
+                <td>
+                    ${
+                        item.is_active
+                        ?
+                        `<span class="badge badge-on">نشط</span>`
+                        :
+                        `<span class="badge badge-off">متوقف</span>`
+                    }
+                </td>
+
+                <td>
+
+                    <div class="actions">
+
+                        <button
+                            class="action edit"
+                            onclick="editAd('${item.id}')">
+                            تعديل
+                        </button>
+
+                        <button
+                            class="action toggle"
+                            onclick="toggleAd('${item.id}',${item.is_active})">
+                            ${item.is_active ? "إيقاف" : "تفعيل"}
+                        </button>
+
+                        <button
+                            class="action delete"
+                            onclick="deleteAd('${item.id}')">
+                            حذف
+                        </button>
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+function openAdModal(){
+
+    document.getElementById("adId").value = "";
+    document.getElementById("adTitle").value = "";
+    document.getElementById("adCompany").value = "Delk Advertising";
+    document.getElementById("adPrice").value = "0";
+    document.getElementById("adPriceLabel").value = "";
+    document.getElementById("adDescription").value = "";
+    document.getElementById("adImage").value = "";
+    document.getElementById("adLink").value = "";
+
+    document
+        .getElementById("adModal")
+        .classList.add("show");
+
+}
+
+
+function editAd(id){
+
+    const item =
+        advertisements.find(x=>x.id === id);
+
+    if(!item) return;
+
+    document.getElementById("adId").value = item.id;
+    document.getElementById("adTitle").value = item.title || "";
+    document.getElementById("adCompany").value = item.company || "Delk Advertising";
+    document.getElementById("adPrice").value = item.price || 0;
+    document.getElementById("adPriceLabel").value = item.price_label || "";
+    document.getElementById("adDescription").value = item.description || "";
+    document.getElementById("adImage").value = item.image_url || "";
+    document.getElementById("adLink").value = item.link || "";
+
+    document
+        .getElementById("adModal")
+        .classList.add("show");
+
+}
+
+
+async function saveAd(){
+
+    const id =
+        document.getElementById("adId").value;
+
+    const payload = {
+
+        title:
+            document
+            .getElementById("adTitle")
+            .value.trim(),
+
+        description:
+            document
+            .getElementById("adDescription")
+            .value.trim(),
+
+        image_url:
+            document
+            .getElementById("adImage")
+            .value.trim(),
+
+        link:
+            document
+            .getElementById("adLink")
+            .value.trim(),
+
+        company:
+            document
+            .getElementById("adCompany")
+            .value.trim() || "Delk Advertising",
+
+        price:
+            Number(
+                document
+                .getElementById("adPrice")
+                .value || 0
+            ),
+
+        price_label:
+            document
+            .getElementById("adPriceLabel")
+            .value.trim()
+
+    };
+
+    if(!payload.title){
+
+        alert("اكتب عنوان الإعلان.");
+
+        return;
+
+    }
+
+    try{
+
+        let result;
+
+        if(id){
+
+            result =
+                await supabaseClient
+                .from("advertisements")
+                .update(payload)
+                .eq("id",id);
+
+        }else{
+
+            result =
+                await supabaseClient
+                .from("advertisements")
+                .insert(payload);
+
+        }
+
+        if(result.error)
+            throw result.error;
+
+        closeModal("adModal");
+
+        await loadAds();
+
+    }catch(error){
+
+        alert(
+            "حدث خطأ:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+async function toggleAd(id,current){
+
+    const {error} =
+        await supabaseClient
+        .from("advertisements")
+        .update({
+            is_active:!current
+        })
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadAds();
+
+}
+
+
+async function deleteAd(id){
+
+    if(!confirm("هل تريد حذف الإعلان؟"))
+        return;
+
+    const {error} =
+        await supabaseClient
+        .from("advertisements")
+        .delete()
+        .eq("id",id);
+
+    if(error){
+
+        alert(error.message);
+        return;
+
+    }
+
+    await loadAds();
+
+}
+
+
+/* =========================
+   VISITS
+========================= */
+
+async function loadVisits(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from("site_visits")
+        .select("*")
+        .order("created_at",{ascending:false})
+        .limit(100);
+
+    if(error){
+
+        console.error(error);
+
+        return;
+
+    }
+
+    visits = data || [];
+
+    renderVisits();
+
+}
+
+
+function renderVisits(){
+
+    document
+        .getElementById("totalVisits")
+        .textContent =
+        visits.length;
+
+    const tbody =
+        document.getElementById("visitsTable");
+
+    if(!visits.length){
+
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="3"
+                    style="text-align:center;color:#8b93a7">
+                    لا توجد زيارات مسجلة
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+    tbody.innerHTML =
+        visits.map(visit=>`
+
+            <tr>
+
+                <td>
+                    ${esc(visit.visit_date)}
+                </td>
+
+                <td>
+                    ${esc(visit.page)}
+                </td>
+
+                <td>
+                    ${esc(visit.visitor_key)}
+                </td>
+
+            </tr>
+
+        `).join("");
+
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+function updateStats(){
+
+    document
+        .getElementById("companiesCount")
+        .textContent =
+        companies.length;
+
+    document
+        .getElementById("productsCount")
+        .textContent =
+        products.length;
+
+    document
+        .getElementById("servicesCount")
+        .textContent =
+        services.length;
+
+    document
+        .getElementById("visitsCount")
+        .textContent =
+        visits.length;
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+checkSession();
+
+</script>
+
+</body>
+</html>

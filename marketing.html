@@ -1,0 +1,3757 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delk Marketing | ديلك للتسويق</title>
+
+<meta name="description"
+content="Delk Marketing - شركة متخصصة في التسويق الرقمي، إدارة الحملات الإعلانية، صناعة المحتوى، بناء العلامات التجارية وتنمية المشروعات.">
+
+<meta name="theme-color" content="#070812">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Cairo",sans-serif;
+    background:#05060d;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(124,58,237,.18),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 90% 15%,
+        rgba(0,212,255,.10),
+        transparent 25%
+    ),
+    radial-gradient(
+        circle at 50% 80%,
+        rgba(236,72,153,.07),
+        transparent 30%
+    );
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    z-index:-9;
+    pointer-events:none;
+    opacity:.10;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 92%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    z-index:1000;
+    padding:14px 0;
+}
+
+.navbar{
+    width:min(1200px,94%);
+    min-height:70px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:8px 10px 8px 18px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:23px;
+
+    background:rgba(5,7,17,.78);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.38),
+        inset 0 1px rgba(255,255,255,.05);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    flex-shrink:0;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5,
+            #06b6d4
+        );
+
+    display:grid;
+    place-items:center;
+
+    box-shadow:
+        0 10px 35px rgba(124,58,237,.25);
+}
+
+.logo span{
+    font-family:Arial,sans-serif;
+    font-size:17px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.brand-text strong{
+    font-size:15px;
+    font-weight:900;
+}
+
+.brand-text small{
+    color:#737b91;
+    font-size:8px;
+    letter-spacing:1px;
+    direction:ltr;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+.nav{
+    display:flex;
+    align-items:center;
+    gap:3px;
+}
+
+.nav a{
+    color:#aab1c2;
+    font-size:11px;
+    font-weight:700;
+
+    padding:10px 12px;
+
+    border-radius:12px;
+
+    transition:.25s;
+}
+
+.nav a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.055);
+}
+
+.nav .active{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5
+        );
+}
+
+.menu{
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+
+    color:#fff;
+    background:rgba(255,255,255,.05);
+
+    font-size:21px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:155px 0 90px;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:#7c3aed;
+
+    filter:blur(180px);
+
+    opacity:.13;
+
+    top:-250px;
+    right:-180px;
+}
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:#06b6d4;
+
+    filter:blur(170px);
+
+    opacity:.06;
+
+    bottom:-250px;
+    left:-150px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:8px 15px;
+
+    color:#cfc3ff;
+
+    border:1px solid rgba(139,92,246,.25);
+
+    background:rgba(124,58,237,.08);
+
+    border-radius:100px;
+
+    font-size:10px;
+    font-weight:800;
+
+    margin-bottom:22px;
+}
+
+.badge-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    box-shadow:
+        0 0 18px #8b5cf6;
+}
+
+.hero h1{
+    font-size:clamp(43px,6vw,72px);
+
+    line-height:1.12;
+
+    letter-spacing:-2px;
+
+    font-weight:900;
+
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:
+        linear-gradient(
+            90deg,
+            #c4b5fd,
+            #8b5cf6,
+            #22d3ee
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+}
+
+.hero-text{
+    max-width:650px;
+
+    color:#8e97aa;
+
+    font-size:13px;
+
+    line-height:2.1;
+
+    margin-bottom:28px;
+}
+
+.hero-text strong{
+    color:#e5e0ff;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+}
+
+.btn{
+    min-width:160px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:14px 20px;
+
+    border-radius:15px;
+
+    font-size:11px;
+    font-weight:900;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.primary{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5
+        );
+
+    box-shadow:
+        0 15px 40px rgba(99,60,237,.28);
+}
+
+.secondary{
+    color:#dce1ed;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:rgba(255,255,255,.045);
+}
+
+.hero-numbers{
+    display:flex;
+    gap:32px;
+
+    margin-top:36px;
+}
+
+.number strong{
+    display:block;
+
+    font-size:23px;
+
+    font-weight:900;
+}
+
+.number span{
+    color:#6f778b;
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+    min-height:510px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.marketing-orbit{
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(124,58,237,.17),
+            rgba(255,255,255,.015) 54%,
+            transparent 72%
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 100px rgba(124,58,237,.12);
+}
+
+.marketing-orbit::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-32px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(139,92,246,.16);
+
+    animation:spin 18s linear infinite;
+}
+
+.marketing-orbit::after{
+    content:"";
+
+    position:absolute;
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:#22d3ee;
+
+    box-shadow:
+        0 0 30px #22d3ee;
+
+    top:5px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.marketing-core{
+    width:290px;
+    height:290px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,92,246,.22),
+            rgba(6,182,212,.08)
+        );
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        inset 0 0 70px rgba(139,92,246,.08),
+        0 25px 70px rgba(0,0,0,.35);
+
+    animation:float 5s ease-in-out infinite;
+}
+
+.core-icon{
+    width:90px;
+    height:90px;
+
+    border-radius:28px;
+
+    display:grid;
+    place-items:center;
+
+    font-size:43px;
+
+    margin-bottom:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,.3),
+            rgba(34,211,238,.12)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.marketing-core h2{
+    font-size:24px;
+    font-weight:900;
+}
+
+.marketing-core p{
+    color:#8e97aa;
+    font-size:10px;
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   FLOAT CARDS
+========================================================= */
+
+.float{
+    position:absolute;
+
+    padding:10px 14px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:14px;
+
+    background:rgba(8,10,24,.82);
+
+    backdrop-filter:blur(15px);
+
+    color:#c5ccdc;
+
+    font-size:9px;
+    font-weight:800;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+}
+
+.float-one{
+    top:65px;
+    right:0;
+}
+
+.float-two{
+    bottom:70px;
+    left:0;
+}
+
+.float-three{
+    bottom:25px;
+    right:65px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+    padding:105px 0;
+}
+
+.section-head{
+    max-width:700px;
+
+    text-align:center;
+
+    margin:0 auto 50px;
+}
+
+.label{
+    color:#a78bfa;
+
+    font-size:10px;
+    font-weight:900;
+
+    margin-bottom:7px;
+}
+
+.section-head h2{
+    font-size:clamp(30px,5vw,44px);
+
+    line-height:1.3;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.section-head p{
+    color:#80899d;
+
+    font-size:12px;
+
+    line-height:2;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.service{
+    min-height:230px;
+
+    padding:26px;
+
+    position:relative;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.3s;
+}
+
+.service::before{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:#8b5cf6;
+
+    filter:blur(90px);
+
+    opacity:.07;
+
+    top:-100px;
+    left:-80px;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(139,92,246,.30);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.22);
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(124,58,237,.10);
+
+    border:1px solid rgba(139,92,246,.18);
+
+    font-size:25px;
+
+    margin-bottom:17px;
+}
+
+.service h3{
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#7d869a;
+
+    font-size:10px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   WHY
+========================================================= */
+
+.why{
+    display:grid;
+
+    grid-template-columns:
+        .9fr
+        1.1fr;
+
+    gap:18px;
+}
+
+.glass{
+    padding:34px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:27px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+}
+
+.why-main{
+    min-height:390px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(124,58,237,.16),
+            transparent 60%
+        );
+}
+
+.why-main h3{
+    font-size:28px;
+
+    margin-bottom:15px;
+}
+
+.why-main p{
+    color:#858ea2;
+
+    font-size:12px;
+
+    line-height:2.1;
+}
+
+.feature-list{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:13px;
+}
+
+.feature{
+    padding:20px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    background:rgba(255,255,255,.025);
+}
+
+.feature-number{
+    color:#a78bfa;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.feature h4{
+    font-size:14px;
+
+    margin-bottom:6px;
+}
+
+.feature p{
+    color:#737d92;
+
+    font-size:9px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   PACKAGES
+========================================================= */
+
+.packages{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+}
+
+.package{
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.package:hover{
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(139,92,246,.28);
+}
+
+.package.featured{
+    border-color:
+        rgba(139,92,246,.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,58,237,.13),
+            rgba(255,255,255,.02)
+        );
+
+    box-shadow:
+        0 25px 80px rgba(88,50,190,.12);
+}
+
+.popular{
+    position:absolute;
+
+    top:17px;
+    left:17px;
+
+    padding:6px 10px;
+
+    border-radius:100px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5
+        );
+
+    font-size:8px;
+    font-weight:900;
+}
+
+.package h3{
+    font-size:19px;
+
+    margin-bottom:7px;
+}
+
+.package-desc{
+    color:#7d8699;
+
+    font-size:10px;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:27px;
+
+    font-weight:900;
+
+    margin-bottom:4px;
+}
+
+.price small{
+    color:#727b8e;
+
+    font-size:9px;
+
+    font-weight:500;
+}
+
+.package ul{
+    list-style:none;
+
+    margin:20px 0 25px;
+}
+
+.package li{
+    color:#8c95a8;
+
+    font-size:10px;
+
+    margin:10px 0;
+}
+
+.package li::before{
+    content:"✓";
+
+    color:#a78bfa;
+
+    font-weight:900;
+
+    margin-left:7px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.step{
+    text-align:center;
+
+    padding:27px 18px;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.step-num{
+    width:48px;
+    height:48px;
+
+    margin:0 auto 15px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #4f46e5
+        );
+
+    font-size:14px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 10px 30px rgba(99,60,237,.20);
+}
+
+.step h3{
+    font-size:13px;
+
+    margin-bottom:7px;
+}
+
+.step p{
+    color:#727c90;
+
+    font-size:9px;
+
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   WORKS
+========================================================= */
+
+.work-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
+}
+
+.work{
+    min-height:250px;
+
+    padding:27px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.015)
+        );
+
+    transition:.3s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.work:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(139,92,246,.28);
+}
+
+.work-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.work-icon{
+    width:55px;
+    height:55px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:17px;
+
+    background:
+        rgba(124,58,237,.10);
+
+    border:1px solid rgba(139,92,246,.18);
+
+    font-size:24px;
+}
+
+.work-type{
+    color:#8d7dcb;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    padding:6px 9px;
+
+    border-radius:100px;
+
+    background:rgba(124,58,237,.08);
+}
+
+.work h3{
+    font-size:17px;
+
+    margin-bottom:7px;
+}
+
+.work p{
+    color:#788297;
+
+    font-size:10px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+    max-width:850px;
+
+    margin:auto;
+}
+
+.faq-item{
+    margin-bottom:10px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.025);
+}
+
+.faq-question{
+    width:100%;
+
+    padding:18px 20px;
+
+    border:0;
+
+    color:#fff;
+
+    background:transparent;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    text-align:right;
+
+    font-size:11px;
+
+    font-weight:800;
+}
+
+.faq-icon{
+    color:#a78bfa;
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.faq-answer p{
+    padding:0 20px 18px;
+
+    color:#7e879b;
+
+    font-size:10px;
+
+    line-height:2;
+}
+
+.faq-item.open .faq-answer{
+    max-height:150px;
+}
+
+.faq-item.open .faq-icon{
+    transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+    padding:75px 25px;
+
+    text-align:center;
+
+    border-radius:32px;
+
+    border:1px solid rgba(139,92,246,.20);
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(124,58,237,.23),
+            transparent 60%
+        ),
+        rgba(255,255,255,.025);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.cta h2{
+    font-size:clamp(30px,5vw,47px);
+
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.cta p{
+    max-width:650px;
+
+    margin:0 auto 27px;
+
+    color:#8992a6;
+
+    font-size:11px;
+
+    line-height:2;
+}
+
+
+/* =========================================================
+   CONTACT MODAL
+========================================================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.72);
+
+    backdrop-filter:blur(12px);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(520px,100%);
+
+    padding:28px;
+
+    border-radius:27px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1020,
+            #080a14
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.5);
+
+    position:relative;
+}
+
+.close{
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.05);
+
+    color:#fff;
+
+    font-size:18px;
+}
+
+.modal-box h3{
+    font-size:23px;
+
+    margin-bottom:5px;
+}
+
+.modal-box > p{
+    color:#788297;
+
+    font-size:10px;
+
+    margin-bottom:20px;
+}
+
+.form-group{
+    margin-bottom:13px;
+}
+
+.form-group label{
+    display:block;
+
+    color:#aab2c3;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+
+    padding:13px 14px;
+
+    border-radius:13px;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    background:rgba(255,255,255,.035);
+
+    color:#fff;
+
+    outline:none;
+
+    font-size:10px;
+
+    transition:.25s;
+}
+
+.form-group textarea{
+    min-height:100px;
+
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139,92,246,.08);
+}
+
+.form-group select option{
+    background:#0b0e1c;
+}
+
+.full-btn{
+    width:100%;
+
+    border:0;
+
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:65px 0 25px;
+
+    background:#020308;
+
+    border-top:1px solid rgba(255,255,255,.07);
+}
+
+.footer-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr;
+
+    gap:35px;
+
+    margin-bottom:45px;
+}
+
+.footer-description{
+    max-width:410px;
+
+    color:#6e778a;
+
+    font-size:10px;
+
+    line-height:2;
+
+    margin-top:14px;
+}
+
+.footer-title{
+    font-size:11px;
+
+    font-weight:900;
+
+    margin-bottom:14px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:8px 0;
+}
+
+.footer-links a{
+    color:#6e778a;
+
+    font-size:10px;
+
+    transition:.2s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.copyright{
+    padding-top:22px;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
+    text-align:center;
+
+    color:#555e72;
+
+    font-size:8px;
+
+    line-height:2;
+}
+
+.copyright strong{
+    color:#a99aff;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav{
+        display:none;
+
+        position:absolute;
+
+        top:80px;
+
+        right:3%;
+        left:3%;
+
+        padding:10px;
+
+        flex-direction:column;
+
+        background:#090c1b;
+
+        border:1px solid rgba(255,255,255,.09);
+
+        border-radius:20px;
+    }
+
+    .nav.show{
+        display:flex;
+    }
+
+    .nav a{
+        width:100%;
+
+        text-align:center;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .hero-content{
+        order:1;
+    }
+
+    .hero-visual{
+        order:2;
+
+        min-height:430px;
+    }
+
+    .hero-text{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-numbers{
+        justify-content:center;
+    }
+
+    .service-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .why{
+        grid-template-columns:1fr;
+    }
+
+    .packages{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .work-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:600px){
+
+    header{
+        padding:9px 0;
+    }
+
+    .navbar{
+        min-height:64px;
+
+        border-radius:19px;
+    }
+
+    .logo{
+        width:43px;
+        height:43px;
+
+        border-radius:14px;
+    }
+
+    .brand-text strong{
+        font-size:12px;
+    }
+
+    .brand-text small{
+        font-size:6px;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:clamp(37px,12vw,54px);
+
+        letter-spacing:-1px;
+    }
+
+    .hero-text{
+        font-size:11px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .hero-numbers{
+        gap:18px;
+    }
+
+    .number strong{
+        font-size:19px;
+    }
+
+    .number span{
+        font-size:8px;
+    }
+
+    .hero-visual{
+        min-height:340px;
+    }
+
+    .marketing-orbit{
+        width:280px;
+        height:280px;
+    }
+
+    .marketing-core{
+        width:205px;
+        height:205px;
+    }
+
+    .core-icon{
+        width:62px;
+        height:62px;
+
+        font-size:30px;
+
+        border-radius:20px;
+
+        margin-bottom:8px;
+    }
+
+    .marketing-core h2{
+        font-size:18px;
+    }
+
+    .float{
+        font-size:7px;
+
+        padding:8px 10px;
+    }
+
+    .float-one{
+        top:20px;
+        right:-5px;
+    }
+
+    .float-two{
+        bottom:20px;
+        left:-5px;
+    }
+
+    .float-three{
+        display:none;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .service-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .service{
+        min-height:210px;
+
+        padding:20px 14px;
+    }
+
+    .service h3{
+        font-size:13px;
+    }
+
+    .glass{
+        padding:24px;
+    }
+
+    .feature-list{
+        grid-template-columns:1fr;
+    }
+
+    .packages{
+        grid-template-columns:1fr;
+    }
+
+    .process{
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:10px;
+    }
+
+    .work-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta{
+        padding:50px 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .modal-box{
+        padding:23px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<div class="navbar">
+
+<a href="#home" class="brand">
+
+<div class="logo">
+<span>DM</span>
+</div>
+
+<div class="brand-text">
+
+<strong>
+Delk Marketing
+</strong>
+
+<small>
+DELK MARKETING
+</small>
+
+</div>
+
+</a>
+
+
+<button
+class="menu"
+onclick="toggleMenu()"
+aria-label="فتح القائمة"
+>
+☰
+</button>
+
+
+<nav class="nav" id="nav">
+
+<a href="#home" class="active">
+الرئيسية
+</a>
+
+<a href="#services">
+خدماتنا
+</a>
+
+<a href="#why">
+لماذا نحن
+</a>
+
+<a href="#packages">
+الباقات
+</a>
+
+<a href="#works">
+أعمالنا
+</a>
+
+<a href="#contact">
+تواصل معنا
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+
+<div class="hero-content">
+
+<div class="badge">
+
+<span class="badge-dot"></span>
+
+نصنع حضورًا رقميًا يصنع الفرق
+
+</div>
+
+
+<h1>
+
+نحوّل
+
+<span class="gradient">
+الاهتمام
+</span>
+
+<br>
+
+إلى
+
+<span class="gradient">
+نمو حقيقي
+</span>
+
+</h1>
+
+
+<p class="hero-text">
+
+مرحبًا بك في
+<strong>Delk Marketing</strong>،
+ذراع التسويق الرقمي داخل منظومة
+موسوعة ديلك ستار.
+
+نساعد المشروعات والعلامات التجارية
+على الوصول إلى جمهورها من خلال
+التسويق الرقمي، الحملات الإعلانية،
+المحتوى وبناء الهوية التجارية.
+
+</p>
+
+
+<div class="buttons">
+
+<a
+href="#packages"
+class="btn primary"
+>
+ابدأ حملتك الآن
+←
+</a>
+
+<button
+class="btn secondary"
+onclick="openModal()"
+>
+اطلب عرضًا تسويقيًا
+</button>
+
+</div>
+
+
+<div class="hero-numbers">
+
+<div class="number">
+
+<strong>360°</strong>
+
+<span>
+حلول تسويقية متكاملة
+</span>
+
+</div>
+
+
+<div class="number">
+
+<strong>24/7</strong>
+
+<span>
+متابعة وتطوير
+</span>
+
+</div>
+
+
+<div class="number">
+
+<strong>∞</strong>
+
+<span>
+أفكار وحلول
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- HERO VISUAL -->
+
+<div class="hero-visual">
+
+<div class="marketing-orbit">
+
+
+<div class="marketing-core">
+
+<div class="core-icon">
+📈
+</div>
+
+<h2>
+Delk Marketing
+</h2>
+
+<p>
+Marketing • Growth • Branding
+</p>
+
+</div>
+
+
+<div class="float float-one">
+🎯 استهداف الجمهور
+</div>
+
+
+<div class="float float-two">
+📊 تحليل النتائج
+</div>
+
+
+<div class="float float-three">
+🚀 نمو العلامة التجارية
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+خدماتنا
+</div>
+
+<h2>
+كل ما تحتاجه لتسويق مشروعك
+</h2>
+
+<p>
+نقدم حلولًا تسويقية تساعد مشروعك
+على بناء حضور قوي والوصول إلى
+العملاء المناسبين.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<div class="service-icon">
+📣
+</div>
+
+<h3>
+الحملات الإعلانية
+</h3>
+
+<p>
+تخطيط الحملات الإعلانية وإعداد
+الجمهور والاستهداف وتحسين الأداء.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+التسويق عبر السوشيال ميديا
+</h3>
+
+<p>
+إدارة وتطوير الحضور الرقمي على
+منصات التواصل الاجتماعي.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎨
+</div>
+
+<h3>
+التصميم والهوية
+</h3>
+
+<p>
+تصميمات وهوية بصرية تساعد علامتك
+على الظهور بشكل احترافي.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎬
+</div>
+
+<h3>
+المحتوى والفيديو
+</h3>
+
+<p>
+أفكار ومحتوى وتصميمات وفيديوهات
+مناسبة لجمهورك.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🔎
+</div>
+
+<h3>
+تحليل السوق
+</h3>
+
+<p>
+دراسة الجمهور والمنافسين وتحديد
+الفرص المناسبة للنمو.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📊
+</div>
+
+<h3>
+تحليل الأداء
+</h3>
+
+<p>
+متابعة النتائج وقراءة البيانات
+وتطوير الحملات باستمرار.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🚀
+</div>
+
+<h3>
+نمو المشروعات
+</h3>
+
+<p>
+خطط تسويقية تساعد المشروعات
+على الوصول إلى مراحل جديدة.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+💡
+</div>
+
+<h3>
+الاستراتيجية التسويقية
+</h3>
+
+<p>
+بناء خطة تسويق تناسب أهداف
+مشروعك وميزانيتك.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY US
+========================================================= -->
+
+<section id="why">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+لماذا Delk Marketing؟
+</div>
+
+<h2>
+التسويق ليس مجرد إعلان
+</h2>
+
+<p>
+نحن نهتم بالصورة الكاملة للعلامة
+التجارية وليس فقط بنشر الإعلانات.
+</p>
+
+</div>
+
+
+<div class="why">
+
+
+<div class="glass why-main">
+
+<h3>
+نبني خطة...
+<br>
+
+<span class="gradient">
+ثم نطوّرها
+</span>
+</h3>
+
+<p>
+
+نبدأ بفهم مشروعك والجمهور الذي
+تريد الوصول إليه، ثم نحدد القنوات
+والرسائل المناسبة، وبعد ذلك نتابع
+النتائج ونطوّر الخطة بناءً على
+البيانات.
+
+</p>
+
+<br>
+
+<p>
+
+هدفنا ليس فقط الحصول على مشاهدات،
+بل بناء حضور رقمي يساعد مشروعك
+على النمو بصورة مستمرة.
+
+</p>
+
+</div>
+
+
+<div class="glass">
+
+<div class="feature-list">
+
+
+<div class="feature">
+
+<div class="feature-number">
+01
+</div>
+
+<h4>
+استراتيجية واضحة
+</h4>
+
+<p>
+كل حملة تبدأ بهدف واضح وخطة
+مناسبة للمشروع.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+02
+</div>
+
+<h4>
+استهداف ذكي
+</h4>
+
+<p>
+الوصول إلى الفئة الأكثر اهتمامًا
+بالمنتج أو الخدمة.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+03
+</div>
+
+<h4>
+محتوى قوي
+</h4>
+
+<p>
+محتوى مصمم لجذب الانتباه
+وتوصيل الرسالة.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+04
+</div>
+
+<h4>
+متابعة مستمرة
+</h4>
+
+<p>
+مراجعة النتائج وتطوير الحملة
+حسب الأداء.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+05
+</div>
+
+<h4>
+تقارير وتحليل
+</h4>
+
+<p>
+قراءة الأرقام وتحويلها إلى
+قرارات تسويقية.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+06
+</div>
+
+<h4>
+حلول مرنة
+</h4>
+
+<p>
+خطط قابلة للتعديل حسب احتياجات
+وميزانية المشروع.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PACKAGES
+========================================================= -->
+
+<section id="packages">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+الباقات
+</div>
+
+<h2>
+اختر نقطة البداية
+</h2>
+
+<p>
+باقات مرنة يمكن تعديلها حسب
+نوع المشروع وأهداف الحملة.
+</p>
+
+</div>
+
+
+<div class="packages">
+
+
+<div class="package">
+
+<h3>
+Starter
+</h3>
+
+<p class="package-desc">
+مناسبة للمشروعات التي تريد
+البدء بحضور تسويقي منظم.
+</p>
+
+<div class="price">
+مخصص
+<small>
+حسب المشروع
+</small>
+</div>
+
+<ul>
+
+<li>تحليل أولي للمشروع</li>
+
+<li>خطة محتوى أساسية</li>
+
+<li>تصميمات تسويقية</li>
+
+<li>خطة نشر</li>
+
+<li>متابعة الأداء</li>
+
+</ul>
+
+<button
+class="btn secondary"
+style="width:100%"
+onclick="openModal('Starter')"
+>
+اطلب الباقة
+</button>
+
+</div>
+
+
+<div class="package featured">
+
+<div class="popular">
+الأكثر طلبًا
+</div>
+
+<h3>
+Growth
+</h3>
+
+<p class="package-desc">
+للمشروعات التي تريد زيادة
+الوصول والتفاعل والنمو.
+</p>
+
+<div class="price">
+مخصص
+<small>
+حسب الحملة
+</small>
+</div>
+
+<ul>
+
+<li>استراتيجية تسويقية</li>
+
+<li>إدارة حملات إعلانية</li>
+
+<li>محتوى وتصميمات</li>
+
+<li>تحليل الجمهور</li>
+
+<li>متابعة وتحسين</li>
+
+<li>تقرير أداء</li>
+
+</ul>
+
+<button
+class="btn primary"
+style="width:100%"
+onclick="openModal('Growth')"
+>
+ابدأ الآن
+</button>
+
+</div>
+
+
+<div class="package">
+
+<h3>
+Business
+</h3>
+
+<p class="package-desc">
+حل تسويقي متكامل للعلامات
+والمشروعات التي تريد التوسع.
+</p>
+
+<div class="price">
+مخصص
+<small>
+حسب الاحتياج
+</small>
+</div>
+
+<ul>
+
+<li>خطة تسويقية متكاملة</li>
+
+<li>إدارة عدة حملات</li>
+
+<li>صناعة محتوى</li>
+
+<li>بناء الهوية التجارية</li>
+
+<li>تحليل المنافسين</li>
+
+<li>تقارير وتطوير مستمر</li>
+
+</ul>
+
+<button
+class="btn secondary"
+style="width:100%"
+onclick="openModal('Business')"
+>
+اطلب استشارة
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+طريقة العمل
+</div>
+
+<h2>
+من الفكرة إلى النتيجة
+</h2>
+
+<p>
+نعمل بخطوات واضحة حتى تكون
+الصورة أمامك من البداية.
+</p>
+
+</div>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-num">
+01
+</div>
+
+<h3>
+نفهم مشروعك
+</h3>
+
+<p>
+نتعرف على نشاطك وأهدافك
+والجمهور المستهدف.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">
+02
+</div>
+
+<h3>
+نضع الخطة
+</h3>
+
+<p>
+نحدد الرسائل والقنوات
+والاستراتيجية المناسبة.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">
+03
+</div>
+
+<h3>
+ننفذ الحملة
+</h3>
+
+<p>
+نبدأ المحتوى والإعلانات
+والتسويق وفق الخطة.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-num">
+04
+</div>
+
+<h3>
+نحلل ونطور
+</h3>
+
+<p>
+نراجع النتائج ونحسن الأداء
+باستمرار.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     WORKS
+========================================================= -->
+
+<section id="works">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+مجالات العمل
+</div>
+
+<h2>
+نساعد أنواعًا مختلفة من المشروعات
+</h2>
+
+<p>
+من المشروعات الصغيرة إلى العلامات
+التجارية والمشروعات الرقمية.
+</p>
+
+</div>
+
+
+<div class="work-grid">
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+🏢
+</div>
+
+<div class="work-type">
+شركات
+</div>
+
+</div>
+
+<h3>
+الشركات والخدمات
+</h3>
+
+<p>
+بناء حضور رقمي احترافي للشركات
+والخدمات المحلية والرقمية.
+</p>
+
+</div>
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+🛒
+</div>
+
+<div class="work-type">
+تجارة
+</div>
+
+</div>
+
+<h3>
+المتاجر الإلكترونية
+</h3>
+
+<p>
+تسويق المنتجات وزيادة الوصول
+والاهتمام بالمتجر.
+</p>
+
+</div>
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+🍔
+</div>
+
+<div class="work-type">
+مطاعم
+</div>
+
+</div>
+
+<h3>
+المطاعم والمقاهي
+</h3>
+
+<p>
+حملات ومحتوى يساعد على زيادة
+الانتشار والوصول للعملاء.
+</p>
+
+</div>
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+🎓
+</div>
+
+<div class="work-type">
+تعليم
+</div>
+
+</div>
+
+<h3>
+المراكز التعليمية
+</h3>
+
+<p>
+الترويج للدورات والمراكز
+والمحتوى التعليمي.
+</p>
+
+</div>
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+👕
+</div>
+
+<div class="work-type">
+علامات تجارية
+</div>
+
+</div>
+
+<h3>
+الملابس والمنتجات
+</h3>
+
+<p>
+صناعة محتوى وحملات للمنتجات
+والعلامات التجارية.
+</p>
+
+</div>
+
+
+<div class="work">
+
+<div class="work-top">
+
+<div class="work-icon">
+📱
+</div>
+
+<div class="work-type">
+مشروعات رقمية
+</div>
+
+</div>
+
+<h3>
+التطبيقات والمنصات
+</h3>
+
+<p>
+إطلاق وتسويق المشروعات
+والمنتجات الرقمية.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="label">
+الأسئلة الشائعة
+</div>
+
+<h2>
+أسئلة قبل بدء الحملة
+</h2>
+
+</div>
+
+
+<div class="faq">
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+onclick="toggleFaq(this)"
+>
+
+هل يمكن تنفيذ حملة لمشروع صغير؟
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+نعم، يتم تحديد الخطة وفق حجم
+المشروع والهدف والميزانية
+المتاحة للحملة.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+onclick="toggleFaq(this)"
+>
+
+هل سعر الحملة ثابت؟
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+السعر يختلف حسب نوع الخدمة
+والمدة ونطاق الحملة والمنصات
+المستخدمة، لذلك يتم تحديد
+العرض بعد معرفة التفاصيل.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+onclick="toggleFaq(this)"
+>
+
+هل يمكن إدارة السوشيال ميديا؟
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+نعم، يمكن إعداد محتوى وخطة
+نشر وإدارة تسويقية للحسابات
+وفق الاتفاق ونطاق المشروع.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<button
+class="faq-question"
+onclick="toggleFaq(this)"
+>
+
+كيف أبدأ؟
+
+<span class="faq-icon">
++
+</span>
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+اضغط على طلب حملة، اكتب اسمك
+ورقمك ونوع مشروعك ووصف الخدمة
+المطلوبة، وسيتم تجهيز رسالة
+واتساب تحتوي على البيانات.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+
+جاهز
+
+<span class="gradient">
+لتسويق مشروعك؟
+</span>
+
+</h2>
+
+<p>
+
+أرسل لنا تفاصيل مشروعك، وسنساعدك
+على اختيار الخدمة والخطة المناسبة
+لبداية حملتك التسويقية.
+
+</p>
+
+
+<div class="buttons" style="justify-content:center">
+
+<button
+class="btn primary"
+onclick="openModal()"
+>
+اطلب حملتك الآن
+🚀
+</button>
+
+<a
+href="store.html"
+class="btn secondary"
+>
+العودة إلى متجرنا
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<a href="#home" class="brand">
+
+<div class="logo">
+<span>DM</span>
+</div>
+
+<div class="brand-text">
+
+<strong>
+Delk Marketing
+</strong>
+
+<small>
+DELK MARKETING
+</small>
+
+</div>
+
+</a>
+
+
+<p class="footer-description">
+
+Delk Marketing هي شركة متخصصة
+في التسويق الرقمي والحملات
+الإعلانية وصناعة المحتوى وبناء
+العلامات التجارية ضمن منظومة
+موسوعة ديلك ستار.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+روابط سريعة
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a href="#home">
+الرئيسية
+</a>
+</li>
+
+<li>
+<a href="#services">
+خدماتنا
+</a>
+</li>
+
+<li>
+<a href="#packages">
+الباقات
+</a>
+</li>
+
+<li>
+<a href="#works">
+مجالات العمل
+</a>
+</li>
+
+<li>
+<a href="#contact">
+تواصل معنا
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+موسوعة ديلك ستار
+</div>
+
+<ul class="footer-links">
+
+<li>
+<a href="index.html">
+الموقع الرئيسي
+</a>
+</li>
+
+<li>
+<a href="store.html">
+متجرنا
+</a>
+</li>
+
+<li>
+<a href="delksoft.html">
+DelkSoft
+</a>
+</li>
+
+<li>
+<a href="media.html">
+Delk Media
+</a>
+</li>
+
+<li>
+<a href="advertising.html">
+Delk Advertising
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© <span id="year"></span>
+
+<strong>
+Delk Marketing
+</strong>
+
+— إحدى شركات موسوعة ديلك ستار.
+
+<br>
+
+صاحب الموسوعة والشركات:
+
+<strong>
+عثمان أحمد عثمان عبدالرحيم
+</strong>
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+<!-- =========================================================
+     MODAL
+========================================================= -->
+
+<div
+class="modal"
+id="modal"
+onclick="outsideClose(event)"
+>
+
+<div class="modal-box">
+
+<button
+class="close"
+onclick="closeModal()"
+>
+×
+</button>
+
+
+<h3>
+اطلب حملتك التسويقية
+</h3>
+
+<p>
+اكتب بياناتك، وسيتم تجهيز رسالة
+واتساب بالطلب مباشرة.
+</p>
+
+
+<form id="marketingForm">
+
+
+<div class="form-group">
+
+<label>
+الاسم
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="اكتب اسمك"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="01xxxxxxxxx"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+نوع المشروع
+</label>
+
+<select id="project" required>
+
+<option value="">
+اختر نوع المشروع
+</option>
+
+<option>
+شركة
+</option>
+
+<option>
+متجر إلكتروني
+</option>
+
+<option>
+مطعم أو مقهى
+</option>
+
+<option>
+مركز تعليمي
+</option>
+
+<option>
+علامة تجارية
+</option>
+
+<option>
+تطبيق أو منصة
+</option>
+
+<option>
+مشروع آخر
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+الخدمة المطلوبة
+</label>
+
+<select id="service" required>
+
+<option value="">
+اختر الخدمة
+</option>
+
+<option>
+حملة إعلانية
+</option>
+
+<option>
+إدارة سوشيال ميديا
+</option>
+
+<option>
+صناعة محتوى
+</option>
+
+<option>
+تصميم وهوية
+</option>
+
+<option>
+استراتيجية تسويقية
+</option>
+
+<option>
+باقة تسويقية متكاملة
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+وصف المشروع والطلب
+</label>
+
+<textarea
+id="description"
+placeholder="اكتب تفاصيل مشروعك وما الذي تريد تحقيقه..."
+required
+></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="btn primary full-btn"
+>
+إرسال الطلب عبر واتساب
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   MENU
+========================================================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("nav")
+    .classList
+    .toggle("show");
+
+}
+
+
+document
+.querySelectorAll(".nav a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("nav")
+        .classList
+        .remove("show");
+
+    });
+
+});
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+/* =========================================================
+   ACTIVE NAV
+========================================================= */
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll",function(){
+
+    let current = "";
+
+    sections.forEach(function(section){
+
+        const top =
+        section.offsetTop - 180;
+
+        if(window.scrollY >= top){
+
+            current =
+            section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(function(link){
+
+        link.classList.remove("active");
+
+        if(
+            link.getAttribute("href")
+            === "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+const modal =
+document.getElementById("modal");
+
+
+function openModal(packageName=""){
+
+    modal.classList.add("show");
+
+    document.body.style.overflow="hidden";
+
+    if(packageName){
+
+        const description =
+        document.getElementById("description");
+
+        description.value =
+        "أرغب في طلب باقة " +
+        packageName +
+        " التسويقية.";
+
+    }
+
+}
+
+
+function closeModal(){
+
+    modal.classList.remove("show");
+
+    document.body.style.overflow="";
+
+}
+
+
+function outsideClose(event){
+
+    if(event.target === modal){
+
+        closeModal();
+
+    }
+
+}
+
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        closeModal();
+
+    }
+
+});
+
+
+/* =========================================================
+   WHATSAPP FORM
+========================================================= */
+
+document
+.getElementById("marketingForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+
+    const name =
+    document.getElementById("name").value.trim();
+
+    const phone =
+    document.getElementById("phone").value.trim();
+
+    const project =
+    document.getElementById("project").value;
+
+    const service =
+    document.getElementById("service").value;
+
+    const description =
+    document.getElementById("description").value.trim();
+
+
+    /*
+       ضع هنا رقم واتساب الشركة
+       بدون + أو مسافات.
+
+       مثال:
+       2010xxxxxxxx
+
+       غيّر الرقم الموجود بين علامات الاقتباس.
+    */
+
+    const whatsappNumber =
+    "201000000000";
+
+
+    const message =
+
+`طلب جديد من موقع Delk Marketing
+
+الاسم: ${name}
+
+رقم العميل: ${phone}
+
+نوع المشروع: ${project}
+
+الخدمة المطلوبة: ${service}
+
+تفاصيل المشروع:
+${description}
+
+المصدر:
+Delk Marketing Website`;
+
+
+    const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+
+});
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+function toggleFaq(button){
+
+    const item =
+    button.parentElement;
+
+    const all =
+    document.querySelectorAll(".faq-item");
+
+    all.forEach(function(other){
+
+        if(other !== item){
+
+            other.classList.remove("open");
+
+        }
+
+    });
+
+    item.classList.toggle("open");
+
+}
+
+</script>
+
+</body>
+</html>
